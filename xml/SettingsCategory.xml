@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>BG_OpenClose_Fade_Animation</include>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<texture border="1">special://skin/backgrounds/home_bg.jpg</texture>
+			</control>
+		</control>
+		<control type="group">
+			<left>135</left>
+			<top>45</top>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+			<control type="grouplist" id="3">
+				<description>button area</description>
+				<left>15</left>
+				<top>135</top>
+				<width>390</width>
+				<height>722</height>
+				<itemgap>-2</itemgap>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>3</onup>
+				<ondown>20</ondown>
+			</control>
+			<control type="button" id="20">
+				<description>Setting level button</description>
+				<left>15</left>
+				<top>843</top>
+				<height>120</height>
+				<width>390</width>
+				<label>10037</label>
+				<textoffsetx>30</textoffsetx>
+				<textoffsety>42</textoffsety>
+				<align>right</align>
+				<aligny>top</aligny>
+				<font>font30caps</font>
+				<textcolor>selected</textcolor>
+				<focusedcolor>selected</focusedcolor>
+				<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+				<pulseonselect>false</pulseonselect>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>3</onup>
+				<ondown>3</ondown>
+				<onclick>SettingsLevelChange</onclick>
+			</control>
+			<control type="label">
+				<left>30</left>
+				<top>849</top>
+				<height>38</height>
+				<width>345</width>
+				<label>31142</label>
+				<font>font30_title</font>
+				<textcolor>white</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<left>450</left>
+				<top>30</top>
+				<width>1089</width>
+				<height>45</height>
+				<font>font30</font>
+				<label>$INFO[Control.GetLabel(2)] - $LOCALIZE[5]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<left>435</left>
+				<top>105</top>
+				<width>1125</width>
+				<height>652</height>
+				<itemgap>-2</itemgap>
+				<pagecontrol>60</pagecontrol>
+				<onleft>3</onleft>
+				<onright>60</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1590</left>
+				<top>90</top>
+				<width>38</width>
+				<height>652</height>
+				<texturesliderbackground border="0,21,0,21">ScrollBarV.png</texturesliderbackground>
+				<texturesliderbar border="0,21,0,21">ScrollBarV_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,21,0,21">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>ScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+				<onleft>5</onleft>
+				<onright>3</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+			</control>
+			<control type="textbox" id="6">
+				<description>description area</description>
+				<left>446</left>
+				<top>795</top>
+				<width>1104</width>
+				<height>128</height>
+				<font>font30</font>
+				<align>justify</align>
+				<textcolor>white</textcolor>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+			</control>
+		</control>
+		<include>DialogBackground</include>
+		<control type="button" id="10">
+			<description>Default Category Button</description>
+			<height>120</height>
+			<width>390</width>
+			<textoffsetx>30</textoffsetx>
+			<align>right</align>
+			<aligny>center</aligny>
+			<font>font30_title</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+			<pulseonselect>false</pulseonselect>
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<left>0</left>
+			<top>0</top>
+			<textoffsetx>30</textoffsetx>
+			<height>90</height>
+			<font>font30</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<invalidcolor>invalid</invalidcolor>
+			<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default RadioButton</description>
+			<left>0</left>
+			<top>0</top>
+			<textoffsetx>30</textoffsetx>
+			<radioposx>1040</radioposx>
+			<height>90</height>
+			<font>font30</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default SpinControlex</description>
+			<left>0</left>
+			<top>0</top>
+			<textoffsetx>30</textoffsetx>
+			<height>90</height>
+			<font>font30</font>
+			<textcolor>grey2</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+			<aligny>center</aligny>
+		</control>
+		<control type="image" id="11">
+			<description>separator image</description>
+			<height>3</height>
+			<texture>separator2.png</texture>
+		</control>
+		<control type="label" id="2">
+			<description>Fake Label so we can pass it value down to the one below</description>
+			<left>0</left>
+			<top>0</top>
+			<width>0</width>
+			<height>0</height>
+			<font>-</font>
+			<visible>false</visible>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<!-- <onload>PlayMedia(/system/media/start.mp4,1)</onload> -->
+	<allowoverlay>true</allowoverlay>
+	<controls>
+		<control type="button" id="10">
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<onup>noop</onup>
+			<ondown>noop</ondown>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+			<onclick>noop</onclick>
+			<onback>noop</onback>
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onclick>noop</onclick>
+		</control>
+		<control type="videowindow">
+			<include>FullscreenDimensions</include>
+			<visible>Player.HasVideo</visible>
+		</control>
+	</controls>
+</window>

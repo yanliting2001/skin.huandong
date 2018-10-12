@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<views>50,555</views>
+	<controls>
+		<control type="image">
+			<texture>home/bg.png</texture>
+		</control>
+		<control type="group">
+			<include>VideoList</include>
+			<include>View555_FileManagerList</include>
+		</control>
+		<control type="grouplist">
+			<!-- Breadcrumbs left -->
+			<left>378</left>
+			<top>60</top>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="cubic">500</scrolltime>
+			<visible>Control.IsVisible(500)</visible>
+			<animation effect="fade" time="300" delay="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<animation effect="slide" end="-318" time="300" tween="cubic" easing="inout" condition="!Control.IsVisible(500)">Conditional</animation>
+			<control type="label">
+				<description>Section header</description>
+				<width>auto</width>
+				<font>font40</font>
+				<textcolor>white80</textcolor>
+				<label>电视剧</label>
+			</control>
+			<control type="label">
+				<description>"Sort by" header</description>
+				<top>13</top>
+				<width>auto</width>
+				<font>font26</font>
+				<textcolor>white40</textcolor>
+				<label>按地区</label>
+			</control>
+			<control type="image">
+				<description>Header divider</description>
+				<top>18</top>
+				<width>1</width>
+				<height>22</height>
+				<texture>list/header_divider.png</texture>
+			</control>
+			<control type="label">
+				<description>"Type" header</description>
+				<top>13</top>
+				<width>auto</width>
+				<font>font26</font>
+				<textcolor>white40</textcolor>
+				<label>类型</label>
+			</control>
+			<control type="image">
+				<description>Header divider</description>
+				<top>18</top>
+				<width>1</width>
+				<height>22</height>
+				<texture>list/header_divider.png</texture>
+			</control>
+			<control type="label">
+				<description>"Time" header</description>
+				<top>13</top>
+				<width>auto</width>
+				<font>font26</font>
+				<textcolor>white40</textcolor>
+				<label>时间</label>
+			</control>
+			<control type="image">
+				<description>Header divider</description>
+				<top>18</top>
+				<width>1</width>
+				<height>22</height>
+				<texture>list/header_divider.png</texture>
+			</control>
+			<control type="label">
+				<description>"Popularity" header</description>
+				<top>13</top>
+				<width>auto</width>
+				<font>font26</font>
+				<textcolor>white40</textcolor>
+				<label>人气</label>
+			</control>
+		</control>
+		<control type="grouplist">
+			<!-- Breadcrumbs right -->
+			<right>80</right>
+			<top>60</top>
+			<width>600</width>
+			<align>right</align>
+			<itemgap>0</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="cubic">500</scrolltime>
+			<visible>Control.IsVisible(500)</visible>
+			<animation effect="fade" time="300" delay="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<control type="label">
+				<description>Help text</description>
+				<top>13</top>
+				<width>auto</width>
+				<font>font26</font>
+				<textcolor>white40</textcolor>
+				<label>按</label>
+			</control>
+			<control type="button">
+				<description>Help text</description>
+				<top>10</top>
+				<width>70</width>
+				<height>40</height>
+				<font>font26</font>
+				<textwidth>80</textwidth>
+				<align>center</align>
+				<textcolor>white80</textcolor>
+				<texturenofocus border="4">list/header_button.png</texturenofocus>
+				<label>菜单</label>
+			</control>
+			<control type="label">
+				<description>Help text</description>
+				<top>13</top>
+				<width>auto</width>
+				<font>font26</font>
+				<textcolor>white40</textcolor>
+				<label>键筛选影片</label>
+			</control>
+		</control>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="-200" end="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" end="-200" start="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<width>324</width>
+			<height>100%</height>
+			<visible>Control.IsVisible(500)</visible>
+			<control type="image">
+				<width>324</width>
+				<height>100%</height>
+				<texture colordiffuse="white30">colors/black.png</texture>
+			</control>
+			<control type="image">
+				<centerleft>50%</centerleft>
+				<top>70</top>
+				<width>30</width>
+				<height>18</height>
+				<texture flipy="true">filter/arrow_vert.png</texture>
+				<visible>Container(9051).HasPrevious</visible>
+			</control>
+			<control type="fixedlist" id="9051">
+				<description>MediaMenu</description>
+				<left>0</left>
+				<top>110</top>
+				<width>324</width>
+				<bottom>110</bottom>
+				<orientation>vertical</orientation>
+				<onright>500</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<focusposition>4</focusposition>
+				<movement>4</movement>
+				<scrolltime tween="cubic">600</scrolltime>
+				<itemlayout height="94" width="324">
+					<control type="label">
+						<left>40</left>
+						<width>324</width>
+						<height>94</height>
+						<aligny>center</aligny>
+						<textcolor>white40</textcolor>
+						<font>fontarial</font>
+						<label>・</label>
+						<visible>!IsEmpty(ListItem.Property(IsSelected))</visible>
+					</control>
+					<control type="label">
+						<left>92</left>
+						<width>324</width>
+						<height>94</height>
+						<aligny>center</aligny>
+						<textcolor>white40</textcolor>
+						<font>font36</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="94" width="324">
+					<control type="label">
+						<left>40</left>
+						<width>324</width>
+						<height>94</height>
+						<aligny>center</aligny>
+						<textcolor>white40</textcolor>
+						<font>fontarial</font>
+						<label>・</label>
+						<visible>!Control.HasFocus(9051)</visible>
+						<visible>!IsEmpty(ListItem.Property(IsSelected))</visible>
+					</control>
+					<control type="label">
+						<left>92</left>
+						<width>324</width>
+						<height>94</height>
+						<aligny>center</aligny>
+						<textcolor>white40</textcolor>
+						<font>font36</font>
+						<visible>!Control.HasFocus(9051)</visible>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="image">
+						<left>62</left>
+						<top>-12</top>
+						<width>200</width>
+						<height>118</height>
+						<texture>filter/filter_button_fo.png</texture>
+						<visible>Control.HasFocus(9051)</visible>
+					</control>
+					<control type="label">
+						<left>40</left>
+						<width>324</width>
+						<height>94</height>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>fontarial</font>
+						<label>・</label>
+						<visible>!IsEmpty(ListItem.Property(IsSelected))</visible>
+						<visible>Control.HasFocus(9051)</visible>
+					</control>
+					<control type="label">
+						<left>92</left>
+						<width>324</width>
+						<height>94</height>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>font36</font>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>Control.HasFocus(9051)</visible>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>全部影片</label>
+						<property name="IsSelected">True</property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>院线强档</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>最爱华语</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>欧美热播</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>动作片</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>喜剧不断</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>犯罪烧脑</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>惊声尖叫</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>动作片场</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>动作片场</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>动作片场</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+					<item>
+						<label>动作片场</label>
+						<property name="IsSelected"></property>
+						<onclick>ActivateWindow(1119)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="image">
+				<centerleft>50%</centerleft>
+				<bottom>70</bottom>
+				<width>30</width>
+				<height>18</height>
+				<texture>filter/arrow_vert.png</texture>
+				<visible>Container(9051).HasNext</visible>
+			</control>
+		</control>
+		<include>MediaProcess</include>
+	</controls>
+</window>

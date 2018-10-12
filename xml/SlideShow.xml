@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>2</defaultcontrol>
+	<controls>
+		<control type="grouplist" id="601">
+			<left>100</left>
+			<top>874</top>
+			<width>1920</width>
+			<height>218</height>
+			<itemgap>-60</itemgap>
+			<align>left</align>
+			<onup>600</onup>
+			<ondown>600</ondown>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,40" end="0,0" delay="130" time="250" tween="cubic" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" start="0,0" end="0,40" time="150" tween="cubic" easing="in" />
+			</animation>
+			<scrolltime tween="quadratic">200</scrolltime>
+			<orientation>horizontal</orientation>
+		</control>
+	</controls>
+</window>

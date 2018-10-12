@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="buttonMenu">
+	<defaultcontrol>9060</defaultcontrol>
+	<include>Dialog_OpenClose_Animation</include>
+	<coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="grouplist" id="9060">
+			<left>655</left>
+			<top>0</top>
+			<width>609</width>
+			<height>1080</height>
+			<onleft>9060</onleft>
+			<onright>9060</onright>
+			<onup>9060</onup>
+			<ondown>9060</ondown>
+			<itemgap>0</itemgap>
+			<align>center</align>
+			<control type="image" id="1">
+				<description>top image</description>
+				<width>609</width>
+				<height>93</height>
+				<texture>dialogs/shutdown/shutdown_top.png</texture>
+			</control>
+			<control type="button" id="2">
+				<description>Exit button</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.Quit()</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13012</label>
+				<visible>System.ShowExitButton</visible>
+			</control>
+			<control type="button" id="3">
+				<description>Shutdown button</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.Powerdown()</onclick>
+				<visible>System.CanPowerDown</visible>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13016</label>
+			</control>
+			<control type="button" id="4">
+				<description>Custom Shutdown Timer</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>20150</label>
+				<visible>!System.HasAlarm(shutdowntimer)</visible>
+				<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+			</control>
+			<control type="button" id="5">
+				<description>Cancel Shutdown Timer</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>20151</label>
+				<visible>System.HasAlarm(shutdowntimer)</visible>
+			</control>
+			<control type="button" id="6">
+				<description>Suspend button</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.Suspend()</onclick>
+				<visible>System.CanSuspend</visible>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13011</label>
+			</control>
+			<control type="button" id="7">
+				<description>Hibernate button</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.Hibernate()</onclick>
+				<visible>System.CanHibernate</visible>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13010</label>
+			</control>
+			<control type="button" id="8">
+				<description>Reboot button</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.Reset()</onclick>
+				<visible>System.CanReboot</visible>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13013</label>
+			</control>
+			<control type="button" id="9">
+				<description>Logoff button</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>System.LogOff</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+				<visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+				<visible>System.Loggedon</visible>
+			</control>
+			<control type="togglebutton" id="10">
+				<description>Master mode button</description>
+				<width>609</width>
+				<height>122</height>
+				<label>20046</label>
+				<altlabel>20045</altlabel>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textwidth>435</textwidth>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<usealttexture>!System.IsMaster</usealttexture>
+				<alttexturefocus border="25">dialogs/shutdown/shutdown_fo.png</alttexturefocus>
+				<alttexturenofocus border="25">dialogs/shutdown/shutdown_nf.png</alttexturenofocus>
+				<onclick>xbmc.mastermode</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<visible>System.HasLocks</visible>
+			</control>
+			<control type="button" id="12">
+				<description>Inhibit idle shutdown</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.InhibitIdleShutdown(true)</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13017</label>
+				<visible>System.HasShutdown +!System.IsInhibit</visible>
+			</control>
+			<control type="button" id="13">
+				<description>Allow idle shutdown</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>XBMC.InhibitIdleShutdown(false)</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>13018</label>
+				<visible>System.HasShutdown + System.IsInhibit</visible>
+			</control>
+			<control type="button" id="14">
+				<description>Toggle debug</description>
+				<width>609</width>
+				<height>122</height>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<textwidth>435</textwidth>
+				<texturefocus border="25">dialogs/shutdown/shutdown_fo.png</texturefocus>
+				<texturenofocus border="25">dialogs/shutdown/shutdown_nf.png</texturenofocus>
+				<onclick>ActivateWindow(settings)</onclick>
+				<pulseonselect>no</pulseonselect>
+				<font>font38_bold</font>
+				<label>$LOCALIZE[5]</label>
+			</control>
+			<control type="image" id="15">
+				<description>bottom image</description>
+				<width>609</width>
+				<height>111</height>
+				<texture>dialogs/shutdown/shutdown_bottom.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

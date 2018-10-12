@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_Recommended_Landscape">
+		<control type="group">
+			<visible>Control.IsVisible(200001)</visible>
+			<left>35</left>
+			<control type="wraplist" id="200001">
+				<left>396</left>
+				<top>0</top>
+				<width>672</width>
+				<height>384</height>
+				<onfocus>SetProperty(Recommend.Focus.Just.Once,1,home)</onfocus>
+				<onleft>200001</onleft>
+				<onright>200001</onright>
+				<onup>9000</onup>
+				<onup>ClearProperty(Recommend.Focus.Just.Once,home)</onup>
+				<ondown>2000025</ondown>
+				<ondown>Control.Move(2001,1)</ondown>
+				<focusposition>1</focusposition>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<viewtype label="31076">bigwrap</viewtype>
+				<scrolltime tween="sine" easing="inout">200</scrolltime>
+				<itemlayout width="672" height="384" />
+				<focusedlayout width="672" height="384" />
+			</control>
+			<control type="group">
+				<camera x="500" y="192"/>
+				<include>List_Bounce_Animation</include>
+				<control type="group" id="6011">
+					<visible>Container(200001).OnNext</visible>
+					<animation effect="slide" end="0,0" time="150" reversible="false">Hidden</animation>
+					<control type="group">
+						<left>124</left>
+						<include>LandscapeItem-2</include>
+						<visible>Container(200001).OnNext</visible>
+						<animation effect="slide" end="-124,0" time="150" reversible="false">Hidden</animation>
+					</control>
+					<control type="group">
+						<left>396</left>
+						<include>LandscapeItem-1</include>
+						<visible>Container(200001).OnNext</visible>
+						<animation effect="slide" end="-272,0" time="150" reversible="false">Hidden</animation>
+					</control>
+					<control type="group">
+						<left>982</left>
+						<include>LandscapeItem2</include>
+					</control>
+					<control type="group">
+						<left>982</left>
+						<include>LandscapeItem1</include>
+						<visible>Container(200001).OnNext</visible>
+						<animation effect="slide" end="-220,0" time="150" reversible="false">Hidden</animation>
+					</control>
+					<control type="group">
+						<left>762</left>
+						<include>LandscapeItem0</include>
+						<visible>Container(200001).OnNext</visible>
+						<animation effect="slide" end="-366,0" time="150" reversible="false">Hidden</animation>
+					</control>
+				</control>
+				<control type="group" id="6012">
+					<visible>Container(200001).OnPrevious</visible>
+					<animation effect="slide" end="0,0" time="150" reversible="false">Hidden</animation>
+					<control type="group">
+						<left>0</left>
+						<include>LandscapeItem-2</include>
+					</control>
+					<control type="group">
+						<left>0</left>
+						<visible>Container(200001).OnPrevious</visible>
+						<animation effect="slide" end="124,0" time="150" reversible="false">Hidden</animation>
+						<include>LandscapeItem-1</include>
+					</control>
+					<control type="group">
+						<left>762</left>
+						<visible>Container(200001).OnPrevious</visible>
+						<animation effect="slide" end="220,0" time="150" reversible="false">Hidden</animation>
+						<include>LandscapeItem2</include>
+					</control>
+					<control type="group">
+						<left>490</left>
+						<visible>Container(200001).OnPrevious</visible>
+						<animation effect="slide" end="272,0" time="150" reversible="false">Hidden</animation>
+						<include>LandscapeItem1</include>
+					</control>
+					<control type="group">
+						<left>124</left>
+						<visible>Container(200001).OnPrevious</visible>
+						<animation effect="slide" end="272,0" time="150" reversible="false">Hidden</animation>
+						<include>LandscapeItem0</include>
+					</control>
+				</control>
+				<control type="group" id="6010">
+					<control type="group">
+						<visible>!Control.IsVisible(6011) + !Control.IsVisible(6012)</visible>
+						<include>LandscapeItem-2</include>
+					</control>
+					<control type="group">
+						<left>124</left>
+						<visible>!Control.IsVisible(6011) + !Control.IsVisible(6012)</visible>
+						<include>LandscapeItem-1</include>
+					</control>
+					<control type="group">
+						<left>982</left>
+						<visible>!Control.IsVisible(6011) + !Control.IsVisible(6012)</visible>
+						<include>LandscapeItem2</include>
+					</control>
+					<control type="group">
+						<left>762</left>
+						<visible>!Control.IsVisible(6011) + !Control.IsVisible(6012)</visible>
+						<include>LandscapeItem1</include>
+					</control>
+					<control type="group">
+						<left>396</left>
+						<animation effect="zoom" start="100" end="108" center="732,192" time="200" condition="Control.HasFocus(200001) + !Control.IsVisible(6011) + !Control.IsVisible(6012)">Conditional</animation>
+						<visible>!Control.IsVisible(6011) + !Control.IsVisible(6012)</visible>
+						<include>LandscapeItem0</include>
+						<control type="image">
+							<left>-5</left>
+							<top>-5</top>
+							<width>682</width>
+							<height>394</height>
+							<texture>home/thumbs/list_fo_landscape.png</texture>
+							<visible>Control.HasFocus(200001)</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>scroll bar</description>
+				<top>432</top>
+				<left>671</left>
+				<visible>!Control.HasFocus(200002) + !Control.HasFocus(2000024) + !Control.HasFocus(2000026) + !Control.HasFocus(2001)</visible>
+				<control type="image">
+					<width>122</width>
+					<height>10</height>
+					<texture>home/menu/bar.png</texture>
+				</control>
+				<control type="image">
+					<width>10</width>
+					<height>10</height>
+					<texture>home/menu/bar_fo.png</texture>
+					<animation effect="slide" end="0,0" time="0" reversible="true" condition="!IntegerGreaterThan(Container(200001).ListItem(0).Property(position),1)">Conditional</animation>
+					<animation effect="slide" end="28,0" time="0" reversible="true" condition="IntegerGreaterThan(Container(200001).ListItem(0).Property(position),1) + !IntegerGreaterThan(Container(200001).ListItem(0).Property(position),2)">Conditional</animation>
+					<animation effect="slide" end="56,0" time="0" reversible="true" condition="IntegerGreaterThan(Container(200001).ListItem(0).Property(position),2) + !IntegerGreaterThan(Container(200001).ListItem(0).Property(position),3)">Conditional</animation>
+					<animation effect="slide" end="84,0" time="0" reversible="true" condition="IntegerGreaterThan(Container(200001).ListItem(0).Property(position),3) + !IntegerGreaterThan(Container(200001).ListItem(0).Property(position),4)">Conditional</animation>
+					<animation effect="slide" end="112,0" time="0" reversible="true" condition="IntegerGreaterThan(Container(200001).ListItem(0).Property(position),4) + !IntegerGreaterThan(Container(200001).ListItem(0).Property(position),5)">Conditional</animation>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="LandscapeThumbCommonValues">
+		<left>-30</left>
+		<top>-30</top>
+		<width>760</width>
+		<height>570</height>
+		<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+		<bordertexture border="49">thumbs/landscape_shadow50.png</bordertexture>
+		<bordersize>50</bordersize>
+	</include>
+	<include name="LandscapeLabelCommonValues">
+		<left>20</left>
+		<top>384</top>
+		<width>660</width>
+		<height>105</height>
+		<font>font36_bold</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textoffsetx>10</textoffsetx>
+		<shadowcolor>shadow</shadowcolor>
+	</include>
+	<include name="LandscapeBlack">
+		<control type="image">
+			<left>20</left>
+			<top>20</top>
+			<width>660</width>
+			<height>470</height>
+			<texture>thumbs/landscape_black_aa.png</texture>
+		</control>
+	</include>
+	<include name="WatchedOverlayLandscape">
+		<width>100</width>
+		<height>100</height>
+		<aspectratio align="center" aligny="top">keep</aspectratio>
+	</include>
+	<include name="LandscapeItem-3">
+		<control type="image">
+			<top>54</top>
+			<width>483</width>
+			<height>276</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(-3).Icon]</texture>
+		</control>
+	</include>
+	<include name="LandscapeItem-2">
+		<control type="image">
+			<top>54</top>
+			<width>483</width>
+			<height>276</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(-2).Icon]</texture>
+		</control>
+	</include>
+	<include name="LandscapeItem-1">
+		<control type="image">
+			<top>27</top>
+			<width>578</width>
+			<height>330</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(-1).Icon]</texture>
+		</control>
+	</include>
+	<include name="LandscapeItem0">
+		<control type="image">
+			<width>672</width>
+			<height>384</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(0).Icon]</texture>
+		</control>
+		<control type="image">
+			<left>572</left>
+			<include>WatchedOverlayLandscape</include>
+			<texture>$INFO[Container(200001).ListItem.Property(overlay)]</texture>
+		</control>
+	</include>
+	<include name="LandscapeItem1">
+		<control type="image">
+			<top>27</top>
+			<width>578</width>
+			<height>330</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(1).Icon]</texture>
+		</control>
+		<control type="image">
+			<left>478</left>
+			<top>27</top>
+			<include>WatchedOverlayLandscape</include>
+			<texture>$INFO[Container(200001).ListItem(1).Property(overlay)]</texture>
+		</control>
+	</include>
+	<include name="LandscapeItem2">
+		<control type="image">
+			<top>54</top>
+			<width>483</width>
+			<height>276</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(2).Icon]</texture>
+		</control>
+		<control type="image">
+			<left>383</left>
+			<top>54</top>
+			<include>WatchedOverlayLandscape</include>
+			<texture>$INFO[Container(200001).ListItem(2).Property(overlay)]</texture>
+		</control>
+	</include>
+	<include name="LandscapeItem3">
+		<control type="image">
+			<top>54</top>
+			<width>483</width>
+			<height>276</height>
+			<aspectratio scalediffuse="false" aligny="center">stretch</aspectratio>
+			<texture fallback="list/default/recommend_landscape.png">$INFO[Container(200001).ListItem(3).Icon]</texture>
+		</control>
+		<control type="image">
+			<include>WatchedOverlayLandscape</include>
+			<texture>$INFO[Container(200001).ListItem(3).Property(overlay)]</texture>
+		</control>
+	</include>
+</includes>

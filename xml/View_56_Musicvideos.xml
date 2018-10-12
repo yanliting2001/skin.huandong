@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_56_Musicvideos">
+		<control type="group" id="566">
+			<description>TV Show View</description>
+			<visible>Control.IsVisible(56)</visible>
+			<include>View_Animation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>List_Bounce_Animation</include>
+			<control type="panel" id="56">
+				<left>-188</left>
+				<top>342</top>
+				<width>2496</width>
+				<height>660</height>
+				<onup>$VAR[NavUpList]</onup>
+				<ondown>60</ondown>
+				<onleft>$VAR[BounceLeftVar]</onleft>
+				<onright>$VAR[BounceRightVar]</onright>
+				<orientation>horizontal</orientation>
+				<viewtype label="21371">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<preloaditems>2</preloaditems>
+				<animation type="Conditional" condition="Container(56).Column(0)" reversible="true">
+					<effect type="slide" start="0" end="250" time="300" />
+				</animation>
+				<animation type="Conditional" condition="Container(56).Column(5)" reversible="true">
+					<effect type="slide" start="0" end="-230" time="300" />
+				</animation>
+				<itemlayout height="290" width="376">
+					<control type="image">
+						<width>376</width>
+						<height>290</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<bordertexture border="20">thumbs/landscape_shadow20.png</bordertexture>
+						<bordersize>20</bordersize>
+						<texture diffuse="thumbs/landscape_diffuse.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<width>376</width>
+						<height>290</height>
+						<bordersize>20</bordersize>
+						<texture>thumbs/landscape_black.png</texture>
+					</control>
+					<control type="label">
+						<top>208</top>
+						<width>376</width>
+						<height>70</height>
+						<font>font20_bold</font>
+						<textoffsetx>30</textoffsetx>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+				</itemlayout>
+				<focusedlayout height="290" width="376">
+					<control type="group">
+						<animation effect="zoom" center="auto" start="100" end="140" time="300" delay="100" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="auto" start="140" end="100" time="300" tween="quadratic" reversible="false" condition="!Container(56).Scrolling">Unfocus</animation>
+						<control type="image">
+							<width>376</width>
+							<height>290</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<bordertexture border="20">thumbs/landscape_shadow20.png</bordertexture>
+							<bordersize>20</bordersize>
+							<texture diffuse="thumbs/landscape_diffuse.png">$INFO[ListItem.Art(poster)]</texture>
+						</control>
+						<control type="image">
+							<width>376</width>
+							<height>290</height>
+							<bordersize>20</bordersize>
+							<texture>thumbs/landscape_black.png</texture>
+						</control>
+						<control type="label">
+							<top>208</top>
+							<width>376</width>
+							<height>70</height>
+							<font>font20_bold</font>
+							<textoffsetx>30</textoffsetx>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="100" end="60" time="100" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

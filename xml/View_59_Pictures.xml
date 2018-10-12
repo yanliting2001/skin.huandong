@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_59_Pictures">
+		<control type="group">
+			<top>327</top>
+			<visible>Control.IsVisible(59)</visible>
+			<include>View_Animation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>List_Bounce_Animation</include>
+			<control type="label">
+				<left>0</left>
+				<top>-256</top>
+				<width>1920</width>
+				<height>200</height>
+				<font>font200_bold</font>
+				<textcolor>30FFFFFF</textcolor>
+				<aligny>center</aligny>
+				<!-- <label>离开的第六节</label> -->
+				<label>$INFO[Container(59).ListItem.Property(Uploader)]</label>
+			</control>
+			<control type="label">
+				<left>350</left>
+				<top>590</top>
+				<width>200</width>
+				<height>40</height>
+				<font>font28_bold</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(59).ListItem.Property(index)]$INFO[window.Property(totalnum),/]</label>
+			</control>
+			<control type="label">
+				<left>350</left>
+				<top>670</top>
+				<width>200</width>
+				<height>40</height>
+				<font>font28_bold</font>
+				<textcolor>white</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(59).ListItem.Property(UploadTime)]</label>
+			</control>
+			<control type="panel" id="59">
+				<left>0</left>
+				<width>2140</width>
+				<height>700</height>
+				<onleft>$VAR[BounceLeftVar]</onleft>
+				<onright>$VAR[BounceRightVar]</onright>
+				<onup>$VAR[NavUpList]</onup>
+				<ondown>60</ondown>
+				<viewtype label="albums_family">bigwrap</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<orientation>horizontal</orientation>
+				<preloaditems>4</preloaditems>
+				<animation effect="slide" start="0" end="-220" time="300" tween="quadratic" condition="Container(59).Column(6)">Conditional</animation>
+				<itemlayout height="270" width="268">
+					<control type="image">
+						<left>148</left>
+						<top>3</top>
+						<width>264</width>
+						<height>264</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture>thumbs/picture_default.png</texture>
+						<bordertexture border="3">views/pictures/thumbs/border_nf.png</bordertexture>
+						<bordersize>3</bordersize>
+					</control>
+					<control type="image">
+						<left>148</left>
+						<top>3</top>
+						<width>264</width>
+						<height>264</height>
+						<fadetime>200</fadetime>
+						<aspectratio>scale</aspectratio>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<bordersize>3</bordersize>
+					</control>
+				</itemlayout>
+				<focusedlayout height="270" width="268">
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="280,135" end="146.5" start="100" time="150" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="UnFocus" reversible="false" condition="!Container(59).Scrolling">
+							<effect type="zoom" center="280,135" start="146.5" end="100" time="150" tween="quadratic" easing="in"/>
+						</animation>
+						<control type="image">
+							<left>106</left>
+							<top>-39</top>
+							<width>348</width>
+							<height>348</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture>thumbs/picture_default.png</texture>
+							<bordertexture border="45">views/pictures/thumbs/border_fo.png</bordertexture>
+							<bordersize>45</bordersize>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="0" time="150"/>
+							</animation>
+							<animation type="UnFocus" reversible="false" condition="!Container(59).Scrolling">
+								<effect type="fade" start="100" end="0" time="150"/>
+							</animation>
+						</control>
+						<control type="image">
+							<left>148</left>
+							<top>3</top>
+							<width>264</width>
+							<height>264</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture>thumbs/picture_default.png</texture>
+							<bordertexture border="3">views/pictures/thumbs/border_nf.png</bordertexture>
+							<bordersize>3</bordersize>
+						</control>
+						<control type="image">
+							<left>148</left>
+							<top>3</top>
+							<width>264</width>
+							<height>264</height>
+							<fadetime>200</fadetime>
+							<aspectratio>scale</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<bordersize>3</bordersize>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>-70</top>
+				<height>670</height>
+				<width>1920</width>
+				<texture>views/pictures/bg_blue_to_purple_fade_left.png</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>-70</top>
+				<height>670</height>
+				<width>1920</width>
+				<texture>views/pictures/bg_blue_to_purple_fade_right.png</texture>
+				<visible>Container(59).HasNext</visible>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>0</left>
+				<top>628</top>
+				<width>1920</width>
+				<height>38</height>
+				<onup>59</onup>
+				<ondown>noop</ondown>
+				<texturesliderbackground>views/pictures/scrollbar/texturesliderbackground.png</texturesliderbackground>
+				<textureslidernib>views/pictures/scrollbar/textureslidernib.png</textureslidernib>
+				<textureslidernibfocus>views/pictures/scrollbar/textureslidernib.png</textureslidernibfocus>
+			</control>
+		</control>
+	</include>
+</includes>

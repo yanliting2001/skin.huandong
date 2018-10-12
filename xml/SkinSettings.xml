@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>BG_OpenClose_Fade_Animation</include>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<texture border="1">special://skin/backgrounds/home_bg.jpg</texture>
+			</control>
+		</control>
+		<control type="group">
+			<left>135</left>
+			<top>45</top>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+			<control type="grouplist" id="9001">
+				<description>control area</description>
+				<left>435</left>
+				<top>105</top>
+				<width>1125</width>
+				<height>652</height>
+				<itemgap>-2</itemgap>
+				<pagecontrol>60</pagecontrol>
+				<onleft>9001</onleft>
+				<onright>9001</onright>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<control type="radiobutton" id="100">
+					<description>Default RadioButton</description>
+					<left>0</left>
+					<top>0</top>
+					<textoffsetx>30</textoffsetx>
+					<radioposx>1040</radioposx>
+					<height>90</height>
+					<width>1125</width>
+					<font>font30</font>
+					<label>Smoke Effect</label>
+					<textcolor>grey2</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+					<onclick>Skin.ToggleSetting(smokeeffect)</onclick>
+					<selected>!Skin.HasSetting(smokeeffect)</selected>
+				</control>
+				<control type="button" id="3">
+					<description>Default RadioButton</description>
+					<left>0</left>
+					<top>0</top>
+					<textoffsetx>30</textoffsetx>
+					<height>90</height>
+					<width>1125</width>
+					<font>font30</font>
+					<label>Home Background Image</label>
+					<textcolor>grey2</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+					<onclick>Skin.SetLargeImage(BackgroundImage)</onclick>
+					<!-- <selected>!Skin.HasSetting(Alternative.Home)</selected> -->
+				</control>
+				<control type="button" id="102">
+					<description>Video Addon Button</description>
+					<left>0</left>
+					<top>0</top>
+					<textoffsetx>30</textoffsetx>
+					<height>90</height>
+					<width>1125</width>
+					<font>font30</font>
+					<label>Video Addon</label>
+					<textcolor>grey2</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+					<onclick>ActivateWindow(video,addons://sources/video/)</onclick>
+				</control>
+				<control type="button" id="103">
+					<description>Music Addon Button</description>
+					<left>0</left>
+					<top>0</top>
+					<textoffsetx>30</textoffsetx>
+					<height>90</height>
+					<width>1125</width>
+					<font>font30</font>
+					<label>Music Addon</label>
+					<textcolor>grey2</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+					<onclick>ActivateWindow(music,addons://sources/audio/)</onclick>
+				</control>
+				<control type="button" id="104">
+					<description>Application Addon Button</description>
+					<left>0</left>
+					<top>0</top>
+					<textoffsetx>30</textoffsetx>
+					<height>90</height>
+					<width>1125</width>
+					<font>font30</font>
+					<label>Application Addon</label>
+					<textcolor>grey2</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturefocus border="25">buttons/infobutton_fo.png</texturefocus>
+					<onclick>ActivateWindow(video,addons://sources/executable/)</onclick>
+				</control>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<left>450</left>
+				<top>30</top>
+				<width>1110</width>
+				<height>45</height>
+				<font>font16</font>
+				<label>$LOCALIZE[31000] $LOCALIZE[5]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="textbox">
+				<description>Appearance Description</description>
+				<left>450</left>
+				<top>780</top>
+				<width>1110</width>
+				<height>150</height>
+				<font>font12</font>
+				<label>$INFO[Container(9000).ListItem.Label2]</label>
+				<align>left</align>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+		<include>DialogBackground</include>
+	</controls>
+</window>

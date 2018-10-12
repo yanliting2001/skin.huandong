@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>-</defaultcontrol>
+	<onload>SetProperty(ButtonClick,music_player,home)</onload>
+	<controls>
+		<!--
+		<control type="visualisation" id="2">
+			<description>visualisation</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+		</control>
+		-->
+		<control type="image">
+			<description>Fanart Image for Artist</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<aspectratio>scale</aspectratio>
+			<texture>music/videos_bg.png</texture>
+			<fadetime>600</fadetime>
+		</control>
+		<control type="image">
+			<description>Fanart Image for Artist</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<aspectratio>scale</aspectratio>
+			<texture colordiffuse="FFAAAAAA" background="true">$INFO[Window(home).Property(ImageFilter)]</texture>
+			<fadetime>600</fadetime>
+		</control>
+		<control type="group">
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" start="0,0" end="0,40" time="150" tween="cubic" easing="in" />
+				<effect type="fade" start="100" end="0" time="240" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,40" end="0,0" time="150" tween="cubic" easing="in" />
+				<effect type="fade" start="0" end="100" time="240" />
+			</animation>
+			<animation type="Hidden" reversible="false">
+				<effect type="slide" start="0,0" end="0,40" time="150" tween="cubic" easing="in" />
+				<effect type="fade" start="100" end="0" time="240" />
+			</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="slide" start="0,40" end="0,0" time="150" tween="cubic" easing="in" />
+				<effect type="fade" start="0" end="100" time="240" />
+			</animation>
+			<animation type="Conditional" condition="!IsEmpty(Window(home).Property(PlaylistHasFocus))" reversible="false">
+				<effect type="rotatey" center="1310" end="-90" time="360" tween="cubic" easing="in" />
+				<effect type="rotatey" center="1310" start="-90" end="90" time="0" delay="360" />
+				<effect type="fade" start="100" end="0" time="0" delay="360" />
+				<effect type="rotatey" center="1310" start="90" end="0" time="360" delay="360" tween="cubic" />
+			</animation>
+			<animation type="Conditional" condition="IsEmpty(Window(home).Property(PlaylistHasFocus))" reversible="false">
+				<effect type="rotatey" center="1310" end="90" time="0" tween="cubic" easing="in" delay="360" />
+				<effect type="rotatey" center="1310" start="90" end="-90" time="0" delay="360" />
+				<effect type="fade" end="100" time="160" delay="360" />
+				<effect type="rotatey" center="1310" start="-90" end="0" time="360" delay="360" tween="cubic" />
+			</animation>
+			<visible>Control.IsVisible(110)</visible>
+			<control type="image">
+				<left>927</left>
+				<top>175</top>
+				<width>738</width>
+				<height>616</height>
+				<texture>music/music-list-bg.png</texture>
+			</control>
+			<control type="list" id="110">
+				<left>982</left>
+				<top>185</top>
+				<width>620</width>
+				<height>556</height>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="60">
+					<control type="label">
+						<left>310</left>
+						<top>0</top>
+						<width>620</width>
+						<height>60</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="label">
+						<left>310</left>
+						<top>0</top>
+						<width>620</width>
+						<height>60</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<align>center</align>
+						<shadowcolor>black</shadowcolor>
+						<textcolor>FF00E4FF</textcolor>
+						<selectedcolor>FF00E4FF</selectedcolor>
+						<label fallback="--">$INFO[ListItem.Label]</label>
+						<animation effect="zoom" center="310,30" start="100" end="110" time="200">Focus</animation>
+					</control>
+				</focusedlayout>
+				<!-- <content>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+					<item>
+						<label>fdsfd sdf sdf asd sdf fsda fasd fsd fdas fd fsdfs ds fsdf sd fsd fsd fsd  s</label>
+						<icon>DefaultNetwork.png</icon>
+						<onclick>ActivateWindow(Musicfiles,return)</onclick>
+					</item>
+				</content> -->
+			</control>
+			<control type="label">
+				<left>927</left>
+				<top>175</top>
+				<width>738</width>
+				<height>616</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font70</font>
+				<textcolor>white</textcolor>
+				<label>暂无歌词</label>
+				<visible>!IntegerGreaterThan(Container(110).NumItems,0)</visible>
+			</control>
+		</control>
+		<control type="image">
+			<description>Fanart Image for Artist</description>
+			<left>0</left>
+			<top>300</top>
+			<width>1920</width>
+			<height>780</height>
+			<aspectratio>scale</aspectratio>
+			<animation effect="fade" delay="200" time="200">WindowOpen</animation>
+			<texture colordiffuse="FFAAAAAA" fallback="" background="true" diffuse="music/vis_diffuse.png">$INFO[Window(home).Property(ImageFilter)]</texture>
+			<fadetime>600</fadetime>
+			<animation effect="fade" time="0">WindowClose</animation>
+		</control>
+		<control type="image">
+			<top>493</top>
+			<width>1920</width>
+			<height>587</height>
+			<visible>!Window.IsActive(musicosd)</visible>
+			<texture border="1">music/osd_bottom_shadow.png</texture>
+		</control>
+		<control type="image">
+			<width>1920</width>
+			<height>1080</height>
+			<visible>!Window.IsActive(musicosd)</visible>
+			<texture border="1">music/music_tips.png</texture>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+		</control>
+		<!--media infos-->
+		<control type="group">
+			<!-- <animation effect="fade" time="200">VisibleChange</animation>
+			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible> -->
+			<!-- <control type="group">
+				<visible>!Window.IsActive(musicosd)</visible>
+				<include>Topbar</include>
+			</control> -->
+			<control type="group">
+				<description>Bottom</description>
+				<left>0</left>
+				<visible>!Window.IsActive(musicosd)</visible>
+				<top>493</top>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="slide" start="-80,0" end="0,0" delay="130" time="350" tween="cubic" />
+					<effect type="fade" start="0" end="100" time="240" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="slide" start="0,0" end="-80,0" time="150" tween="cubic" easing="in" />
+					<effect type="fade" start="100" end="0" time="240" />
+				</animation>
+				<control type="image">
+					<left>345</left>
+					<top>-272</top>
+					<width>500</width>
+					<height>500</height>
+					<aligny>top</aligny>
+					<fadetime>300</fadetime>
+					<aspectratio align="left">keep</aspectratio>
+					<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+					<texture background="true" fallback="music/cdart/default.png" diffuse="music/cdart_mask.png">$INFO[Player.Art(cdart)]</texture>
+					<bordersize>30</bordersize>
+				</control>
+				<control type="image">
+					<left>145</left>
+					<top>-272</top>
+					<width>500</width>
+					<height>500</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="music/musicbg-blurred.png" diffuse="music/cdcover_mask2.png">$INFO[Player.Art(thumb)]</texture>
+					<bordertexture border="28">music/cd_shadow2.png</bordertexture>
+					<bordersize>28</bordersize>
+					<fadetime>300</fadetime>
+				</control>
+				<control type="image">
+					<left>145</left>
+					<top>-272</top>
+					<width>500</width>
+					<height>500</height>
+					<visible>StringCompare(Window(home).Property(music_switch),1)</visible>
+					<aspectratio>keep</aspectratio>
+					<texture>music/cdart/switch.png</texture>
+					<bordersize>28</bordersize>
+				</control>
+				<control type="label">
+					<left>171</left>
+					<top>300</top>
+					<width>1250</width>
+					<height>60</height>
+					<font>font45_bold</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[Player.Filename]</label>
+				</control>
+			</control>
+		</control>
+		<control type="grouplist">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="-80,0" end="0,0" delay="130" time="350" tween="cubic" />
+				<effect type="fade" start="0" end="100" time="240" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" start="0,0" end="-80,0" time="150" tween="cubic" easing="in" />
+				<effect type="fade" start="100" end="0" time="240" />
+			</animation>
+			<left>68</left>
+			<top>78</top>
+			<width>1648</width>
+			<height>120</height>
+			<itemgap>20</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<orientation>horizontal</orientation>
+			<control type="label">
+				<width min="20" max="600">auto</width>
+				<height>120</height>
+				<font>font64_bold</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[MusicPlayer.Property(typename)]</label>
+			</control>
+			<control type="label">
+				<top>42</top>
+				<width min="5" max="600">auto</width>
+				<height>60</height>
+				<font>font36_bold</font>
+				<textcolor>white2</textcolor>
+				<aligny>center</aligny>
+				<label>  |  </label>
+				<visible>!IsEmpty(MusicPlayer.Property(channelname))</visible>
+			</control>
+			<control type="label">
+				<top>42</top>
+				<width min="20" max="600">auto</width>
+				<height>60</height>
+				<font>font32_bold</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[MusicPlayer.Property(channelname)]</label>
+			</control>
+		</control>
+		<!--codec & viz infos-->
+		<control type="group" id="0">
+			<left>0</left>
+			<top>75</top>
+			<visible>Player.ShowCodec + ![Window.IsVisible(script-XBMC_Lyrics-main.xml) | Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList)]</visible>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<control type="image">
+				<description>media info background image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>158</height>
+				<colordiffuse>AAFFFFFF</colordiffuse>
+				<texture>black-back.png</texture>
+			</control>
+			<control type="label">
+				<description>row 1 label</description>
+				<left>75</left>
+				<top>15</top>
+				<label>-</label>
+				<align>left</align>
+				<label>$INFO[musicplayer.Codec,$LOCALIZE[21446]: ,]$INFO[musicplayer.Bitrate, $LOCALIZE[623]: ,kbps]$INFO[musicplayer.bitspersample, $LOCALIZE[612]: ,]$INFO[musicplayer.Samplerate, $LOCALIZE[613]: ,kHz]$INFO[musicplayer.Channels, $LOCALIZE[21444]: ]</label>
+				<font>font12</font>
+			</control>
+			<control type="label">
+				<description>row 2 label</description>
+				<left>75</left>
+				<top>60</top>
+				<label>-</label>
+				<align>left</align>
+				<label>$INFO[Visualisation.Name,, [I][COLOR=orange]($LOCALIZE[20166])[/COLOR][/I] ]fps: $INFO[System.FPS]</label>
+				<font>font12</font>
+				<visible>Visualisation.Locked</visible>
+			</control>
+			<control type="label">
+				<description>Unlocked row 2 label</description>
+				<left>75</left>
+				<top>60</top>
+				<label>-</label>
+				<align>left</align>
+				<label>$INFO[Visualisation.Name,, ]fps: $INFO[System.FPS]</label>
+				<font>font12</font>
+				<visible>!Visualisation.Locked</visible>
+			</control>
+			<control type="label">
+				<description>row 3 label</description>
+				<left>75</left>
+				<top>105</top>
+				<label>-</label>
+				<align>left</align>
+				<label>$INFO[Visualisation.Preset,$LOCALIZE[13388]: ]</label>
+				<font>font12</font>
+			</control>
+		</control>
+	</controls>
+</window>

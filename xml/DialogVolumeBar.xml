@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>-</defaultcontrol>
+	<include>Dialog_OpenClose_Animation</include>
+	<controls>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>dialogs/dialog_bg_fade.png</texture>
+		</control>
+		<control type="group">
+			<left>819</left>
+			<top>399</top>
+			<control type="image">
+				<width>282</width>
+				<height>282</height>
+				<texture>dialogs/volume/vol_bg.png</texture>
+			</control>
+			<control type="image">
+				<left>102</left>
+				<top>100</top>
+				<width>78</width>
+				<height>82</height>
+				<texture>dialogs/volume/icons/volume.png</texture>
+			</control>
+			<control type="image">
+				<width>282</width>
+				<height>282</height>
+				<texture>$INFO[Control.GetLabel(800),dialogs/volume/circle/r,.png]</texture>
+			</control>
+			<control type="label">
+				<description>Volume label (in percentage)</description>
+				<top>306</top>
+				<width>282</width>
+				<height>24</height>
+				<font>font24</font>
+				<textcolor>white70</textcolor>
+				<align>center</align>
+				<label>$INFO[Control.GetLabel(800),,%]</label>
+			</control>
+			<control type="progress" id="800">
+				<left>0</left>
+				<top>0</top>
+				<width>1</width>
+				<height>1</height>
+				<texturebg border="2" />
+				<lefttexture />
+				<midtexture border="2" />
+				<righttexture />
+				<overlaytexture />
+				<info>Player.Volume</info>
+			</control>
+		</control>
+	</controls>
+</window>

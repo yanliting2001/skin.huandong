@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">603</defaultcontrol>
+	<onunload>ClearProperty(PlaylistHasFocus,home)</onunload>
+	<onload>RunScript(special://skin/extras/close_music_osd.py)</onload>
+	<controls>
+		<control type="group">
+			<control type="image">
+				<description>Fanart Image for Artist</description>
+				<left>0</left>
+				<top>300</top>
+				<width>1920</width>
+				<height>780</height>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="" background="true" diffuse="music/vis_diffuse.png">$INFO[Window(home).Property(ImageFilter)]</texture>
+				<colordiffuse>FFAAAAAA</colordiffuse>
+				<fadetime>600</fadetime>
+				<animation effect="fade" time="0">WindowClose</animation>
+			</control>
+			<control type="image">
+				<top>493</top>
+				<width>1920</width>
+				<height>587</height>
+				<texture border="1">music/osd_bottom_shadow.png</texture>
+				<animation effect="fade" time="0">WindowClose</animation>
+			</control>
+			<control type="group">
+				<control type="group">
+					<animation effect="fade" time="0">WindowClose</animation>
+					<description>Bottom</description>
+					<left>0</left>
+					<top>493</top>
+					<control type="image">
+						<left>345</left>
+						<top>-272</top>
+						<width>500</width>
+						<height>500</height>
+						<aligny>top</aligny>
+						<aspectratio align="left">keep</aspectratio>
+						<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+						<texture background="true" fallback="music/cdart/default.png" diffuse="music/cdart_mask.png">$INFO[Player.Art(cdart)]</texture>
+						<bordersize>30</bordersize>
+					</control>
+					<control type="image">
+						<left>145</left>
+						<top>-272</top>
+						<width>500</width>
+						<height>500</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="music/musicbg-blurred.png" diffuse="music/cdcover_mask2.png">$INFO[Player.Art(thumb)]</texture>
+						<bordertexture border="28">music/cd_shadow2.png</bordertexture>
+						<bordersize>28</bordersize>
+					</control>
+					<control type="image">
+						<left>145</left>
+						<top>-272</top>
+						<width>500</width>
+						<height>500</height>
+						<visible>StringCompare(Window(home).Property(music_switch),1)</visible>
+						<aspectratio>keep</aspectratio>
+						<texture>music/cdart/switch.png</texture>
+						<bordersize>28</bordersize>
+					</control>					
+					<control type="label">
+						<left>171</left>
+						<top>300</top>
+						<width>1250</width>
+						<height>60</height>
+						<font>font45_bold</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[Player.Filename]</label>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>Bottom</description>
+				<left>0</left>
+				<top>493</top>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="slide" start="0,40" delay="50" end="0,0" time="250" tween="cubic" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="slide" start="0,0" end="0,40" time="150" tween="cubic" easing="in" />
+				</animation>
+				<control type="progress">
+					<description>Progressbar</description>
+					<include>Dialog_OpenClose_Animation</include>
+					<left>170</left>
+					<top>421</top>
+					<width>1580</width>
+					<height>7</height>
+					<texturebg border="6,0,6,0">osd/progress/texturebg_cache.png</texturebg>
+					<lefttexture border="6,0,0,0">osd/progress/lefttexture_cache.png</lefttexture>
+					<midtexture border="0,0,1,0">osd/progress/midtexture_cache.png</midtexture>
+					<righttexture border="0,0,6,0">osd/progress/righttexture_cache.png</righttexture>
+					<info>Player.Progress</info>
+				</control>
+				<control type="slider" id="600">
+					<description>Seek Slider</description>
+					<left>167</left>
+					<top>407</top>
+					<width>1595</width>
+					<height>35</height>
+					<texturesliderbar border="6,11,6,11">osd/seekslider2.png</texturesliderbar>
+					<textureslidernib border="11"></textureslidernib>
+					<textureslidernibfocus>osd/slider_nib_fo.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
+					<onup>300</onup>
+					<ondown>1000</ondown>
+					<animation type="WindowOpen" reversible="false">
+						<effect type="fade" time="150" />
+					</animation>
+					<animation type="WindowClose" reversible="false">
+						<effect type="fade" delay="100" time="180" />
+					</animation>
+				</control>
+				<control type="label">
+					<description>Duration</description>
+					<left>1350</left>
+					<include>Dialog_OpenClose_Animation</include>
+					<top>365</top>
+					<width>400</width>
+					<height>45</height>
+					<align>right</align>
+					<font>font28</font>
+					<textcolor>grey3</textcolor>
+					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+				</control>
+			</control>
+			<control type="group">
+				<animation type="WindowOpen" reversible="false">
+					<effect type="slide" start="0,40" end="0,0" delay="130" time="250" tween="cubic" />
+					<effect type="fade" start="0" end="100" time="240" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="slide" start="0,0" end="0,40" time="150" tween="cubic" easing="in" />
+					<effect type="fade" start="100" end="0" time="240" />
+				</animation>
+				<top>960</top>
+				<control type="grouplist" id="1000">
+					<left>0</left>
+					<width>1920</width>
+					<height>95</height>
+					<itemgap>111</itemgap>
+					<align>center</align>
+					<onup>300</onup>
+					<ondown>300</ondown>
+					<scrolltime tween="quadratic">200</scrolltime>
+					<orientation>horizontal</orientation>
+					<control type="button" id="601">
+						<visible>StringCompare(MusicPlayer.Property(typename), $LOCALIZE[31035]) | StringCompare(MusicPlayer.Property(typename), $LOCALIZE[31036])</visible>
+						<width>68</width>
+						<height>71</height>
+						<texturefocus>osd/playlist_fo.png</texturefocus>
+						<texturenofocus>osd/playlist_nf.png</texturenofocus>
+						<onclick>SetProperty(ButtonClick,songlist)</onclick>
+						<onclick>SetProperty(PlaylistHasFocus,true,home)</onclick>
+					</control>
+					<control type="button" id="602">
+						<width>68</width>
+						<height>71</height>
+						<texturefocus>osd/previous_fo.png</texturefocus>
+						<texturenofocus>osd/previous_nf.png</texturenofocus>
+						<onclick>SetProperty(ButtonClick,previoussong)</onclick>
+					</control>
+					<control type="togglebutton" id="603">
+						<width>68</width>
+						<height>71</height>
+						<texturefocus>osd/pause_fo.png</texturefocus>
+						<texturenofocus>osd/pause_nf.png</texturenofocus>
+						<alttexturefocus>osd/play_fo.png</alttexturefocus>
+						<alttexturenofocus>osd/play_nf.png</alttexturenofocus>
+						<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+						<onclick>PlayerControl(Play)</onclick>
+					</control>
+					<control type="button" id="604">
+						<width>68</width>
+						<height>71</height>
+						<texturefocus>osd/stop_fo.png</texturefocus>
+						<texturenofocus>osd/stop_nf.png</texturenofocus>
+						<onclick>ClearProperty(NowisPlaying,home)</onclick>
+						<onclick>PlayerControl(Stop)</onclick>
+					</control>
+					<control type="button" id="605">
+						<width>68</width>
+						<height>71</height>
+						<texturefocus>osd/next_fo.png</texturefocus>
+						<texturenofocus>osd/next_nf.png</texturenofocus>
+						<onclick>SetProperty(ButtonClick,nextsong)</onclick>
+					</control>
+					<control type="list" id="706">
+						<width>68</width>
+						<height>71</height>
+						<onleft>605</onleft>
+						<onright>607</onright>
+						<pagecontrol />
+						<scrolltime tween="quadratic">300</scrolltime>
+						<orientation>horizontal</orientation>
+						<itemlayout height="71" width="68">
+							<control type="image">
+								<width>68</width>
+								<height>71</height>
+								<texture>$INFO[ListItem.ActualIcon,,_nf.png]</texture>
+							</control>
+						</itemlayout>
+						<focusedlayout height="71" width="68">
+							<control type="image">
+								<width>68</width>
+								<height>71</height>
+								<texture>$INFO[ListItem.ActualIcon,,_nf.png]</texture>
+								<visible>!Control.HasFocus(706)</visible>
+							</control>
+							<control type="image">
+								<width>68</width>
+								<height>71</height>
+								<visible>Control.HasFocus(706)</visible>
+								<texture>$INFO[ListItem.ActualIcon,,_fo.png]</texture>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<label />
+								<icon>osd/repeat</icon>
+								<visible>Playlist.IsRepeat</visible>
+								<onclick>PlayerControl(RepeatOne)</onclick>
+							</item>
+							<item id="2">
+								<label />
+								<icon>osd/repeat_one</icon>
+								<visible>Playlist.IsRepeatOne</visible>
+								<onclick>PlayerControl(RepeatOff)</onclick>
+								<onclick>PlayerControl(RandomOn)</onclick>
+							</item>
+							<item id="3">
+								<label />
+								<icon>osd/shuffle</icon>
+								<visible>Playlist.IsRandom</visible>
+								<onclick>PlayerControl(RandomOff)</onclick>
+								<onclick>PlayerControl(RepeatAll)</onclick>
+							</item>
+						</content>
+					</control>
+					<control type="button" id="607">
+						<visible>!IsEmpty(Window.Property(tclrc.haslist))</visible>
+						<width>95</width>
+						<height>95</height>
+						<texturefocus>osd/button_lyrics.png</texturefocus>
+						<texturenofocus>osd/button_lyrics.png</texturenofocus>
+						<onclick>SetProperty(tclrc.showlist, TRUE)</onclick>
+					</control>
+				</control>
+			</control>
+		</control>
+		<!-- <control type="grouplist">
+			<left>0</left>
+			<top>15</top>
+			<width>1880</width>
+			<height>60</height>
+			<itemgap>20</itemgap>
+			<align>right</align>
+			<scrolltime tween="quadratic">200</scrolltime>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+		</control> -->
+	</controls>
+</window>

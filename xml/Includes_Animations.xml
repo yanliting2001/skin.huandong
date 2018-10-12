@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="WindowSlideDownUpAnimation">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" tween="cubic" time="720" start="0,1080" end="0,0" />
+			<effect type="fade" start="0" end="100" time="250" delay="0" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" end="0" time="250" />
+			<effect type="slide" tween="cubic" time="720" end="0,1080" start="0,0" />
+		</animation>
+	</include>
+	<include name="WindowHomeListSlideLeftAnimation">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" start="-50" end="0" time="500" delay="400" tween="cubic" easing="out" />
+			<effect type="fade" start="0" end="100" time="250" delay="480" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" end="0" time="250" />
+		</animation>
+	</include>
+	<include name="Visible_Fade_Animation">
+		<animation effect="fade" time="300">Visible</animation>
+		<animation effect="fade" time="300">Hidden</animation>
+	</include>
+	<include name="Dialog_OpenClose_Animation">
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>
+	</include>
+</includes>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,100" end="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" end="0,100" start="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<control type="image">
+				<top>694</top>
+				<bottom>0</bottom>
+				<texture colordiffuse="ff1e293f">colors/white.png</texture>
+			</control>
+			<control type="panel" id="6000">
+				<!-- Icon list -->
+				<left>72</left>
+				<top>727</top>
+				<right>40</right>
+				<bottom>20</bottom>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>5000</onup>
+				<ondown>noop</ondown>
+				<pagecontrol />
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+				<itemlayout height="354" width="224">
+					<control type="image">
+						<width>220</width>
+						<height>292</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="18">list/thumbs/shadow_poster.png</bordertexture>
+						<bordersize>18</bordersize>
+					</control>
+					<control type="image">
+						<left>23</left>
+						<top>23</top>
+						<width>56</width>
+						<height>30</height>
+						<texture colordiffuse="white70">colors/black.png</texture>
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<left>51</left>
+						<top>23</top>
+						<width>56</width>
+						<height>30</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>fontnumber22</font>
+						<textcolor>FFff9c00</textcolor>
+						<label>$INFO[ListItem.Rating]</label>
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<left>110</left>
+						<top>294</top>
+						<width>220</width>
+						<align>center</align>
+						<font>font13</font>
+						<textcolor>white60</textcolor>
+						<textoffsetx>18</textoffsetx>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="image">
+						<left>122</left>
+						<top>16</top>
+						<width>80</width>
+						<height>32</height>
+						<aspectratio>keep</aspectratio>
+						<texture>home/overlays/1.png</texture>
+						<texture>$INFO[ListItem.Property(Overlay)]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout height="354" width="300">
+					<control type="group">
+						<animation effect="zoom" center="110,146" start="100" end="106" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="110,146" start="106" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+						<control type="image">
+							<width>220</width>
+							<height>292</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<bordertexture border="18">list/thumbs/shadow_poster.png</bordertexture>
+							<bordersize>18</bordersize>
+						</control>
+						<control type="image">
+							<width>220</width>
+							<height>292</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<bordertexture border="18">list/thumbs/focus_poster.png</bordertexture>
+							<bordersize>18</bordersize>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>110</left>
+							<top>294</top>
+							<width>220</width>
+							<align>center</align>
+							<font>font13</font>
+							<textcolor>white</textcolor>
+							<textoffsetx>18</textoffsetx>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<left>23</left>
+							<top>23</top>
+							<width>56</width>
+							<height>30</height>
+							<texture colordiffuse="white70">colors/black.png</texture>
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+						</control>
+						<control type="label">
+							<left>51</left>
+							<top>23</top>
+							<width>56</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>fontnumber22</font>
+							<textcolor>FFff9c00</textcolor>
+							<label>$INFO[ListItem.Rating]</label>
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+						</control>
+						<control type="image">
+							<left>122</left>
+							<top>16</top>
+							<width>80</width>
+							<height>32</height>
+							<aspectratio>keep</aspectratio>
+							<texture>home/overlays/1.png</texture>
+							<texture>$INFO[ListItem.Property(Overlay)]</texture>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>videodb://movies/titles/</content>
+			</control>
+		</control>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,-100" end="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" end="0,-100" start="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<control type="image">
+				<height>694</height>
+				<texture colordiffuse="ff253047">colors/white.png</texture>
+			</control>
+			<control type="image">
+				<left>62</left>
+				<top>107</top>
+				<width>836</width>
+				<height>496</height>
+				<aspectratio>scale</aspectratio>
+				<texture>$INFO[ListItem.Art(fanart)]</texture>
+				<bordertexture border="28">dialogs/info/thumb_shadow.png</bordertexture>
+				<bordersize>28</bordersize>
+			</control>
+			<control type="image">
+				<left>62</left>
+				<top>107</top>
+				<width>836</width>
+				<height>496</height>
+				<aspectratio>scale</aspectratio>
+				<texture>colors/black.png</texture>
+				<bordersize>28</bordersize>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="videowindow">
+				<left>90</left>
+				<top>135</top>
+				<width>780</width>
+				<height>440</height>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="group">
+				<!-- Rating -->
+				<left>1667</left>
+				<top>126</top>
+				<width>162</width>
+				<height>48</height>
+				<control type="image">
+					<texture>dialogs/info/rating.png</texture>
+				</control>
+				<control type="label">
+					<left>12</left>
+					<top>12</top>
+					<width>40</width>
+					<height>27</height>
+					<font>font26</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<label>豆</label>
+				</control>
+				<control type="label">
+					<left>81</left>
+					<width>81</width>
+					<height>51</height>
+					<font>font26</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>ff317036</textcolor>
+					<label>[B]$INFO[ListItem.Rating][/B]</label>
+				</control>
+			</control>
+				<control type="label">
+					<left>1500</left>
+					<top>190</top>
+					<width>329</width>
+					<height>20</height>
+					<font>font22</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<textcolor>white40</textcolor>
+					<label>本视频由PPTV提供</label>
+				</control>
+			<control type="grouplist" id="1000">
+				<!-- Title + Year -->
+				<left>934</left>
+				<top>136</top>
+				<height>46</height>
+				<itemgap>13</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>noop</onup>
+				<ondown>3000</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="label">
+					<!-- Director -->
+					<width>auto</width>
+					<height>46</height>
+					<font>font44</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Title]</label>
+				</control>
+				<control type="label">
+					<!-- Country + Year -->
+					<width min="10" max="400">auto</width>
+					<height>46</height>
+					<font>font13</font>
+					<aligny>top</aligny>
+					<textoffsety>13</textoffsety>
+					<textcolor>white60</textcolor>
+					<label>$INFO[ListItem.Country]$INFO[ListItem.Year, / ]</label>
+				</control>
+			</control>
+			<control type="grouplist" id="2000">
+				<!-- Director -->
+				<left>934</left>
+				<top>217</top>
+				<height>46</height>
+				<itemgap>13</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>noop</onup>
+				<ondown>3000</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="label">
+					<!-- Director -->
+					<width>72</width>
+					<height>46</height>
+					<font>font13</font>
+					<aligny>center</aligny>
+					<textcolor>white80</textcolor>
+					<label>导演:</label>
+				</control>
+				<control type="button" id="2001">
+					<!-- Director 1 -->
+					<width>auto</width>
+					<height>46</height>
+					<font>font13</font>
+					<textoffsetx>20</textoffsetx>
+					<textcolor>white60</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<label>约瑟夫·科辛斯基</label>
+					<texturenofocus border="7">dialogs/info/text_nf.png</texturenofocus>
+					<texturefocus border="7">dialogs/info/text_fo.png</texturefocus>
+				</control>
+				<control type="button" id="2002">
+					<!-- Director 2 -->
+					<width>auto</width>
+					<height>46</height>
+					<font>font13</font>
+					<textoffsetx>20</textoffsetx>
+					<textcolor>white60</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<label>约瑟夫·科辛斯基</label>
+					<texturenofocus border="7">dialogs/info/text_nf.png</texturenofocus>
+					<texturefocus border="7">dialogs/info/text_fo.png</texturefocus>
+				</control>
+			</control>
+			<control type="grouplist" id="3000">
+				<!-- Starring -->
+				<left>934</left>
+				<top>283</top>
+				<height>46</height>
+				<itemgap>13</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>2000</onup>
+				<ondown>4000</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="label">
+					<!-- Starring -->
+					<width>72</width>
+					<height>46</height>
+					<font>font13</font>
+					<aligny>center</aligny>
+					<textcolor>white80</textcolor>
+					<label>演员:</label>
+				</control>
+				<control type="button" id="3001">
+					<!-- Actor 1 -->
+					<width>auto</width>
+					<height>46</height>
+					<font>font13</font>
+					<textoffsetx>20</textoffsetx>
+					<textcolor>white60</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<label>汤姆·克鲁斯</label>
+					<texturenofocus border="7">dialogs/info/text_nf.png</texturenofocus>
+					<texturefocus border="7">dialogs/info/text_fo.png</texturefocus>
+				</control>
+				<control type="button" id="3002">
+					<!-- Actor 2 -->
+					<width>auto</width>
+					<height>46</height>
+					<font>font13</font>
+					<textoffsetx>20</textoffsetx>
+					<textcolor>white60</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<label>摩根·弗里曼</label>
+					<texturenofocus border="7">dialogs/info/text_nf.png</texturenofocus>
+					<texturefocus border="7">dialogs/info/text_fo.png</texturefocus>
+				</control>
+				<control type="button" id="3003">
+					<!-- Actor 3 -->
+					<width>auto</width>
+					<height>46</height>
+					<font>font13</font>
+					<textoffsetx>20</textoffsetx>
+					<textcolor>white60</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<label>欧嘉</label>
+					<texturenofocus border="7">dialogs/info/text_nf.png</texturenofocus>
+					<texturefocus border="7">dialogs/info/text_fo.png</texturefocus>
+				</control>
+			</control>
+			<control type="button" id="4000">
+				<!-- Plot fake button -->
+				<left>934</left>
+				<top>355</top>
+				<width>896</width>
+				<height>106</height>
+				<font>font13</font>
+				<textcolor>white60</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<label />
+				<texturenofocus border="7">dialogs/info/text_nf.png</texturenofocus>
+				<texturefocus border="7">dialogs/info/text_fo.png</texturefocus>
+				<onup>3000</onup>
+				<ondown>5000</ondown>
+			</control>
+			<control type="textbox">
+				<!-- Plot -->
+				<left>952</left>
+				<top>360</top>
+				<width>860</width>
+				<height>90</height>
+				<font>font30_textbox</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Plot]</label>
+				<animation effect="fade" time="50" start="100" end="60" condition="!Control.HasFocus(4000)">Conditional</animation>
+			</control>
+			<control type="grouplist" id="5000">
+				<!-- Breadcrumbs left -->
+				<left>934</left>
+				<top>505</top>
+				<height>71</height>
+				<itemgap>20</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>4000</onup>
+				<ondown>6000</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="button" id="50001">
+					<!-- Play -->
+					<width>179</width>
+					<height>71</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<textoffsetx>80</textoffsetx>
+					<textwidth>90</textwidth>
+					<label>试看</label>
+					<texturenofocus>dialogs/info/button_play_nf.png</texturenofocus>
+					<texturefocus>dialogs/info/button_play_fo.png</texturefocus>
+				</control>
+				<control type="button" id="50002">
+					<!-- Buy -->
+					<width>179</width>
+					<height>71</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<textoffsetx>80</textoffsetx>
+					<textwidth>90</textwidth>
+					<label>购买</label>
+					<texturenofocus>dialogs/info/button_vip_nf.png</texturenofocus>
+					<texturefocus>dialogs/info/button_vip_fo.png</texturefocus>
+					<onclick>ActivateWindow(1118)</onclick>
+				</control>
+				<control type="togglebutton" id="50003">
+					<!-- Collection -->
+					<width>179</width>
+					<height>71</height>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<textoffsetx>80</textoffsetx>
+					<textwidth>90</textwidth>
+					<label>收藏</label>
+					<texturenofocus>dialogs/info/button_fav_nf.png</texturenofocus>
+					<texturefocus>dialogs/info/button_fav_fo.png</texturefocus>
+					<alttexturenofocus>dialogs/info/button_fav_on_nf.png</alttexturenofocus>
+					<alttexturefocus>dialogs/info/button_fav_on_fo.png</alttexturefocus>
+					<usealttexture>StringCompare(Window.Property(Fav),On)</usealttexture>
+				</control>
+			</control>
+		</control>
+		<control type="image">
+			<left>90</left>
+			<top>692</top>
+			<width>150</width>
+			<height>12</height>
+			<texture>dialogs/info/list_indicator.png</texture>
+			<animation effect="fade" time="300" delay="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+		</control>
+		<control type="label">
+			<left>90</left>
+			<top>652</top>
+			<width>150</width>
+			<height>30</height>
+			<align>center</align>
+			<font>font13</font>
+			<textcolor>white60</textcolor>
+			<label>您可能喜欢</label>
+			<animation effect="fade" time="300" delay="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1100" type="dialog">
+	<visible>Skin.HasSetting(DebugGrid)</visible>
+	<controls>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>special://skin/extras/backgrounds/debuggrid1080.png</texture>
+			<animation effect="fade" time="400">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+		</control>
+	</controls>
+</window>

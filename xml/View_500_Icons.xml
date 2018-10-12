@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_500_Icons">
+		<control type="group">
+			<description>Busy View</description>
+			<visible>!IntegerGreaterThan(Container(509).NumItems,0) + !Window.IsActive(BusyDialog)</visible>
+			<animation type="Conditional" reversible="false" condition="!IntegerGreaterThan(Container(509).NumItems,0)">
+				<effect type="slide" start="0,200" end="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" end="0,200" start="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<control type="multiimage">
+				<width>57</width>
+				<height>57</height>
+				<left>1050</left>
+				<top>492</top>
+				<imagepath>loading/cube</imagepath>
+				<timeperimage>5</timeperimage>
+				<fadetime>15</fadetime>
+				<loop>true</loop>
+				<randomize>false</randomize>
+			</control>
+			<control type="label">
+				<description>Busy label</description>
+				<top>29</top>
+				<left>120</left>
+				<width>100%</width>
+				<height>100%</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font20</font>
+				<label>加载中...</label>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(509)</visible>
+			<control type="panel" id="509">
+				<!-- Icon list -->
+				<left>357</left>
+				<top>130</top>
+				<right>0</right>
+				<bottom>40</bottom>
+				<onleft>9051</onleft>
+				<onright>60</onright>
+				<onup>333</onup>
+				<ondown>noop</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+				<animation type="WindowOpen" reversible="false">
+					<effect type="slide" start="0,200" end="0" time="500" tween="cubic" easing="out" />
+					<effect type="fade" end="100" time="250" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+					<effect type="slide" end="0,200" start="0" time="500" tween="cubic" easing="out" />
+					<effect type="fade" end="0" time="250" />
+				</animation>
+				<animation effect="slide" end="-25" time="0" tween="cubic" easing="inout" condition="StringCompare(Window.Property(ChannelListType),sport)">Conditional</animation>
+				<itemlayout height="448" width="309" condition="StringCompare(Window.Property(ChannelListType),others)">
+					<control type="image">
+						<width>296</width>
+						<height>380</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">list/default/list_poster.png</texture>
+						<bordersize>18</bordersize>
+					</control>
+					<control type="image">
+						<width>296</width>
+						<height>380</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordertexture border="18">list/thumbs/shadow_poster.png</bordertexture>
+						<bordersize>18</bordersize>
+					</control>
+					<control type="image">
+						<left>24</left>
+						<top>24</top>
+						<width>57</width>
+						<height>34</height>
+						<texture colordiffuse="white70">colors/black.png</texture>
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<left>27</left>
+						<top>24</top>
+						<width>57</width>
+						<height>34</height>
+						<font>fontnumber</font>
+						<textcolor>FFff9c00</textcolor>
+						<label>$INFO[ListItem.Rating]</label>
+						<visible>!IsEmpty(ListItem.Rating)</visible>
+					</control>
+					<control type="label">
+						<top>388</top>
+						<width>296</width>
+						<align>center</align>
+						<font>font13</font>
+						<textcolor>white60</textcolor>
+						<textoffsetx>18</textoffsetx>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="image">
+						<left>169</left>
+						<top>18</top>
+						<width>110</width>
+						<height>39</height>
+						<aspectratio scalediffuse="true">scale</aspectratio>
+						<texture>$INFO[ListItem.Property(Overlay)]</texture>
+					</control>
+				</itemlayout>
+				<itemlayout height="355" width="506" condition="StringCompare(Window.Property(ChannelListType),sport)">
+					<control type="image">
+						<width>552</width>
+						<height>370</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="list/thumbs/diffuse_landscape.png">list/default/recommend_landscape.png</texture>
+						<bordersize>55</bordersize>
+					</control>
+					<control type="image">
+						<width>552</width>
+						<height>370</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="list/thumbs/diffuse_landscape.png">$INFO[ListItem.Art(fanart)]</texture>
+						<bordersize>55</bordersize>
+					</control>
+					<control type="image">
+						<left>387</left>
+						<top>55</top>
+						<width>110</width>
+						<height>39</height>
+						<aspectratio scalediffuse="true">scale</aspectratio>
+						<texture diffuse="home/overlays/diffuse_overlay.png">$INFO[ListItem.Property(Overlay)]</texture>
+					</control>
+					<control type="label">
+						<left>20</left>
+						<centerbottom>5%</centerbottom>
+						<width>492</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font26</font>
+						<textcolor>white60</textcolor>
+						<textoffsetx>20</textoffsetx>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="448" width="309" condition="StringCompare(Window.Property(ChannelListType),others)">
+					<control type="group">
+						<animation effect="zoom" center="148,224" start="100" end="106" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="148,224" start="106" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+						<control type="image">
+							<width>296</width>
+							<height>380</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true">list/default/list_poster.png</texture>
+							<bordersize>18</bordersize>
+						</control>
+						<control type="image">
+							<width>296</width>
+							<height>380</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true">list/default/list_poster.png</texture>
+							<bordertexture border="18">list/thumbs/focus_poster.png</bordertexture>
+							<bordersize>18</bordersize>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<width>296</width>
+							<height>380</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<bordertexture border="18">list/thumbs/shadow_poster.png</bordertexture>
+							<bordersize>18</bordersize>
+						</control>
+						<control type="label">
+							<top>388</top>
+							<width>296</width>
+							<align>center</align>
+							<font>font13</font>
+							<textcolor>white</textcolor>
+							<textoffsetx>18</textoffsetx>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<left>24</left>
+							<top>24</top>
+							<width>57</width>
+							<height>34</height>
+							<texture colordiffuse="white70">colors/black.png</texture>
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+						</control>
+						<control type="label">
+							<left>27</left>
+							<top>24</top>
+							<width>57</width>
+							<height>34</height>
+							<font>fontnumber</font>
+							<textcolor>FFff9c00</textcolor>
+							<label>$INFO[ListItem.Rating]</label>
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+						</control>
+						<control type="image">
+							<left>169</left>
+							<top>18</top>
+							<width>110</width>
+							<height>39</height>
+							<aspectratio scalediffuse="true">scale</aspectratio>
+							<texture>$INFO[ListItem.Property(Overlay)]</texture>
+						</control>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="355" width="506" condition="StringCompare(Window.Property(ChannelListType),sport)">
+					<control type="group">
+						<animation effect="zoom" center="150,201" start="100" end="116" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="150,201" start="116" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+						<control type="image">
+							<width>552</width>
+							<height>370</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" diffuse="list/thumbs/diffuse_landscape.png">list/default/recommend_landscape.png</texture>
+							<bordertexture border="55">list/thumbs/shadow_landscape.png</bordertexture>
+							<bordersize>55</bordersize>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<width>552</width>
+							<height>370</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" diffuse="list/thumbs/diffuse_landscape.png">list/default/recommend_landscape.png</texture>
+							<bordersize>55</bordersize>
+						</control>
+						<control type="image">
+							<width>552</width>
+							<height>370</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" diffuse="list/thumbs/diffuse_poster.png">$INFO[ListItem.Art(fanart)]</texture>
+							<bordertexture border="55">list/thumbs/shadow_landscape.png</bordertexture>
+							<bordersize>55</bordersize>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<width>552</width>
+							<height>370</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture background="true" diffuse="list/thumbs/diffuse_landscape.png">$INFO[ListItem.Art(fanart)]</texture>
+							<bordersize>55</bordersize>
+						</control>
+						<control type="image">
+							<left>387</left>
+							<top>55</top>
+							<width>110</width>
+							<height>39</height>
+							<aspectratio scalediffuse="true">scale</aspectratio>
+							<texture diffuse="home/overlays/diffuse_overlay.png">$INFO[ListItem.Property(Overlay)]</texture>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<centerbottom>5%</centerbottom>
+							<width>492</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font26</font>
+							<textcolor>white</textcolor>
+							<textoffsetx>20</textoffsetx>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

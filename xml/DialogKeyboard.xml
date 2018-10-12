@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">300</defaultcontrol>
+	<coordinates>
+		<system>0</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>dialogs/dialogs_bg.png</texture>
+			<animation effect="fade" time="400">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+		</control>
+		<control type="group">
+			<include>Visible_Fade_Animation</include>
+			<visible>!Window.IsVisible(numericinput)</visible>
+			<control type="image">
+				<left>0</left>
+				<top>400</top>
+				<width>1920</width>
+				<height>690</height>
+				<texture>dialogs/keyboard/back.png</texture>
+			</control>
+			<control type="label" id="311">
+				<description>header label</description>
+				<left>0</left>
+				<top>30</top>
+				<width>1920</width>
+				<height>45</height>
+				<font>font36</font>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label" id="310">
+				<description>Edit Text</description>
+				<left>0</left>
+				<top>460</top>
+				<width>1920</width>
+				<height>75</height>
+				<font>font36</font>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="group" id="301">
+				<left>73</left>
+				<top>525</top>
+				<width>1900</width>
+				<height>1000</height>
+				<!--Row 1-->
+				<control type="grouplist" id="400">
+					<orientation>horizontal</orientation>
+					<itemgap>-9</itemgap>
+					<control type="button" id="49">
+						<onup>302</onup>
+						<ondown>65</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="50">
+						<onup>302</onup>
+						<ondown>66</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="51">
+						<onup>302</onup>
+						<ondown>67</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="52">
+						<onup>302</onup>
+						<ondown>68</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="53">
+						<onup>32</onup>
+						<ondown>69</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="54">
+						<onup>32</onup>
+						<ondown>70</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="55">
+						<onup>32</onup>
+						<ondown>71</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="56">
+						<onup>32</onup>
+						<ondown>72</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="57">
+						<onup>32</onup>
+						<ondown>73</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="48">
+						<onup>300</onup>
+						<ondown>74</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="8">
+						<label>20181</label>
+						<width>410</width>
+						<onup>300</onup>
+						<ondown>75</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+				</control>
+				<!--Row 2-->
+				<control type="grouplist" id="401">
+					<orientation>horizontal</orientation>
+					<itemgap>-9</itemgap>
+					<top>136</top>
+					<onup>400</onup>
+					<ondown>402</ondown>
+					<control type="button" id="65">
+						<onup>49</onup>
+						<ondown>78</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="66">
+						<onup>50</onup>
+						<ondown>79</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="67">
+						<onup>51</onup>
+						<ondown>80</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="68">
+						<onup>52</onup>
+						<ondown>81</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="69">
+						<onup>53</onup>
+						<ondown>82</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="70">
+						<onup>54</onup>
+						<ondown>83</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="71">
+						<onup>55</onup>
+						<ondown>84</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="72">
+						<onup>56</onup>
+						<ondown>85</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="73">
+						<onup>57</onup>
+						<ondown>86</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="74">
+						<onup>48</onup>
+						<ondown>87</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="75">
+						<onup>8</onup>
+						<ondown>88</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="76">
+						<onup>8</onup>
+						<ondown>89</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="77">
+						<onup>8</onup>
+						<ondown>90</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+				</control>
+				<!--Row 3-->
+				<control type="grouplist" id="402">
+					<top>272</top>
+					<onup>401</onup>
+					<ondown>403</ondown>
+					<orientation>horizontal</orientation>
+					<itemgap>-9</itemgap>
+					<control type="button" id="78">
+						<onup>65</onup>
+						<ondown>302</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="79">
+						<onup>66</onup>
+						<ondown>302</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="80">
+						<onup>67</onup>
+						<ondown>302</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="81">
+						<onup>68</onup>
+						<ondown>302</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="82">
+						<onup>69</onup>
+						<ondown>32</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="83">
+						<onup>70</onup>
+						<ondown>32</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="84">
+						<onup>71</onup>
+						<ondown>32</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="85">
+						<onup>72</onup>
+						<ondown>32</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="86">
+						<onup>73</onup>
+						<ondown>32</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="87">
+						<onup>74</onup>
+						<ondown>300</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="88">
+						<onup>75</onup>
+						<ondown>300</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="89">
+						<onup>76</onup>
+						<ondown>300</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+					<control type="button" id="90">
+						<onup>77</onup>
+						<ondown>300</ondown>
+						<include>Keyboard_Button</include>
+					</control>
+				</control>
+				<!--Row 4-->
+				<control type="grouplist" id="403">
+					<top>408</top>
+					<onup>402</onup>
+					<ondown>400</ondown>
+					<orientation>horizontal</orientation>
+					<itemgap>-9</itemgap>
+					<control type="togglebutton" id="302">
+						<label>$LOCALIZE[20178]</label>
+						<altlabel>$LOCALIZE[20178]</altlabel>
+						<onup>78</onup>
+						<ondown>49</ondown>
+						<include>Keyboard_Button_Wide</include>
+					</control>
+					<control type="button" id="32">
+						<onup>83</onup>
+						<ondown>54</ondown>
+						<include>Keyboard_Button_Wide</include>
+					</control>
+					<control type="button" id="300">
+						<include>Keyboard_Button_Wide</include>
+						<onup>87</onup>
+						<ondown>48</ondown>
+						<label>20177</label>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

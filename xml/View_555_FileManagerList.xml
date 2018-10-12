@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View555_FileManagerList">
+		<control type="group">
+			<visible>Control.IsVisible(555)</visible>
+			<include>Visible_Fade_Animation</include>
+			<control type="list" id="555">
+				<left>157</left>
+				<top>465</top>
+				<width>1765</width>
+				<height>684</height>
+				<onleft>$VAR[BounceLeftVar]</onleft>
+				<onright>$VAR[BounceRightVar]</onright>
+				<visible>Substring(Container.FolderPath,sources://,left)</visible>
+				<onup>333</onup>
+				<ondown>noop</ondown>
+				<animation effect="slide" start="0,0" end="615,0" time="200" condition="StringCompare(Container.NumItems,1)">conditional</animation>
+				<animation effect="slide" start="0,0" end="385,0" time="200" condition="StringCompare(Container.NumItems,2)">conditional</animation>
+				<animation effect="slide" start="0,0" end="65,0" time="200" condition="!StringCompare(Container.NumItems,1) + !StringCompare(Container.NumItems,2)">conditional</animation>
+				<orientation>horizontal</orientation>
+				<viewtype label="LocalVideos">icon</viewtype>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="450" width="335">
+					<control type="image">
+						<left>92</left>
+						<top>100</top>
+						<width>150</width>
+						<height>150</height>
+						<aspectratio>keep</aspectratio>
+						<texture>icons/list/fo/DefaultUSB.png</texture>
+						<animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<left>25</left>
+						<top>25</top>
+						<width>285</width>
+						<height>400</height>
+						<aspectratio>keep</aspectratio>
+						<texture>icons/filemanager/list_nf.png</texture>
+					</control>
+					<control type="label">
+						<left>72</left>
+						<top>270</top>
+						<width>190</width>
+						<height>110</height>
+						<selectedcolor>selected</selectedcolor>
+						<font>font30_bold</font>
+						<textoffsetx>0</textoffsetx>
+						<textcolor>white</textcolor>
+						<align>center</align>
+						<animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="450" width="335">
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="auto" end="137" start="100" time="300" tween="quadratic" />
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" center="auto" start="137" end="100" time="300" tween="quadratic" />
+						</animation>
+						<control type="image">
+							<left>92</left>
+							<top>100</top>
+							<width>150</width>
+							<height>150</height>
+							<aspectratio>keep</aspectratio>
+							<texture>icons/list/fo/DefaultUSB.png</texture>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="40" start="100" time="150" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="40" time="150" />
+							</animation>
+						</control>
+						<control type="image">
+							<left>25</left>
+							<top>25</top>
+							<width>285</width>
+							<height>400</height>
+							<aspectratio>keep</aspectratio>
+							<texture>icons/filemanager/list_fo.png</texture>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="0" start="100" time="150" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="0" time="150" />
+							</animation>
+						</control>
+						<control type="image">
+							<left>25</left>
+							<top>25</top>
+							<width>285</width>
+							<height>400</height>
+							<aspectratio>keep</aspectratio>
+							<texture>icons/filemanager/list_nf.png</texture>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="100" start="0" time="150" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="0" start="100" time="150" />
+							</animation>
+						</control>
+						<control type="label">
+							<left>72</left>
+							<top>270</top>
+							<width>190</width>
+							<height>110</height>
+							<selectedcolor>selected</selectedcolor>
+							<font>font30_bold</font>
+							<textoffsetx>0</textoffsetx>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="40" start="100" time="150" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="40" time="150" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="label">
+				<left>60</left>
+				<top>43</top>
+				<width min="20" max="600">auto</width>
+				<height>44</height>
+				<font>font44</font>
+				<textcolor>white60</textcolor>
+				<aligny>center</aligny>
+				<label>视频</label>
+				<visible>false</visible>
+			</control>
+			<control type="label">
+				<right>150</right>
+				<top>43</top>
+				<width>auto</width>
+				<height>40</height>
+				<font>font40</font>
+				<textcolor>white40</textcolor>
+				<label>$INFO[System.Time(HH:MM)]</label>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" condition="Player.HasMedia + StringCompare(Window(home).Property(NowisPlaying),1)">Conditional</animation>
+			</control>
+		</control>
+		<control type="group">
+			<include>Window_OpenClose_Fade_Animation</include>
+			<control type="grouplist">
+				<left>70</left>
+				<top>55</top>
+				<width>1648</width>
+				<height>64</height>
+				<itemgap>30</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="20" max="960">auto</width>
+					<height>64</height>
+					<font>font64_bold</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+					<label>$VAR[FolderNameVar]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

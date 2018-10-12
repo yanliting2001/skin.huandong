@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_505_Member">
+		<control type="group">
+			<visible>Control.IsVisible(505)</visible>
+			<include>View_Animation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>List_Bounce_Animation</include>
+			<control type="list" id="505">
+				<left>510</left>
+				<top>454</top>
+				<width>1200</width>
+				<height>400</height>
+				<onleft>335</onleft>
+				<onright>noop</onright>
+				<onup>$VAR[NavUpList]</onup>
+				<ondown>60</ondown>
+				<viewtype label="albums_member">bigwrap</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<orientation>horizontal</orientation>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="400" width="300">
+					<control type="image">
+						<left>50</left>
+						<top>40</top>
+						<width>200</width>
+						<height>200</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="views/pictures/thumbs/account_diffuse.png">thumbs/member_default.png</texture>
+						<bordertexture border="3">views/pictures/thumbs/account_nf.png</bordertexture>
+						<bordersize>3</bordersize>
+					</control>
+					<control type="image">
+						<left>50</left>
+						<top>40</top>
+						<width>200</width>
+						<height>200</height>
+						<fadetime>200</fadetime>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="views/pictures/thumbs/account_diffuse.png">$INFO[ListItem.Icon]</texture>
+						<bordersize>3</bordersize>
+					</control>
+					<control type="label">
+						<left>150</left>
+						<top>300</top>
+						<width>200</width>
+						<height>44</height>
+						<font>font26_bold</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+				</itemlayout>
+				<focusedlayout height="400" width="300">
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="150,140" end="156.5" start="100" time="150" tween="quadratic" easing="out"/>
+						</animation>
+						<animation type="UnFocus" reversible="false" condition="!Container(59).Scrolling">
+							<effect type="zoom" center="150,140" start="156.5" end="100" time="150" tween="quadratic" easing="in"/>
+						</animation>
+						<control type="image">
+							<left>10</left>
+							<top>0</top>
+							<width>280</width>
+							<height>280</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="views/pictures/thumbs/account_diffuse.png">thumbs/member_default.png</texture>
+							<bordertexture border="40">views/pictures/thumbs/account_fo.png</bordertexture>
+							<bordersize>43</bordersize>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="0" time="150"/>
+							</animation>
+							<animation type="UnFocus" reversible="false" condition="!Container(505).Scrolling">
+								<effect type="fade" start="100" end="0" time="150"/>
+							</animation>
+						</control>
+						<control type="image">
+							<left>50</left>
+							<top>40</top>
+							<width>200</width>
+							<height>200</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="views/pictures/thumbs/account_diffuse.png">thumbs/member_default.png</texture>
+							<bordertexture border="3">views/pictures/thumbs/account_nf.png</bordertexture>
+							<bordersize>3</bordersize>
+						</control>
+						<control type="image">
+							<left>50</left>
+							<top>40</top>
+							<width>200</width>
+							<height>200</height>
+							<fadetime>200</fadetime>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="views/pictures/thumbs/account_diffuse.png">$INFO[ListItem.Icon]</texture>
+							<bordersize>3</bordersize>
+						</control>
+						<control type="label">
+							<left>150</left>
+							<top>300</top>
+							<width>200</width>
+							<height>44</height>
+							<font>font26_bold</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="100" end="60" time="100" />
+							</animation>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="60" end="100" time="100" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<left>260</left>
+				<top>494</top>
+				<animation type="Conditional" reversible="false" condition="Control.HasFocus(335)">
+					<effect type="zoom" end="156.5" start="100" center="360,600" time="150" tween="quadratic" />
+				</animation>
+				<animation type="Conditional" reversible="false" condition="!Control.HasFocus(335)">
+					<effect type="zoom" end="100" start="156.5" center="360,600" time="150" tween="quadratic" />
+				</animation>
+				<control type="button" id="335">
+					<width>200</width>
+					<height>200</height>
+					<onleft>noop</onleft>
+					<onright>505</onright>
+					<onup>$VAR[NavUpList]</onup>
+					<ondown>60</ondown>
+					<visible>Control.IsVisible(505)</visible>
+					<texturefocus>views/pictures/thumbs/account_new.png</texturefocus>
+					<texturenofocus>views/pictures/thumbs/account_new.png</texturenofocus>
+					<label>-</label>
+				</control>
+				<control type="label">
+					<top>260</top>
+					<width>200</width>
+					<height>44</height>
+					<font>font26_bold</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>扫描添加新成员</label>
+					<visible>Control.IsVisible(505)</visible>
+					<animation type="Conditional" reversible="false" condition="!Control.HasFocus(335)">
+						<effect type="fade" start="100" end="60" time="100" />
+					</animation>
+					<animation type="Conditional" reversible="false" condition="Control.HasFocus(335)">
+						<effect type="fade" start="60" end="100" time="100" />
+					</animation>
+				</control>
+			</control>
+			<control type="group">
+				<top>579</top>
+				<left>150</left>
+				<control type="image">
+					<description>left arrow</description>
+					<width>19</width>
+					<height>39</height>
+					<texture>views/pictures/arrow.png</texture>
+				</control>
+				<control type="image">
+					<description>left arrow</description>
+					<left>1620</left>
+					<width>19</width>
+					<height>39</height>
+					<texture flipx="true">views/pictures/arrow.png</texture>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

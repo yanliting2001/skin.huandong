@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<views>50,555</views>
+	<controls>
+		<control type="group">
+			<include>BG_OpenClose_Fade_Animation</include>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<!-- <texture border="1">views/pictures/bg_blue_to_purple.png</texture> -->
+				<texture border="1">home/bg.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<include>Window_OpenClose_Animation</include>
+			<include>PictureList</include>
+			<include>View555_FileManagerList</include>
+			<!-- view id = 50 -->
+		</control>
+		<include>MediaProcess</include>
+		<include>DialogBackground</include>
+	</controls>
+</window>

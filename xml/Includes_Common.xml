@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="Button_InfoDialog">
+		<width>200</width>
+		<height>72</height>
+		<align>center</align>
+		<textcolor>white80</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<shadowcolor>shadow</shadowcolor>
+		<texturefocus border="5">controls/button/button_fo.png</texturefocus>
+		<texturenofocus/>
+		<alttexturefocus border="5">controls/button/button_fo.png</alttexturefocus>
+		<alttexturenofocus/>
+	</include>
+	<include name="Button_DialogVideoInfoDialog">
+		<height>65</height>
+		<width>190</width>
+		<textoffsetx>30</textoffsetx>
+		<font>font36_bold</font>
+		<align>center</align>
+		<!--<textcolor>white_nf</textcolor>-->
+		<textcolor>white</textcolor>
+		<texturefocus border="10">views/topbar/list2_fo.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</include>
+	<include name="HiddenObject">
+		<left>-4</left>
+		<top>0</top>
+		<width>1</width>
+		<height>1</height>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<font>-</font>
+	</include>
+		<include name="Keyboard_Button_Wide">
+		<width>595</width>
+		<height>144</height>
+		<texturefocus border="30">dialogs/keyboard/key_focus.png</texturefocus>
+		<texturenofocus border="30">dialogs/keyboard/key.png</texturenofocus>
+		<alttexturefocus border="30">dialogs/keyboard/key_focus.png</alttexturefocus>
+		<alttexturenofocus border="30">dialogs/keyboard/key.png</alttexturenofocus>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font_keyboard</font>
+		<textcolor>white</textcolor>
+		<selectedcolor>white</selectedcolor>
+	</include>
+	<include name="Keyboard_Button">
+		<width>144</width>
+		<height>144</height>
+		<texturefocus border="30">dialogs/keyboard/key_focus.png</texturefocus>
+		<texturenofocus border="30">dialogs/keyboard/key.png</texturenofocus>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>font_keyboard</font>
+		<textcolor>white</textcolor>
+		<selectedcolor>white</selectedcolor>
+	</include>
+</includes>

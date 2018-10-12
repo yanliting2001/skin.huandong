@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="PosterThumb">
+		<!-- <value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value> -->
+		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="FanartVar">
+		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="LoginUserNameVar">
+		<value condition="!IsEmpty(Window(home).Property(UserName))">$INFO[Window(home).Property(UserName)]</value>
+		<value>您尚未登录帐号！</value>
+	</variable>
+	<variable name="AMPMVar">
+		<value condition="SubString(System.Time,AM)">AM</value>
+		<value>PM</value>
+	</variable>
+	<variable name="NowPlayingIconVar">
+		<value condition="Player.Paused">topbar/nowplaying/pause.png</value>
+		<value>topbar/nowplaying/icon.png</value>
+	</variable>
+	<variable name="NowPlayingTitleVar">
+		<value condition="Player.HasAudio">$INFO[Player.Filename]</value>
+		<value>$INFO[Player.Title]</value>
+	</variable>
+	<variable name="PassThroughVar">
+		<value condition="!IsEmpty(Window(home).Property(EnablePassThrough))">禁用直通输出</value>
+		<value>允许直通输出</value>
+	</variable>
+	<variable name="SubtitlesLanguageVar">
+		<value condition="!IsEmpty(VideoPlayer.SubtitlesLanguage)">$INFO[VideoPlayer.SubtitlesLanguage]</value>
+		<value>$LOCALIZE[31072]</value>
+	</variable>
+	<variable name="AudioLanguageVar">
+		<value condition="!IsEmpty(VideoPlayer.AudioLanguage)">$INFO[VideoPlayer.AudioLanguage]</value>
+		<value>$LOCALIZE[31072]</value>
+	</variable>
+	<variable name="PlayRepeatOneVar">
+		<value condition="Playlist.IsRepeatOne + !Playlist.IsRandom">filter/icon_check.png</value>
+		<value />
+	</variable>
+	<variable name="PlayRepeatAllVar">
+		<value condition="Playlist.IsRepeat + !Playlist.IsRandom">filter/icon_check.png</value>
+		<value />
+	</variable>
+	<variable name="PlayRandomVar">
+		<value condition="Playlist.IsRandom">filter/icon_check.png</value>
+		<value />
+	</variable>
+	<variable name="3DModeLeftRightVar">
+		<value condition="StringCompare(Window(home).Property(3DMode),LeftRight)">filter/icon_check.png</value>
+		<value />
+	</variable>
+	<variable name="3DModeUpDownVar">
+		<value condition="StringCompare(Window(home).Property(3DMode),UpDown)">filter/icon_check.png</value>
+		<value />
+	</variable>
+	<variable name="3DModeCloseVar">
+		<value condition="IsEmpty(Window(home).Property(3DMode))">filter/icon_check.png</value>
+		<value />
+	</variable>
+	<variable name="PlayerSeekTime">
+		<value condition="!IntegerGreaterThan(Player.SeekBar,0)">00:00:01</value>
+		<value condition="IntegerGreaterThan(Player.SeekBar,99)">$INFO[Player.Duration]</value>
+		<value>$INFO[Player.SeekTime]</value>
+	</variable>
+</includes>

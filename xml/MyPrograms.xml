@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<views>50,501,502,503,504</views>
+	<controls>
+		<control type="group">
+			<include>BG_OpenClose_Fade_Animation</include>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<texture border="1">special://skin/backgrounds/home_bg.jpg</texture>
+			</control>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture background="true" colordiffuse="11FFFFFF">$VAR[BackgroundVar]</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>!IsEmpty(ListItem.Art(fanart))</visible>
+				<visible>!Control.IsVisible(504)</visible>
+			</control>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture background="true" diffuse="thumbs/fanart_diffuse2.png" fallback="special://skin/backgrounds/home_bg.jpg">$INFO[ListItem.Art(fanart)]</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>Control.IsVisible(504)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<include>Window_OpenClose_Animation</include>
+			<include>View_50_List</include>
+			<!--view id = 50-->
+			<include>View_501_MyApps</include>
+			<!-- view id = 501 -->
+			<include>View_502_Games</include>
+			<!-- view id = 502 -->
+			<include>View_503_AppPanel</include>
+			<!-- view id = 503 -->
+			<include>View_504_MyGames</include>
+			<!-- view id = 503 -->
+		</control>
+		<include>Topbar</include>
+		<control type="group">
+			<visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(504)</visible>
+			<include>Visible_Fade_Animation</include>
+			<include>Window_OpenClose_Fade_Animation</include>
+			<include>BreadCrumbs</include>
+			<control type="scrollbar" id="60">
+				<onup>50</onup>
+				<ondown>noop</ondown>
+				<showonepage>true</showonepage>
+				<visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+				<include>Visible_Fade_Animation200</include>
+			</control>
+		</control>
+		<!-- <control type="group">
+			<left>-100</left>
+			<animation effect="slide" start="0" end="-100" time="300" tween="quadratic" easing="out" condition="Container(501).Column(0)">Conditional</animation>
+			<include>BG_OpenClose_Fade_Animation</include>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<texture diffuse="backgrounds/homebg_diffuse.png">backgrounds/appstore_bg.png</texture>
+			</control>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture background="true" colordiffuse="11FFFFFF" diffuse="backgrounds/homebg_diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>!IsEmpty(ListItem.Art(fanart))</visible>
+			</control>
+		</control> -->
+		<include>DialogBackground</include>
+		<control type="group" id="9061">
+			<animation effect="slide" start="0,0" end="0,-210" time="300" tween="quadratic" easing="out">WindowClose</animation>
+			<visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(504)</visible>
+			<control type="fixedlist" id="300">
+				<animation effect="slide" start="0" end="120" time="300" tween="quadratic" easing="out" condition="Player.HasMedia">Conditional</animation>
+				<include>FilterMenuListLayout</include>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[31000]</label>
+						<onclick>ActivateWindow(Programs,plugin://script.startup.pptv?type=app_list&amp;channel=mine&amp;upload=$INFO[Window(10000).Property(reloadtime)],return)</onclick>
+						<icon>-</icon>
+						<thumb>-</thumb>
+						<visible>Control.IsVisible(501) | Control.IsVisible(503)</visible>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[31034]</label>
+						<onclick>ActivateWindow(Programs,plugin://script.startup.pptv?type=app_list&amp;channel=panel&amp;upload=$INFO[Window(10000).Property(reloadtime)],return)</onclick>
+						<icon>-</icon>
+						<thumb>-</thumb>
+						<visible>Control.IsVisible(501) | Control.IsVisible(503)</visible>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[31000]</label>
+						<onclick>ActivateWindow(Programs,plugin://script.startup.pptv?type=game_list&amp;channel=mine&amp;upload=$INFO[Window(10000).Property(reloadtime)],return)</onclick>
+						<icon>-</icon>
+						<thumb>-</thumb>
+						<visible>Control.IsVisible(502) | Control.IsVisible(504)</visible>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31032]</label>
+						<onclick>ActivateWindow(Programs,plugin://script.startup.pptv?type=game_list&amp;channel=store&amp;upload=$INFO[Window(10000).Property(reloadtime)],return)</onclick>
+						<icon>-</icon>
+						<thumb>-</thumb>
+						<visible>Control.IsVisible(502) | Control.IsVisible(504)</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+		<control type="group">
+			<top>-160</top>
+			<animation effect="slide" start="0,0" end="0,160" time="300" tween="quadratic" easing="out" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-160" time="300" tween="quadratic" easing="out">WindowClose</animation>
+			<control type="image">
+				<width>1920</width>
+				<height>153</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="1">backgrounds/dialogs_bg.png</texture>
+			</control>
+			<control type="grouplist" id="9000">
+				<top>0</top>
+				<left>300</left>
+				<width>1620</width>
+				<height>153</height>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<orientation>horizontal</orientation>
+				<control type="button" id="2">
+					<description>View button</description>
+					<width>200</width>
+					<height>153</height>
+					<align>center</align>
+					<texturefocus border="1" colordiffuse="66FFFFFF">white.png</texturefocus>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

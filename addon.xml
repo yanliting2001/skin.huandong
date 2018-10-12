@@ -2,6 +2,7 @@
 <addon id="skin.huadong" version="0.1.0" name="HuaDong Theather" provider-name="yugimaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
+		<import addon="script.startup.huadong" version="0.1.0"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1080" aspect="1.77" default="true" folder="xml" />

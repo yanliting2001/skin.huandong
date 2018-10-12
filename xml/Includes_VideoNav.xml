@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="NavListCommon">
+		<control type="group">
+			<include>BG_OpenClose_Fade_Animation</include>
+			<include>TopbarSlideDownAnimation</include>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<texture border="1">views/pictures/bg_blue_to_purple.png</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>Control.IsVisible(50)</visible>
+				<visible>!Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture background="true" fallback="views/pictures/bg_blue_to_purple.png">$VAR[BackgroundVar]</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>![Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(58) | Control.IsVisible(500)]</visible>
+				<visible>!Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">dialogs/dialog_bg_fade.png</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>![Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(58) | Control.IsVisible(500)]</visible>
+				<visible>!Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<texture border="1">$VAR[VideosBGVar]</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>![Control.IsVisible(50) | Control.IsVisible(53) | Control.IsVisible(55)]</visible>
+				<visible>!Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<description>Normal Default Background Image</description>
+				<include>FullscreenDimensions</include>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture background="true" diffuse="thumbs/fanart_diffuse2.png" fallback="special://skin/backgrounds/home_bg.jpg">$VAR[FanartBGVar]</texture>
+				<include>Visible_Fade_Animation</include>
+				<visible>Control.IsVisible(500) | Control.IsVisible(51) | Control.IsVisible(58)</visible>
+				<visible>!Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>views/topbar/topbar_overlay.png</texture>
+				<include>BG_OpenClose_Fade_Animation</include>
+				<visible>Control.IsVisible(500) | Control.IsVisible(51) | Control.IsVisible(58)</visible>
+			</control>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>black.png</texture>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="videowindow">
+				<include>FullscreenDimensions</include>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>backgrounds/video_fade.png</texture>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="image">
+				<description>No Lists Background Image</description>
+				<visible>!IsEmpty(Window.Property(list_none))</visible>
+				<include>FullscreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" colordiffuse="fanart_diffuse_color">backgrounds/no_list_bg.png</texture>
+				<include>Visible_Fade_Animation</include>
+			</control>
+		</control>
+	</include>
+	<include name="NavListWidgets">
+		<include>Topbar</include>
+		<control type="group">
+			<visible>Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(58) | Control.IsVisible(56) | Control.IsVisible(52) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(53) | Control.IsVisible(506)</visible>
+			<include>Visible_Fade_Animation</include>
+			<include>Window_OpenClose_Fade_Animation</include>
+			<include>VideoBreadCrumbs</include>
+			<include>TopBarShade</include>
+			<control type="group" id="9061">
+				<visible>Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(58) | Control.IsVisible(506)</visible>
+				<animation effect="slide" end="0,-200" start="0,0" time="400" condition="!ControlGroup(9061).HasFocus()">Conditional</animation>
+				<control type="image">
+					<top>153</top>
+					<width>1920</width>
+					<height>116</height>
+					<texture>views/topbar/topbar_bg2.png</texture>
+					<include>BG_OpenClose_Fade_Animation</include>
+					<animation effect="slide" end="0,-180" start="0,0" time="400" condition="!Control.HasFocus(301)">Conditional</animation>
+				</control>
+				<control type="panel" id="301">
+					<left>11</left>
+					<top>180</top>
+					<width>1898</width>
+					<height>60</height>
+					<onleft>noop</onleft>
+					<onright>noop</onright>
+					<onup>300</onup>
+					<onback>300</onback>
+					<scrolltime tween="quadratic">200</scrolltime>
+					<orientation>horizontal</orientation>
+					<animation effect="slide" end="0,-180" start="0,0" time="400" condition="!Control.HasFocus(301)">Conditional</animation>
+					<animation effect="slide" start="0" end="73" time="0" condition="StringCompare(Container(301).NumItems,12)">Conditional</animation>
+					<animation effect="slide" start="0" end="146" time="0" condition="StringCompare(Container(301).NumItems,11)">Conditional</animation>
+					<animation effect="slide" start="0" end="219" time="0" condition="StringCompare(Container(301).NumItems,10)">Conditional</animation>
+					<animation effect="slide" start="0" end="292" time="0" condition="StringCompare(Container(301).NumItems,9)">Conditional</animation>
+					<animation effect="slide" start="0" end="365" time="0" condition="StringCompare(Container(301).NumItems,8)">Conditional</animation>
+					<animation effect="slide" start="0" end="438" time="0" condition="StringCompare(Container(301).NumItems,7)">Conditional</animation>
+					<animation effect="slide" start="0" end="511" time="0" condition="StringCompare(Container(301).NumItems,6)">Conditional</animation>
+					<animation effect="slide" start="0" end="584" time="0" condition="StringCompare(Container(301).NumItems,5)">Conditional</animation>
+					<animation effect="slide" start="0" end="657" time="0" condition="StringCompare(Container(301).NumItems,4)">Conditional</animation>
+					<animation effect="slide" start="0" end="730" time="0" condition="StringCompare(Container(301).NumItems,3)">Conditional</animation>
+					<animation effect="slide" start="0" end="803" time="0" condition="StringCompare(Container(301).NumItems,2)">Conditional</animation>
+					<animation effect="slide" start="0" end="876" time="0" condition="StringCompare(Container(301).NumItems,1)">Conditional</animation>
+					<itemlayout height="60" width="146">
+						<control type="label">
+							<left>73</left>
+							<width>146</width>
+							<height>60</height>
+							<align>center</align>
+							<font>font32</font>
+							<textcolor>white70</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="60" width="146">
+						<control type="image">
+							<left>29</left>
+							<top>4</top>
+							<width>88</width>
+							<height>49</height>
+							<texture>views/topbar/list2_fo.png</texture>
+							<animation effect="fade" end="100" start="0" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>73</left>
+							<width>146</width>
+							<height>60</height>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" end="100" start="71" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="71" time="100">UnFocus</animation>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<width>1920</width>
+					<height>181</height>
+					<texture>views/topbar/topbar_bg.png</texture>
+					<include>BG_OpenClose_Fade_Animation</include>
+				</control>
+				<control type="panel" id="300">
+					<include>FilterMenuListLayout</include>
+				</control>
+			</control>
+			<control type="scrollbar" id="60">
+				<visible>[Control.IsVisible(51) | Control.IsVisible(500) | Control.IsVisible(58) | Control.IsVisible(56) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(506)] + !IsEmpty(Window.Property(channel_name))</visible>
+				<onup>$VAR[ScrollNavUp]</onup>
+				<ondown>noop</ondown>
+				<showonepage>false</showonepage>
+				<include>TopbarSlideDownAnimation</include>
+				<include>Visible_Fade_Animation200</include>
+				<animation effect="slide" start="0" end="0,60" time="300" tween="quadratic" condition="!Control.HasFocus(60) + [Control.IsVisible(51) | Control.IsVisible(58) | Control.isVisible(500)]">Conditional</animation>
+				<animation effect="fade" start="100" end="40" time="0" condition="!Control.HasFocus(60)">Conditional</animation>
+				<animation effect="fade" start="40" end="100" time="0" condition="Control.HasFocus(60)">Conditional</animation>
+			</control>
+		</control>
+		<include>DialogBackground</include>
+	</include>
+</includes>

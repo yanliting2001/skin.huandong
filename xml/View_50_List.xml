@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="VideoList">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include>Visible_Fade_Animation</include>
+			<control type="label">
+				<left>177</left>
+				<top>228</top>
+				<width>2000</width>
+				<height>44</height>
+				<font>font36_bold</font>
+				<textcolor>white70</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[container.foldervolumelabel]</label>
+				<visible>container.folderhasvolumelabel</visible>
+			</control>
+			<control type="panel" id="50">
+				<left>140</left>
+				<top>285</top>
+				<width>1780</width>
+				<height>634</height>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>333</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+				<visible>!StringCompare(Container.FolderPath,sources://video/)</visible>
+				<viewtype label="LocalVideo">icon</viewtype>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="317" width="280">
+					<control type="image">
+						<left>37</left>
+						<top>50</top>
+						<width>206</width>
+						<height>206</height>
+						<texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>20</bordersize>
+						<visible>!IsEmpty(Container.FolderPath)</visible>
+					</control>
+					<control type="image">
+						<left>37</left>
+						<top>50</top>
+						<width>206</width>
+						<height>206</height>
+						<texture>DefaultFolder.png</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>20</bordersize>
+						<visible>IsEmpty(Container.FolderPath)</visible>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>返回</label>
+						<visible>StringCompare(ListItem.Label,..)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+				</itemlayout>
+				<focusedlayout height="317" width="280">
+					<control type="group">
+						<animation effect="zoom" center="auto" start="100" end="130" time="300" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="auto" start="130" end="100" time="300" tween="quadratic" reversible="false">Unfocus</animation>
+						<control type="image">
+							<left>37</left>
+							<top>50</top>
+							<width>206</width>
+							<height>206</height>
+							<texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>18</bordersize>
+							<visible>!IsEmpty(Container.FolderPath)</visible>
+						</control>
+						<control type="image">
+							<left>37</left>
+							<top>50</top>
+							<width>206</width>
+							<height>206</height>
+							<texture>DefaultFolder.png</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>20</bordersize>
+							<visible>IsEmpty(Container.FolderPath)</visible>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>返回</label>
+							<visible>StringCompare(ListItem.Label,..)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1844</left>
+				<top>285</top>
+				<width>21</width>
+				<height>637</height>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<texturesliderbackground border="7">local/bar_vert.png</texturesliderbackground>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<textureslidernib>local/nib.png</textureslidernib>
+				<textureslidernibfocus>local/nib.png</textureslidernibfocus>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<animation effect="fade" start="100" end="40" time="300" condition="!Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>60</left>
+				<top>43</top>
+				<width min="20" max="600">auto</width>
+				<height>44</height>
+				<font>font44</font>
+				<textcolor>white60</textcolor>
+				<aligny>center</aligny>
+				<label>视频</label>
+			</control>
+			<control type="label">
+				<right>150</right>
+				<top>43</top>
+				<width>auto</width>
+				<height>40</height>
+				<font>font40</font>
+				<textcolor>white40</textcolor>
+				<label>$INFO[System.Time(HH:MM)]</label>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" condition="Player.HasMedia + StringCompare(Window(home).Property(NowisPlaying),1)">Conditional</animation>
+			</control>
+		</control>
+	</include>
+	<include name="MusicList">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include>Visible_Fade_Animation</include>
+			<control type="label">
+				<left>177</left>
+				<top>228</top>
+				<width>2000</width>
+				<height>44</height>
+				<font>font36_bold</font>
+				<textcolor>white70</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[container.foldervolumelabel]</label>
+				<visible>container.folderhasvolumelabel</visible>
+			</control>
+			<control type="panel" id="50">
+				<left>140</left>
+				<top>285</top>
+				<width>1780</width>
+				<height>634</height>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>333</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+				<visible>!StringCompare(Container.FolderPath,sources://music/)</visible>
+				<viewtype label="LocalAutio">icon</viewtype>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="317" width="280">
+					<control type="image">
+						<left>37</left>
+						<top>50</top>
+						<width>206</width>
+						<height>206</height>
+						<texture fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>20</bordersize>
+						<visible>ListItem.IsFolder</visible>
+					</control>
+					<control type="image">
+						<left>37</left>
+						<top>50</top>
+						<width>206</width>
+						<height>206</height>
+						<texture fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>12</bordersize>
+						<visible>!ListItem.IsFolder</visible>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.FileName]</label>
+						<visible>!IsEmpty(ListItem.FileName)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>IsEmpty(ListItem.FileName) + !StringCompare(ListItem.Label,..)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>返回</label>
+						<visible>IsEmpty(ListItem.FileName) + StringCompare(ListItem.Label,..)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+				</itemlayout>
+				<focusedlayout height="317" width="280">
+					<control type="group">
+						<animation effect="zoom" center="auto" start="100" end="130" time="300" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="auto" start="130" end="100" time="300" tween="quadratic" reversible="false">Unfocus</animation>
+						<control type="image">
+							<left>37</left>
+							<top>50</top>
+							<width>206</width>
+							<height>206</height>
+							<texture fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>18</bordersize>
+							<visible>ListItem.IsFolder</visible>
+						</control>
+						<control type="image">
+							<left>37</left>
+							<top>50</top>
+							<width>206</width>
+							<height>206</height>
+							<texture fallback="DefaultAudio.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>12</bordersize>
+							<visible>!ListItem.IsFolder</visible>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.FileName]</label>
+							<visible>!IsEmpty(ListItem.FileName)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>IsEmpty(ListItem.FileName) + !StringCompare(ListItem.Label,..)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>返回</label>
+							<visible>IsEmpty(ListItem.FileName) + StringCompare(ListItem.Label,..)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1844</left>
+				<top>285</top>
+				<width>21</width>
+				<height>637</height>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<texturesliderbackground border="7">local/bar_vert.png</texturesliderbackground>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<textureslidernib>local/nib.png</textureslidernib>
+				<textureslidernibfocus>local/nib.png</textureslidernibfocus>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<animation effect="fade" start="100" end="40" time="300" condition="!Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>60</left>
+				<top>43</top>
+				<width min="20" max="600">auto</width>
+				<height>44</height>
+				<font>font44</font>
+				<textcolor>white60</textcolor>
+				<aligny>center</aligny>
+				<label>音乐</label>
+			</control>
+			<control type="label">
+				<right>150</right>
+				<top>43</top>
+				<width>auto</width>
+				<height>40</height>
+				<font>font40</font>
+				<textcolor>white40</textcolor>
+				<label>$INFO[System.Time(HH:MM)]</label>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" condition="Player.HasMedia + StringCompare(Window(home).Property(NowisPlaying),1)">Conditional</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include>Visible_Fade_Animation</include>
+			<include>Window_OpenClose_Fade_Animation</include>
+			<control type="grouplist">
+				<left>70</left>
+				<top>55</top>
+				<width>1648</width>
+				<height>64</height>
+				<itemgap>30</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="20" max="960">auto</width>
+					<height>64</height>
+					<font>font64_bold</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+					<label>$VAR[FolderNameVar]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="PictureList">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include>Visible_Fade_Animation</include>
+			<control type="label">
+				<left>177</left>
+				<top>228</top>
+				<width>2000</width>
+				<height>44</height>
+				<font>font36_bold</font>
+				<textcolor>white70</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[container.foldervolumelabel]</label>
+				<visible>container.folderhasvolumelabel</visible>
+			</control>
+			<control type="panel" id="50">
+				<left>140</left>
+				<top>285</top>
+				<width>1780</width>
+				<height>634</height>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>333</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+				<visible>!StringCompare(Container.FolderPath,sources://pictures/)</visible>
+				<viewtype label="LocalPicture">icon</viewtype>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="317" width="280">
+					<control type="image">
+						<left>37</left>
+						<top>50</top>
+						<width>206</width>
+						<height>206</height>
+						<texture fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>20</bordersize>
+						<visible>ListItem.IsFolder</visible>
+					</control>
+					<control type="image">
+						<left>37</left>
+						<top>50</top>
+						<width>206</width>
+						<height>206</height>
+						<texture fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<bordersize>12</bordersize>
+						<visible>!ListItem.IsFolder</visible>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>返回</label>
+						<visible>StringCompare(ListItem.Label,..)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+					<control type="label">
+						<top>267</top>
+						<width>280</width>
+						<height>44</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font32</font>
+						<selectedcolor>white</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<animation type="Conditional" condition="true" reversible="false">
+							<effect type="fade" start="100" end="60" time="0" />
+						</animation>
+					</control>
+				</itemlayout>
+				<focusedlayout height="317" width="280">
+					<control type="group">
+						<animation effect="zoom" center="auto" start="100" end="130" time="300" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="auto" start="130" end="100" time="300" tween="quadratic" reversible="false">Unfocus</animation>
+						<control type="image">
+							<left>37</left>
+							<top>50</top>
+							<width>206</width>
+							<height>206</height>
+							<texture fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>18</bordersize>
+							<visible>ListItem.IsFolder</visible>
+						</control>
+						<control type="image">
+							<left>37</left>
+							<top>50</top>
+							<width>206</width>
+							<height>206</height>
+							<texture fallback="DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+							<bordersize>12</bordersize>
+							<visible>!ListItem.IsFolder</visible>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>返回</label>
+							<visible>StringCompare(ListItem.Label,..)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+						<control type="label">
+							<top>267</top>
+							<width>280</width>
+							<height>44</height>
+							<textoffsetx>10</textoffsetx>
+							<font>font32</font>
+							<selectedcolor>white</selectedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!StringCompare(ListItem.Label,..)</visible>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="60" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="60" time="300" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1844</left>
+				<top>285</top>
+				<width>21</width>
+				<height>637</height>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<texturesliderbackground border="7">local/bar_vert.png</texturesliderbackground>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<textureslidernib>local/nib.png</textureslidernib>
+				<textureslidernibfocus>local/nib.png</textureslidernibfocus>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<animation effect="fade" start="100" end="40" time="300" condition="!Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>60</left>
+				<top>43</top>
+				<width min="20" max="600">auto</width>
+				<height>44</height>
+				<font>font44</font>
+				<textcolor>white60</textcolor>
+				<aligny>center</aligny>
+				<label>图片</label>
+			</control>
+			<control type="label">
+				<right>150</right>
+				<top>43</top>
+				<width>auto</width>
+				<height>40</height>
+				<font>font40</font>
+				<textcolor>white40</textcolor>
+				<label>$INFO[System.Time(HH:MM)]</label>
+				<animation effect="slide" start="0,0" end="0,-20" time="0" condition="Player.HasMedia + StringCompare(Window(home).Property(NowisPlaying),1)">Conditional</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include>Visible_Fade_Animation</include>
+			<include>Window_OpenClose_Fade_Animation</include>
+			<control type="grouplist">
+				<left>70</left>
+				<top>55</top>
+				<width>1648</width>
+				<height>64</height>
+				<itemgap>30</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width min="20" max="960">auto</width>
+					<height>64</height>
+					<font>font64_bold</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+					<label>$VAR[FolderNameVar]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

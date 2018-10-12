@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>6000</defaultcontrol>
+	<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<zorder>2</zorder>
+	<!-- ToDo: Figure out how to set focus in the filter list to current applied filter -->
+	<controls>
+		<control type="group">
+			<description>Left Menu</description>
+			<left>-960</left>
+			<animation effect="slide" tween="cubic" time="500" start="0" end="960">WindowOpen</animation>
+			<animation effect="slide" tween="cubic" time="400" start="960" end="0">WindowClose</animation>
+			<control type="image">
+				<width>480</width>
+				<height>100%</height>
+				<texture colordiffuse="white80">list/apps/left_bg.png</texture>
+			</control>
+			<control type="image">
+				<left>480</left>
+				<width>480</width>
+				<height>100%</height>
+				<texture>list/apps/left_bg.png</texture>
+			</control>
+			<control type="image">
+				<top>137</top>
+				<width>480</width>
+				<height>3</height>
+				<texture>dialogs/episode/line.png</texture>
+			</control>
+			<control type="label">
+				<top>50</top>
+				<width>480</width>
+				<height>36</height>
+				<font>font36</font>
+				<align>center</align>
+				<textcolor>white60</textcolor>
+				<label>播放设置</label>
+			</control>
+			<control type="label">
+				<left>480</left>
+				<top>522</top>
+				<width>480</width>
+				<height>36</height>
+				<font>font36</font>
+				<align>center</align>
+				<textcolor>white60</textcolor>
+				<label>暂无字幕</label>
+				<visible>!VideoPlayer.HasSubtitles</visible>
+			</control>
+			<control type="list" id="6000">
+				<description>Menu List</description>
+				<left>74</left>
+				<top>290</top>
+				<width>335</width>
+				<height>720</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>noop</onleft>
+				<onright condition="StringCompare(Container(6000).CurrentItem,1)">60001</onright>
+				<onright condition="StringCompare(Container(6000).CurrentItem,2)">60002</onright>
+				<onright condition="StringCompare(Container(6000).CurrentItem,3)">60003</onright>
+				<onright condition="StringCompare(Container(6000).CurrentItem,4)">60004</onright>
+				<onright condition="StringCompare(Container(6000).CurrentItem,5)">60005</onright>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<itemlayout height="143" width="335">
+					<control type="label">
+						<top>20</top>
+						<width>335</width>
+						<height>40</height>
+						<textcolor>white60</textcolor>
+						<align>center</align>
+						<font>font36</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="143" width="335">
+					<control type="group">
+						<animation effect="zoom" center="auto" start="100" end="120" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="auto" start="120" end="100" time="200" tween="quadratic" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>-43</left>
+							<top>-4</top>
+							<width>422</width>
+							<height>135</height>
+							<texture>home/menu/menu_fo.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<left>61</left>
+							<top>25</top>
+							<width>4</width>
+							<height>30</height>
+							<texture>home/menu/focus_line.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						</control>
+						<control type="image">
+							<left>61</left>
+							<top>25</top>
+							<width>4</width>
+							<height>30</height>
+							<texture>home/menu/focus_line.png</texture>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+						<control type="label">
+							<top>20</top>
+							<width>335</width>
+							<height>40</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font36</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<top>20</top>
+							<width>335</width>
+							<height>40</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font36</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- Subtitle -->
+						<label>字幕</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="2">
+						<!-- Audio Stream -->
+						<label>音轨</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<!-- Play Mode -->
+						<label>播放顺序</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<!-- 3D -->
+						<label>3D模式</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<!-- Audio Mode -->
+						<label>音频设置</label>
+						<onclick>noop</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="60001">
+				<description>Subtitle Menu</description>
+				<left>496</left>
+				<top>494</top>
+				<width>460</width>
+				<height>650</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>6000</onleft>
+				<onright>noop</onright>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<visible>StringCompare(Container(6000).CurrentItem,1)</visible>
+				<itemlayout height="123" width="332">
+					<control type="image">
+						<left>52</left>
+						<width>360</width>
+						<height>98</height>
+						<texture>dialogs/episode/button_nf.png</texture>
+					</control>
+					<control type="label">
+						<left>97</left>
+						<top>25</top>
+						<width>332</width>
+						<height>32</height>
+						<textcolor>white60</textcolor>
+						<font>font32</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>262</left>
+						<top>31</top>
+						<width>332</width>
+						<height>26</height>
+						<textcolor>white40</textcolor>
+						<font>font26</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="123" width="332">
+					<control type="group">
+						<animation effect="zoom" center="249,39" start="100" end="120" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="249,39" start="120" end="100" time="200" tween="quadratic" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>52</left>
+							<width>360</width>
+							<height>98</height>
+							<texture>dialogs/episode/button_nf.png</texture>
+						</control>
+						<control type="image">
+							<width>460</width>
+							<height>162</height>
+							<texture>dialogs/episode/button_fo.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+						<control type="label">
+							<left>97</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>97</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(60001)</visible>
+						</control>
+						<control type="label">
+							<left>262</left>
+							<top>31</top>
+							<width>332</width>
+							<height>26</height>
+							<textcolor>white80</textcolor>
+							<font>font26</font>
+							<label>$INFO[ListItem.Label2]</label>
+							<animation effect="fade" start="40" end="80" time="100">Focus</animation>
+							<animation effect="fade" start="80" end="40" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>262</left>
+							<top>31</top>
+							<width>332</width>
+							<height>26</height>
+							<textcolor>white80</textcolor>
+							<font>font26</font>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(60001)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- Cycle Subtitle -->
+						<label>切换字幕</label>
+						<label2>[B]当前$VAR[SubtitlesLanguageVar][/B]</label2>
+						<onclick>CycleSubtitle</onclick>
+						<visible>VideoPlayer.HasSubtitles</visible>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="60002">
+				<description>Audio Stream</description>
+				<left>496</left>
+				<top>494</top>
+				<width>460</width>
+				<height>650</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>6000</onleft>
+				<onright>noop</onright>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<visible>StringCompare(Container(6000).CurrentItem,2)</visible>
+				<itemlayout height="123" width="332">
+					<control type="image">
+						<left>52</left>
+						<width>360</width>
+						<height>98</height>
+						<texture>dialogs/episode/button_nf.png</texture>
+					</control>
+					<control type="label">
+						<left>97</left>
+						<top>25</top>
+						<width>332</width>
+						<height>32</height>
+						<textcolor>white60</textcolor>
+						<font>font32</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>262</left>
+						<top>31</top>
+						<width>332</width>
+						<height>26</height>
+						<textcolor>white40</textcolor>
+						<font>font26</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="123" width="332">
+					<control type="group">
+						<animation effect="zoom" center="249,39" start="100" end="120" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="249,39" start="120" end="100" time="200" tween="quadratic" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>52</left>
+							<width>360</width>
+							<height>98</height>
+							<texture>dialogs/episode/button_nf.png</texture>
+						</control>
+						<control type="image">
+							<width>460</width>
+							<height>162</height>
+							<texture>dialogs/episode/button_fo.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+						<control type="label">
+							<left>97</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>262</left>
+							<top>31</top>
+							<width>332</width>
+							<height>26</height>
+							<textcolor>white80</textcolor>
+							<font>font26</font>
+							<label>$INFO[ListItem.Label2]</label>
+							<animation effect="fade" start="40" end="80" time="100">Focus</animation>
+							<animation effect="fade" start="80" end="40" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>97</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(60002)</visible>
+						</control>
+						<control type="label">
+							<left>262</left>
+							<top>31</top>
+							<width>332</width>
+							<height>26</height>
+							<textcolor>white80</textcolor>
+							<font>font26</font>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(60002)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- Next Audio Language -->
+						<label>切换音轨</label>
+						<label2>[B]当前$VAR[AudioLanguageVar][/B]</label2>
+						<onclick>AudioNextLanguage</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="60003">
+				<description>Play Mode List</description>
+				<left>496</left>
+				<top>371</top>
+				<width>460</width>
+				<height>650</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>6000</onleft>
+				<onright>noop</onright>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<visible>StringCompare(Container(6000).CurrentItem,3)</visible>
+				<itemlayout height="123" width="332">
+					<control type="image">
+						<left>52</left>
+						<width>360</width>
+						<height>98</height>
+						<texture>dialogs/episode/button_nf.png</texture>
+					</control>
+					<control type="image">
+						<left>322</left>
+						<top>28</top>
+						<width>30</width>
+						<height>30</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>62</left>
+						<top>25</top>
+						<width>332</width>
+						<height>32</height>
+						<textcolor>white60</textcolor>
+						<align>center</align>
+						<font>font32</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="123" width="332">
+					<control type="group">
+						<animation effect="zoom" center="249,39" start="100" end="120" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="249,39" start="120" end="100" time="200" tween="quadratic" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>52</left>
+							<width>360</width>
+							<height>98</height>
+							<texture>dialogs/episode/button_nf.png</texture>
+						</control>
+						<control type="image">
+							<width>460</width>
+							<height>162</height>
+							<texture>dialogs/episode/button_fo.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+						<control type="image">
+							<left>322</left>
+							<top>28</top>
+							<width>30</width>
+							<height>30</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>62</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>62</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(60003)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- Repeat All -->
+						<label>列表循环</label>
+						<icon>$VAR[PlayRepeatAllVar]</icon>
+						<onclick>PlayerControl(RepeatAll)</onclick>
+						<onclick>PlayerControl(RandomOff)</onclick>
+					</item>
+					<item id="2">
+						<!-- Repeat One -->
+						<label>单片循环</label>
+						<icon>$VAR[PlayRepeatOneVar]</icon>
+						<onclick>PlayerControl(RepeatOne)</onclick>
+						<onclick>PlayerControl(RandomOff)</onclick>
+					</item>
+					<item id="3">
+						<!-- Random On -->
+						<label>随机播放</label>
+						<icon>$VAR[PlayRandomVar]</icon>
+						<onclick>PlayerControl(RepeatAll)</onclick>
+						<onclick>PlayerControl(RandomOn)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="60004">
+				<description>3D Mode List</description>
+				<left>496</left>
+				<top>371</top>
+				<width>460</width>
+				<height>650</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>6000</onleft>
+				<onright>noop</onright>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<visible>StringCompare(Container(6000).CurrentItem,4)</visible>
+				<itemlayout height="123" width="332">
+					<control type="image">
+						<left>52</left>
+						<width>360</width>
+						<height>98</height>
+						<texture>dialogs/episode/button_nf.png</texture>
+					</control>
+					<control type="image">
+						<left>322</left>
+						<top>28</top>
+						<width>30</width>
+						<height>30</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>62</left>
+						<top>25</top>
+						<width>332</width>
+						<height>32</height>
+						<textcolor>white60</textcolor>
+						<align>center</align>
+						<font>font32</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="123" width="332">
+					<control type="group">
+						<animation effect="zoom" center="249,39" start="100" end="120" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="249,39" start="120" end="100" time="200" tween="quadratic" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>52</left>
+							<width>360</width>
+							<height>98</height>
+							<texture>dialogs/episode/button_nf.png</texture>
+						</control>
+						<control type="image">
+							<width>460</width>
+							<height>162</height>
+							<texture>dialogs/episode/button_fo.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+						<control type="image">
+							<left>322</left>
+							<top>28</top>
+							<width>30</width>
+							<height>30</height>
+							<texture>$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>62</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>62</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(60004)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- Left Right -->
+						<label>3D左右</label>
+						<icon>$VAR[3DModeLeftRightVar]</icon>
+						<onclick>SetStereoMode(split_vertical)</onclick>
+						<onclick>RunScript(script.startup.pptv, 3D, leftright)</onclick>
+						<onclick>SetProperty(3DMode,LeftRight,home)</onclick>
+					</item>
+					<item id="2">
+						<!-- Up Down -->
+						<label>3D上下</label>
+						<icon>$VAR[3DModeUpDownVar]</icon>
+						<onclick>SetStereoMode(split_horizontal)</onclick>
+						<onclick>RunScript(script.startup.pptv, 3D, updown)</onclick>
+						<onclick>SetProperty(3DMode,UpDown,home)</onclick>
+					</item>
+					<item id="3">
+						<!-- Close -->
+						<label>3D关闭</label>
+						<icon>$VAR[3DModeCloseVar]</icon>
+						<onclick>SetStereoMode(off)</onclick>
+						<onclick>RunScript(script.startup.pptv, 3D, close)</onclick>
+						<onclick>ClearProperty(3DMode,home)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="60005">
+				<description>Subtitle Menu</description>
+				<left>496</left>
+				<top>494</top>
+				<width>460</width>
+				<height>650</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>6000</onleft>
+				<onright>noop</onright>
+				<pagecontrol />
+				<scrolltime tween="quadratic">300</scrolltime>
+				<visible>StringCompare(Container(6000).CurrentItem,5)</visible>
+				<itemlayout height="123" width="332">
+					<control type="image">
+						<left>52</left>
+						<width>360</width>
+						<height>98</height>
+						<texture>dialogs/episode/button_nf.png</texture>
+					</control>
+					<control type="label">
+						<left>62</left>
+						<top>25</top>
+						<width>332</width>
+						<height>32</height>
+						<textcolor>white60</textcolor>
+						<align>center</align>
+						<font>font32</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="123" width="332">
+					<control type="group">
+						<animation effect="zoom" center="249,39" start="100" end="120" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="249,39" start="120" end="100" time="200" tween="quadratic" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>52</left>
+							<width>360</width>
+							<height>98</height>
+							<texture>dialogs/episode/button_nf.png</texture>
+						</control>
+						<control type="image">
+							<width>460</width>
+							<height>162</height>
+							<texture>dialogs/episode/button_fo.png</texture>
+							<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+							<visible>!Control.HasFocus(6000)</visible>
+						</control>
+						<control type="label">
+							<left>62</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="fade" start="60" end="100" time="100">Focus</animation>
+							<animation effect="fade" start="100" end="60" time="100">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>62</left>
+							<top>25</top>
+							<width>332</width>
+							<height>32</height>
+							<textcolor>white</textcolor>
+							<align>center</align>
+							<font>font32</font>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(60005)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- PassThrough -->
+						<label>$VAR[PassThroughVar]</label>
+						<onclick>RunScript(special://skin/extras/audio_switch.py)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="HomeWidgetListPosterLayout">
+		<itemlayout width="317" height="568">
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_poster.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>262</left>
+				<top>76</top>
+				<width>110</width>
+				<height>39</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="317" height="568">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_poster.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>262</left>
+					<top>76</top>
+					<width>110</width>
+					<height>39</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_poster.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<top>416</top>
+					<width>448</width>
+					<height>81</height>
+					<texture>home/thumbs/text_overlay_poster.png</texture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore) + !StringCompare(ListItem.Property(appid),GetMore)</visible>
+				</control>
+				<control type="label">
+					<left>224</left>
+					<centerbottom>19%</centerbottom>
+					<width>296</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListLandscapeLayout">
+		<itemlayout width="629" height="568">
+			<control type="image">
+				<width>760</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_poster.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>760</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>574</left>
+				<top>76</top>
+				<width>110</width>
+				<height>39</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="629" height="568">
+			<control type="group">
+				<animation effect="zoom" center="380,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="380,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>760</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_poster.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>760</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>760</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>574</left>
+					<top>76</top>
+					<width>110</width>
+					<height>39</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<width>760</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_poster.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<top>416</top>
+					<width>760</width>
+					<height>81</height>
+					<texture>home/thumbs/text_overlay_poster.png</texture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore) + !StringCompare(ListItem.Property(appid),GetMore)</visible>
+				</control>
+				<control type="label">
+					<left>536</left>
+					<centerbottom>19%</centerbottom>
+					<width>296</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListShopLayout">
+		<itemlayout width="341" height="602">
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_poster.png</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture diffuse="home/thumbs/diffuse_poster.png">home/thumbs/diffuse_poster.png</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>86</left>
+				<top>86</top>
+				<width>300</width>
+				<height>300</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>$INFO[ListItem.Property(ShopIcon)]</texture>
+			</control>
+			<control type="label">
+				<left>76</left>
+				<centerbottom>32%</centerbottom>
+				<width>320</width>
+				<aligny>center</aligny>
+				<font>fontnumber</font>
+				<textcolor>FF4192fa</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<label>$INFO[ListItem.Property(Price)]</label>
+			</control>
+			<control type="textbox">
+				<left>96</left>
+				<top>430</top>
+				<width>280</width>
+				<height>60</height>
+				<font>font24_textbox</font>
+				<textcolor>FF444444</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<left>76</left>
+				<centerbottom>19%</centerbottom>
+				<width>320</width>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>FF444444</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="341" height="602">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="200" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_poster.png</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">home/thumbs/diffuse_poster.png</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">home/thumbs/diffuse_poster.png</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>86</left>
+					<top>86</top>
+					<width>300</width>
+					<height>300</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>home/thumbs/shop_fo.png</texture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<left>86</left>
+					<top>86</top>
+					<width>300</width>
+					<height>300</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(ShopIcon)]</texture>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<texture>home/thumbs/list_fo_poster.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>76</left>
+					<centerbottom>32%</centerbottom>
+					<width>320</width>
+					<aligny>center</aligny>
+					<font>fontnumber</font>
+					<textcolor>FF4192fa</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Property(Price)]</label>
+				</control>
+				<control type="textbox">
+					<left>96</left>
+					<top>430</top>
+					<width>280</width>
+					<height>60</height>
+					<font>font24_textbox</font>
+					<textcolor>FF444444</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>76</left>
+					<centerbottom>19%</centerbottom>
+					<width>320</width>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>FF444444</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListAppsLayout">
+		<itemlayout width="317" height="568">
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>127</left>
+				<top>132</top>
+				<width>194</width>
+				<height>194</height>
+				<texture>home/thumbs/app_icon_bg.png</texture>
+				<visible>!IsEmpty(ListItem.Property(AppIcon))</visible>
+			</control>
+			<control type="image">
+				<left>140</left>
+				<top>140</top>
+				<width>168</width>
+				<height>168</height>
+				<texture diffuse="home/thumbs/diffuse_app_icon.png">$INFO[ListItem.Property(AppIcon)]</texture>
+				<visible>!IsEmpty(ListItem.Property(AppIcon))</visible>
+			</control>
+			<control type="label">
+				<left>236</left>
+				<centerbottom>23%</centerbottom>
+				<width>320</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font36</font>
+				<textcolor>white80</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="317" height="568">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="200" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>127</left>
+					<top>132</top>
+					<width>194</width>
+					<height>194</height>
+					<texture>home/thumbs/app_icon_bg.png</texture>
+					<visible>!IsEmpty(ListItem.Property(AppIcon))</visible>
+				</control>
+				<control type="image">
+					<left>140</left>
+					<top>140</top>
+					<width>168</width>
+					<height>168</height>
+					<texture diffuse="home/thumbs/diffuse_app_icon.png">$INFO[ListItem.Property(AppIcon)]</texture>
+					<visible>!IsEmpty(ListItem.Property(AppIcon))</visible>
+				</control>
+				<control type="label">
+					<left>236</left>
+					<centerbottom>23%</centerbottom>
+					<width>320</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>white80</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListPoster2Layout">
+		<itemlayout width="341" height="602">
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture diffuse="home/thumbs/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>286</left>
+				<top>76</top>
+				<width>110</width>
+				<height>39</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture diffuse="home/overlays/diffuse_overlay.png">$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<texture border="20">home/thumbs/text_overlay.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!IsEmpty(ListItem.Label)</visible>
+			</control>
+			<control type="label">
+				<left>236</left>
+				<centerbottom>19%</centerbottom>
+				<width>320</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font36</font>
+				<textcolor>white</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="progress">
+				<left>76</left>
+				<top>520</top>
+				<width>320</width>
+				<height>6</height>
+				<texturebg>home/progress/texturebg.png</texturebg>
+				<lefttexture />
+				<midtexture>home/progress/midtexture.png</midtexture>
+				<righttexture />
+				<reveal>true</reveal>
+				<info>ListItem.Property(Progress)</info>
+				<visible>!IsEmpty(ListItem.Property(Progress))</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="341" height="602">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="116" time="200" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="116" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>286</left>
+					<top>76</top>
+					<width>110</width>
+					<height>39</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture diffuse="home/overlays/diffuse_overlay.png">$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<texture border="20">home/thumbs/text_overlay.png</texture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="1">UnFocus</animation>
+					<animation effect="fade" start="100" end="0" time="1">Focus</animation>
+					<visible>!IsEmpty(ListItem.Label)</visible>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<texture border="20">home/thumbs/text_overlay_fo.png</texture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="1">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="1">UnFocus</animation>
+					<visible>!IsEmpty(ListItem.Label)</visible>
+				</control>
+				<control type="label">
+					<left>236</left>
+					<centerbottom>19%</centerbottom>
+					<width>320</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>white</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="slide" start="0" end="0,-40" time="10" tween="cubic" easing="inout">Focus</animation>
+					<animation effect="slide" end="0" start="0,-40" time="10" tween="cubic" easing="inout">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>236</left>
+					<centerbottom>18%</centerbottom>
+					<width>320</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>white40</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Property(ProgressTime)]</label>
+					<animation effect="fade" start="0" end="100" time="100" delay="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="progress">
+					<left>76</left>
+					<top>520</top>
+					<width>320</width>
+					<height>6</height>
+					<texturebg>home/progress/texturebg.png</texturebg>
+					<lefttexture />
+					<midtexture>home/progress/midtexture.png</midtexture>
+					<righttexture />
+					<reveal>true</reveal>
+					<info>ListItem.Property(Progress)</info>
+					<visible>!IsEmpty(ListItem.Property(Progress))</visible>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListPoster3Layout">
+		<itemlayout width="341" height="602">
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture diffuse="home/thumbs/diffuse_poster.png">list/default/recommend_poster.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture diffuse="home/thumbs/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>286</left>
+				<top>76</top>
+				<width>110</width>
+				<height>39</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture diffuse="home/overlays/diffuse_overlay.png">$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+			<control type="image">
+				<width>472</width>
+				<height>602</height>
+				<texture border="20">home/thumbs/text_overlay.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!IsEmpty(ListItem.Label) + !StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="label">
+				<left>236</left>
+				<centerbottom>19%</centerbottom>
+				<width>320</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font36</font>
+				<textcolor>white</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="341" height="602">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="116" time="200" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="116" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">list/default/recommend_poster.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="home/thumbs/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>286</left>
+					<top>76</top>
+					<width>110</width>
+					<height>39</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture diffuse="home/overlays/diffuse_overlay.png">$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<width>472</width>
+					<height>602</height>
+					<texture border="20">home/thumbs/text_overlay.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!IsEmpty(ListItem.Label) + !StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="label">
+					<left>236</left>
+					<centerbottom>19%</centerbottom>
+					<width>320</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>white</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListLiveLayout">
+		<itemlayout width="630" height="568">
+			<control type="image">
+				<width>761</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_landscape.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>761</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>76</left>
+				<top>418</top>
+				<width>140</width>
+				<height>30</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>home/overlays/live_timebg.png</texture>
+				<visible>!IsEmpty(ListItem.Property(Time))</visible>
+			</control>
+			<control type="label">
+				<left>76</left>
+				<top>418</top>
+				<width>140</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<font>font22</font>
+				<textcolor>white</textcolor>
+				<textoffsetx>5</textoffsetx>
+				<label>$INFO[ListItem.Property(Time)]</label>
+			</control>
+			<control type="image">
+				<left>600</left>
+				<top>75</top>
+				<width>108</width>
+				<height>30</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="630" height="568">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_landscape.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_landscape.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<texture diffuse="home/thumbs/diffuse_landscape.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>76</left>
+					<top>418</top>
+					<width>140</width>
+					<height>30</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>home/overlays/live_timebg.png</texture>
+					<visible>!IsEmpty(ListItem.Property(Time))</visible>
+				</control>
+				<control type="label">
+					<left>76</left>
+					<top>418</top>
+					<width>140</width>
+					<height>30</height>
+					<aligny>center</aligny>
+					<font>font22</font>
+					<textcolor>white</textcolor>
+					<textoffsetx>5</textoffsetx>
+					<label>$INFO[ListItem.Property(Time)]</label>
+				</control>
+				<control type="image">
+					<left>600</left>
+					<top>75</top>
+					<width>108</width>
+					<height>30</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<top>416</top>
+					<width>761</width>
+					<height>83</height>
+					<texture>home/thumbs/text_overlay_landscape.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_landscape.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>381</left>
+					<centerbottom>19%</centerbottom>
+					<width>609</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListHistoryChannelLayout">
+		<itemlayout width="317" height="568" condition="StringCompare(Window.Property(MineHistory),1)">
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_poster.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>262</left>
+				<top>76</top>
+				<width>110</width>
+				<height>39</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+			<control type="progress">
+				<left>76</left>
+				<top>487</top>
+				<width>296</width>
+				<height>5</height>
+				<texturebg>list/mine/progress/texturebg.png</texturebg>
+				<lefttexture />
+				<midtexture>list/mine/progress/midtexture.png</midtexture>
+				<righttexture />
+				<reveal>true</reveal>
+				<info>ListItem.Property(Video.Played.Percent)</info>
+			</control>
+		</itemlayout>
+		<itemlayout width="630" height="568" condition="!StringCompare(Window.Property(MineHistory),1)">
+			<control type="image">
+				<width>761</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_landscape.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>761</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>76</left>
+				<top>418</top>
+				<width>140</width>
+				<height>30</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>home/overlays/live_timebg.png</texture>
+				<visible>!IsEmpty(ListItem.Property(Time))</visible>
+			</control>
+			<control type="label">
+				<left>76</left>
+				<top>418</top>
+				<width>140</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<font>font22</font>
+				<textcolor>white</textcolor>
+				<textoffsetx>5</textoffsetx>
+				<label>$INFO[ListItem.Property(Time)]</label>
+			</control>
+			<control type="image">
+				<left>600</left>
+				<top>75</top>
+				<width>108</width>
+				<height>30</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="317" height="568" condition="StringCompare(Window.Property(MineHistory),1)">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_poster.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>262</left>
+					<top>76</top>
+					<width>110</width>
+					<height>39</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_poster.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<top>290</top>
+					<width>448</width>
+					<height>278</height>
+					<texture>home/thumbs/text_overlay_poster.png</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore) + !StringCompare(ListItem.Property(appid),GetMore)</visible>
+				</control>
+				<control type="progress">
+					<left>76</left>
+					<top>487</top>
+					<width>296</width>
+					<height>5</height>
+					<texturebg>list/mine/progress/texturebg.png</texturebg>
+					<lefttexture />
+					<midtexture>list/mine/progress/midtexture.png</midtexture>
+					<righttexture />
+					<reveal>true</reveal>
+					<info>ListItem.Property(Video.Played.Percent)</info>
+				</control>
+				<control type="label">
+					<left>224</left>
+					<centerbottom>28%</centerbottom>
+					<width>296</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font32</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>224</left>
+					<centerbottom>21%</centerbottom>
+					<width>290</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font26</font>
+					<textcolor>9A000000</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label2]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+		<focusedlayout width="630" height="568" condition="!StringCompare(Window.Property(MineHistory),1)">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_landscape.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_landscape.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<texture diffuse="home/thumbs/diffuse_landscape.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>76</left>
+					<top>418</top>
+					<width>140</width>
+					<height>30</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>home/overlays/live_timebg.png</texture>
+					<visible>!IsEmpty(ListItem.Property(Time))</visible>
+				</control>
+				<control type="label">
+					<left>76</left>
+					<top>418</top>
+					<width>140</width>
+					<height>30</height>
+					<aligny>center</aligny>
+					<font>font22</font>
+					<textcolor>white</textcolor>
+					<textoffsetx>5</textoffsetx>
+					<label>$INFO[ListItem.Property(Time)]</label>
+				</control>
+				<control type="image">
+					<left>600</left>
+					<top>75</top>
+					<width>108</width>
+					<height>30</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<top>416</top>
+					<width>761</width>
+					<height>83</height>
+					<texture>home/thumbs/text_overlay_landscape.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_landscape.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>381</left>
+					<centerbottom>19%</centerbottom>
+					<width>609</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListPosterChannelLayout">
+		<itemlayout width="630" height="568" condition="StringCompare(Window.Property(MineHistory),1)">
+			<control type="image">
+				<width>761</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_landscape.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>761</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>76</left>
+				<top>418</top>
+				<width>140</width>
+				<height>30</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>home/overlays/live_timebg.png</texture>
+				<visible>!IsEmpty(ListItem.Property(Time))</visible>
+			</control>
+			<control type="label">
+				<left>76</left>
+				<top>418</top>
+				<width>140</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<font>font22</font>
+				<textcolor>white</textcolor>
+				<textoffsetx>5</textoffsetx>
+				<label>$INFO[ListItem.Property(Time)]</label>
+			</control>
+			<control type="image">
+				<left>600</left>
+				<top>75</top>
+				<width>108</width>
+				<height>30</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<itemlayout width="317" height="568" condition="!StringCompare(Window.Property(MineHistory),1)">
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>list/default/recommend_poster.png</texture>
+				<bordersize>76</bordersize>
+				<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+			</control>
+			<control type="image">
+				<width>448</width>
+				<height>568</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>76</bordersize>
+			</control>
+			<control type="image">
+				<left>262</left>
+				<top>76</top>
+				<width>110</width>
+				<height>39</height>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="630" height="568" condition="StringCompare(Window.Property(MineHistory),1)">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_landscape.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_landscape.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<texture diffuse="home/thumbs/diffuse_landscape.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>76</left>
+					<top>418</top>
+					<width>140</width>
+					<height>30</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>home/overlays/live_timebg.png</texture>
+					<visible>!IsEmpty(ListItem.Property(Time))</visible>
+				</control>
+				<control type="label">
+					<left>76</left>
+					<top>418</top>
+					<width>140</width>
+					<height>30</height>
+					<aligny>center</aligny>
+					<font>font22</font>
+					<textcolor>white</textcolor>
+					<textoffsetx>5</textoffsetx>
+					<label>$INFO[ListItem.Property(Time)]</label>
+				</control>
+				<control type="image">
+					<left>600</left>
+					<top>75</top>
+					<width>108</width>
+					<height>30</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<top>416</top>
+					<width>761</width>
+					<height>83</height>
+					<texture>home/thumbs/text_overlay_landscape.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>761</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_landscape.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>381</left>
+					<centerbottom>19%</centerbottom>
+					<width>609</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+		<focusedlayout width="317" height="568" condition="!StringCompare(Window.Property(MineHistory),1)">
+			<control type="group">
+				<animation effect="zoom" center="236,301" start="100" end="106" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="236,301" start="106" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>list/default/recommend_poster.png</texture>
+					<bordersize>76</bordersize>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore)</visible>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture border="76">home/thumbs/shadow_poster.png</bordertexture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordersize>76</bordersize>
+				</control>
+				<control type="image">
+					<left>262</left>
+					<top>76</top>
+					<width>110</width>
+					<height>39</height>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<width>448</width>
+					<height>568</height>
+					<texture>home/thumbs/list_fo_poster.png</texture>
+					<bordersize>70</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<top>416</top>
+					<width>448</width>
+					<height>81</height>
+					<texture>home/thumbs/text_overlay_poster.png</texture>
+					<bordersize>76</bordersize>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore) + !StringCompare(ListItem.Property(appid),GetMore)</visible>
+				</control>
+				<control type="label">
+					<left>224</left>
+					<centerbottom>19%</centerbottom>
+					<width>296</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font36</font>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListWideLayout">
+		<itemlayout width="537" height="357">
+			<control type="image">
+				<left>52</left>
+				<top>5</top>
+				<width>480</width>
+				<height>312</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture fallback="list/default/recommend_landscape.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>52</left>
+				<top>329</top>
+				<width>480</width>
+				<height>24</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>66F2F2F2</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="image">
+				<left>62</left>
+				<top>15</top>
+				<width>100</width>
+				<height>100</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="537" height="357">
+			<control type="group">
+				<animation effect="zoom" center="257,163" start="100" end="116" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="257,163" start="116" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<left>52</left>
+					<top>5</top>
+					<width>480</width>
+					<height>312</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture>home/thumbs/shadow_poster.png</bordertexture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>5</top>
+					<width>480</width>
+					<height>312</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="list/default/recommend_landscape.png">$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="image">
+					<left>62</left>
+					<top>15</top>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<left>47</left>
+					<width>490</width>
+					<height>322</height>
+					<texture>home/thumbs/list_fo_landscape.png</texture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<top>225</top>
+					<width>384</width>
+					<height>114</height>
+					<texture>list/thumbs/label_overlay_landscape.png</texture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="label">
+					<left>42</left>
+					<top>247</top>
+					<width>300</width>
+					<height>24</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>FFF2F2F2</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListThinLayout">
+		<itemlayout width="246" height="357">
+			<control type="image">
+				<left>52</left>
+				<top>5</top>
+				<width>234</width>
+				<height>312</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture fallback="list/default/recommend_poster.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>52</left>
+				<top>329</top>
+				<width>234</width>
+				<height>24</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>66F2F2F2</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="image">
+				<left>62</left>
+				<top>15</top>
+				<width>100</width>
+				<height>100</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$INFO[ListItem.Property(Overlay)]</texture>
+			</control>
+			<control type="image">
+				<left>112</left>
+				<top>104</top>
+				<width>114</width>
+				<height>114</height>
+				<texture>$INFO[ListItem.Property(AppIcon)]</texture>
+				<visible>!IsEmpty(ListItem.Property(AppIcon))</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="281" height="357">
+			<control type="group">
+				<animation effect="zoom" center="140,163" start="100" end="116" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="140,163" start="116" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<left>52</left>
+					<top>5</top>
+					<width>234</width>
+					<height>312</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<bordertexture>home/thumbs/shadow_poster.png</bordertexture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<left>52</left>
+					<top>5</top>
+					<width>234</width>
+					<height>312</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="image">
+					<left>62</left>
+					<top>15</top>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<texture>$INFO[ListItem.Property(Overlay)]</texture>
+				</control>
+				<control type="image">
+					<left>112</left>
+					<top>104</top>
+					<width>114</width>
+					<height>114</height>
+					<texture>$INFO[ListItem.Property(AppIcon)]</texture>
+					<visible>!IsEmpty(ListItem.Property(AppIcon))</visible>
+				</control>
+				<control type="image">
+					<left>47</left>
+					<width>244</width>
+					<height>322</height>
+					<texture>home/thumbs/list_fo_poster.png</texture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+				<control type="image">
+					<top>225</top>
+					<width>258</width>
+					<height>118</height>
+					<texture>list/thumbs/label_overlay_poster.png</texture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+					<visible>!StringCompare(ListItem.Property(cid),GetMore) + !StringCompare(ListItem.Property(type),GetMore)</visible>
+				</control>
+				<control type="label">
+					<left>44</left>
+					<top>247</top>
+					<width>167</width>
+					<height>24</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>FFF2F2F2</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListEntranceLayout">
+		<itemlayout width="246" height="162">
+			<control type="image">
+				<left>5</left>
+				<top>5</top>
+				<width>234</width>
+				<height>150</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout width="251" height="167">
+			<control type="group">
+				<animation effect="zoom" center="122,80" start="100" end="116" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="122,80" start="116" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<left>5</left>
+					<top>5</top>
+					<width>234</width>
+					<height>150</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture>$INFO[ListItem.Icon]</texture>
+				</control>
+				<control type="image">
+					<width>244</width>
+					<height>160</height>
+					<texture>home/thumbs/list_fo_landscape.png</texture>
+					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+				</control>
+			</control>
+		</focusedlayout>
+		<content>
+			<item>
+				<label>观看历史</label>
+				<icon>home/entrance/history.png</icon>
+				<onclick>RunScript(script.startup.pptv, history)</onclick>
+			</item>
+			<item>
+				<label>用户中心</label>
+				<icon>home/entrance/account.png</icon>
+				<onclick>RunScript(script.startup.pptv, account)</onclick>
+			</item>
+			<item>
+				<label>搜索</label>
+				<icon>home/entrance/search.png</icon>
+				<onclick>RunScript(script.pptv.search)</onclick>
+			</item>
+			<item>
+				<label>消息中心</label>
+				<icon>home/entrance/message.png</icon>
+				<onclick>noop</onclick>
+			</item>
+		</content>
+	</include>
+	<include name="HomeLeftWidgetList">
+		<param name="OnLeft2">Control.Move(9000,-1)</param>
+		<definition>
+			<control type="group">
+				<left>-265</left>
+				<top>37</top>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,1)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,2)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,3)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,4)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,5)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,6)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,7)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,8)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,9)">Conditional</animation>
+				<animation effect="slide" end="0,90" time="200" tween="cubic" easing="inout" condition="IntegerGreaterThan(Container($PARAM[ControlId]).CurrentItem,10)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200" delay="450" tween="sine">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+				<visible>Control.HasFocus($PARAM[ControlId])</visible>
+				<animation effect="fade" start="0" end="100" time="100">VisibleChange</animation>
+				<control type="image">
+					<width>275</width>
+					<height>131</height>
+					<texture>home/menu/menu_fo.png</texture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<left>68</left>
+					<top>26</top>
+					<width>4</width>
+					<height>30</height>
+					<texture>home/menu/focus_line.png</texture>
+				</control>
+			</control>
+			<control type="list" id="$PARAM[ControlId]">
+				<description>left widget menu</description>
+				<left>-265</left>
+				<top>37</top>
+				<width>275</width>
+				<height>720</height>
+				<onleft>$PARAM[OnLeft]</onleft>
+				<onleft>$PARAM[OnLeft2]</onleft>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,1)">$PARAM[ParentId]014</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,2)">$PARAM[ParentId]024</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,3)">$PARAM[ParentId]034</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,4)">$PARAM[ParentId]044</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,5)">$PARAM[ParentId]054</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,6)">$PARAM[ParentId]064</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,7)">$PARAM[ParentId]074</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,8)">$PARAM[ParentId]084</onright>
+				<onright condition="StringCompare(Container($PARAM[ControlId]).CurrentItem,9)">$PARAM[ParentId]094</onright>
+				<onup>9000</onup>
+				<ondown>noop</ondown>
+				<scrolltime tween="cubic">400</scrolltime>
+				<itemlayout width="275" height="90">
+					<control type="label">
+						<left>90</left>
+						<top>25</top>
+						<width>100%</width>
+						<height>100%</height>
+						<textcolor>white40</textcolor>
+						<font>font30</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="275" height="90">
+					<control type="button">
+						<include>HiddenObject</include>
+						<onfocus condition="[IsEmpty(Window(home).Property($PARAM[FocusId].Focus.Just.Once)) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),2)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,1)">SetFocus($PARAM[ParentId]014)</onfocus>
+						<onfocus condition="[IsEmpty(Window(home).Property($PARAM[FocusId].Focus.Just.Once)) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),2)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,1)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),1) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),3)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,2)">SetFocus($PARAM[ParentId]024)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),1) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),3)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,2)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),2) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),4)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,3)">SetFocus($PARAM[ParentId]034)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),2) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),4)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,3)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),3) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),5)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,4)">SetFocus($PARAM[ParentId]044)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),3) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),5)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,4)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),4) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),6)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,5)">SetFocus($PARAM[ParentId]054)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),4) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),6)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,5)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),5) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),7)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,6)">SetFocus($PARAM[ParentId]064)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),5) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),7)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,6)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),6) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),8)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,7)">SetFocus($PARAM[ParentId]074)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),6) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),8)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,7)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),7) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),9)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,8)">SetFocus($PARAM[ParentId]084)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),7) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),9)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,8)">SetFocus($PARAM[ControlId])</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),8) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),10)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,9)">SetFocus($PARAM[ParentId]094)</onfocus>
+						<onfocus condition="[StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),8) | StringCompare(Window(home).Property($PARAM[FocusId].Focus.Just.Once),10)] + StringCompare(Container($PARAM[ControlId]).CurrentItem,9)">SetFocus($PARAM[ControlId])</onfocus>
+						<enable>Control.HasFocus($PARAM[ControlId])</enable>
+					</control>
+					<control type="image">
+						<left>65</left>
+						<top>35</top>
+						<width>12</width>
+						<height>12</height>
+						<texture>home/menu/focus_dot.png</texture>
+						<visible>!Control.HasFocus($PARAM[ControlId])</visible>
+					</control>
+					<control type="label">
+						<left>90</left>
+						<top>25</top>
+						<width>100%</width>
+						<height>100%</height>
+						<font>font30</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" tween="quadratic" center="120,37" start="100" end="116" time="200" />
+							<effect type="fade" start="40" end="100" time="200" />
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" tween="quadratic" center="120,37" start="116" end="100" time="200" />
+							<effect type="fade" start="100" end="40" time="200" />
+						</animation>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<description>side mask</description>
+				<left>-175</left>
+				<top>30</top>
+				<control type="image">
+					<width>120</width>
+					<height>30</height>
+					<texture>home/menu/side_mask_top.png</texture>
+					<visible>!Control.HasFocus($PARAM[ControlId])</visible>
+				</control>
+				<control type="image">
+					<top>600</top>
+					<width>120</width>
+					<height>120</height>
+					<texture>home/menu/side_mask_bottom.png</texture>
+					<visible>!Control.HasFocus($PARAM[ControlId])</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+</includes>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_502_Games">
+		<control type="group">
+			<visible>Control.IsVisible(502)</visible>
+			<include>View_Animation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>List_Bounce_Animation</include>
+			<control type="list" id="502">
+				<left>40</left>
+				<top>200</top>
+				<width>1880</width>
+				<height>780</height>
+				<onleft>$VAR[BounceLeftVar]</onleft>
+				<onright>$VAR[BounceRightVar]</onright>
+				<onup condition="Player.HasMedia">333</onup>
+				<onup condition="!Player.HasMedia">9050</onup>
+				<ondown>60</ondown>
+				<onback>9050</onback>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="cubic">400</scrolltime>
+				<include>Bounce_Animation_Vert</include>
+				<orientation>horizontal</orientation>
+				<animation type="Conditional" condition="ControlGroup(9050).HasFocus()" reversible="true">
+					<effect type="slide" end="310" time="500" tween="cubic" easing="inout" />
+					<effect type="zoom" start="100" end="80" center="auto" time="500" tween="cubic" easing="inout" />
+				</animation>
+				<animation type="Conditional" condition="!IsEmpty(Window(Home).Property(Bounce.502.Right))" reversible="false">
+					<effect type="slide" end="-30" time="60" tween="sine" />
+					<effect type="slide" end="30" time="180" tween="sine" delay="80" />
+				</animation>
+				<itemlayout height="686" width="380">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>456</width>
+						<height>736</height>
+						<aspectratio>scale</aspectratio>
+						<texture>DefaultVideo.png</texture>
+						<bordertexture border="64">thumbs/lb_card_shadow_normal.png</bordertexture>
+						<bordersize>48,36,48,148</bordersize>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>456</width>
+						<height>736</height>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<bordersize>48,36,48,148</bordersize>
+					</control>
+					<control type="image">
+						<left>314</left>
+						<top>36</top>
+						<width>94</width>
+						<height>94</height>
+						<texture>$INFO[ListItem.Property(overlay)]</texture>
+					</control>
+					<control type="label">
+						<left>48</left>
+						<top>595</top>
+						<width>360</width>
+						<height>30</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font_card_title</font>
+						<textcolor>white40</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>48</left>
+						<top>635</top>
+						<width>360</width>
+						<height>30</height>
+						<textoffsetx>10</textoffsetx>
+						<font>font_card_subtext</font>
+						<textcolor>white40</textcolor>
+						<label>$INFO[ListItem.Property(downloadtimes)]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="686" width="380">
+					<control type="group">
+						<animation effect="zoom" start="100" end="115" center="auto" time="200" tween="cubic" easing="inout" reversible="false">Focus</animation>
+						<animation effect="zoom" end="100" start="115" center="auto" time="200" tween="cubic" easing="inout" reversible="false">UnFocus</animation>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>456</width>
+							<height>736</height>
+							<aspectratio>scale</aspectratio>
+							<texture>DefaultVideo.png</texture>
+							<bordertexture border="64">thumbs/lb_card_shadow_normal.png</bordertexture>
+							<bordersize>48,36,48,148</bordersize>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>456</width>
+							<height>736</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<bordersize>48,36,48,148</bordersize>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>456</width>
+							<height>736</height>
+							<texture border="64">thumbs/card_shadow_focused.png</texture>
+							<animation effect="fade" start="0" end="100" time="200" reversible="false">Focus</animation>
+							<animation effect="fade" start="100" end="0" time="200" reversible="false">UnFocus</animation>
+						</control>
+						<control type="image">
+							<left>314</left>
+							<top>36</top>
+							<width>94</width>
+							<height>94</height>
+							<texture>$INFO[ListItem.Property(overlay)]</texture>
+						</control>
+						<control type="group">
+							<animation effect="fade" start="40" end="80" time="200" reversible="false">Focus</animation>
+							<animation effect="fade" start="80" end="40" time="200" reversible="false">UnFocus</animation>
+							<control type="label">
+								<left>48</left>
+								<top>595</top>
+								<width>360</width>
+								<height>30</height>
+								<textoffsetx>10</textoffsetx>
+								<font>font_card_title</font>
+								<textcolor>white</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<left>48</left>
+								<top>635</top>
+								<width>360</width>
+								<height>30</height>
+								<textoffsetx>10</textoffsetx>
+								<font>font_card_subtext</font>
+								<textcolor>white</textcolor>
+								<label>$INFO[ListItem.Property(downloadtimes)]</label>
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

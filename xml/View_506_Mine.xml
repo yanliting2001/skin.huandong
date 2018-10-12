@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_506_Mine">
+		<control type="group">
+			<description>Mine View</description>
+			<visible>Control.IsVisible(506)</visible>
+			<control type="panel" id="506">
+				<left>30</left>
+				<top>212</top>
+				<width>1890</width>
+				<height>804</height>
+				<onup>$VAR[NavUpList]</onup>
+				<ondown>60</ondown>
+				<onleft>$VAR[BounceLeftVar]</onleft>
+				<onright>$VAR[BounceRightVar]</onright>
+				<orientation>horizontal</orientation>
+				<viewtype label="Icons">icon</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="quadratic">300</scrolltime>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="366" width="281">
+					<control type="image">
+						<left>35</left>
+						<top>35</top>
+						<width>235</width>
+						<height>320</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<bordertexture border="12">thumbs/view_icons/poster_shadow_nf.png</bordertexture>
+						<bordersize>12</bordersize>
+						<texture diffuse="thumbs/view_icons/poster_diffuse.png">$INFO[ListItem.Art(poster)]</texture>
+					</control>
+					<control type="image">
+						<left>47</left>
+						<top>47</top>
+						<width>211</width>
+						<height>296</height>
+						<texture>thumbs/view_icons/poster_black_nf.png</texture>
+					</control>
+					<control type="image">
+						<left>47</left>
+						<top>47</top>
+						<width>211</width>
+						<height>296</height>
+						<texture>thumbs/view_icons/poster_black_fo.png</texture>
+					</control>
+					<control type="image">
+						<left>181</left>
+						<top>47</top>
+						<width>80</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Property(overlay)]</texture>
+						<animation type="Conditional" reversible="false" condition="true">
+							<effect type="fade" end="70" start="40" time="0" />
+						</animation>
+					</control>
+					<control type="label">
+						<left>25</left>
+						<top>282</top>
+						<width>255</width>
+						<height>80</height>
+						<font>font20_bold</font>
+						<textoffsetx>30</textoffsetx>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>shadow</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="400" width="300">
+					<control type="group">
+						<animation effect="zoom" center="150,218" start="100" end="132" time="300" delay="100" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="150,218" start="132" end="100" time="300" tween="quadratic" reversible="false" condition="!Container(506).Scrolling">Unfocus</animation>
+						<control type="image">
+							<left>-9</left>
+							<top>-9</top>
+							<width>319</width>
+							<height>404</height>
+							<texture border="56">thumbs/view_icons/poster_shadow_fo.png</texture>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="0" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="0" time="300" />
+							</animation>
+						</control>
+						<control type="image">
+							<left>47</left>
+							<top>47</top>
+							<width>211</width>
+							<height>296</height>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture diffuse="thumbs/view_icons/poster_diffuse.png">$INFO[ListItem.Art(poster)]</texture>
+						</control>
+						<control type="image">
+							<left>47</left>
+							<top>47</top>
+							<width>211</width>
+							<height>296</height>
+							<texture>thumbs/view_icons/poster_black_fo.png</texture>
+						</control>
+						<control type="group">
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="100" start="0" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="0" start="100" time="300" />
+							</animation>
+							<control type="image">
+								<left>35</left>
+								<top>35</top>
+								<width>235</width>
+								<height>320</height>
+								<texture border="12">thumbs/view_icons/poster_shadow_nf.png</texture>
+							</control>
+							<control type="image">
+								<left>47</left>
+								<top>47</top>
+								<width>211</width>
+								<height>296</height>
+								<texture>thumbs/view_icons/poster_black_nf.png</texture>
+							</control>
+						</control>
+						<control type="image">
+							<left>182</left>
+							<top>46</top>
+							<width>80</width>
+							<height>80</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Property(overlay)]</texture>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="70" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" end="100" start="70" time="300" />
+							</animation>
+						</control>
+						<control type="label">
+							<left>25</left>
+							<top>258</top>
+							<width>255</width>
+							<height>80</height>
+							<font>font22_bold</font>
+							<textoffsetx>30</textoffsetx>
+							<aligny>center</aligny>
+							<shadowcolor>shadow</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="UnFocus" reversible="false">
+								<effect type="slide" start="0,0" end="0,24" time="300" tween="quadratic" />
+								<effect type="fade" end="70" start="100" time="300" />
+							</animation>
+							<animation type="Focus" reversible="false">
+								<effect type="slide" end="0,0" start="0,24" time="300" tween="quadratic" />
+								<effect type="fade" end="100" start="70" time="300" />
+							</animation>
+						</control>
+						<control type="label">
+							<left>25</left>
+							<top>286</top>
+							<width>255</width>
+							<height>80</height>
+							<font>font16</font>
+							<textoffsetx>30</textoffsetx>
+							<aligny>center</aligny>
+							<textcolor>grey</textcolor>
+							<shadowcolor>shadow</shadowcolor>
+							<label>$INFO[ListItem.PlotOutline]</label>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" start="0" end="100" time="200" />
+							</animation>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" end="0" start="100" time="100" />
+							</animation>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>special://skin/extras/backgrounds/home_image.jpg</texture>
+		</control>
+		<control type="list" id="9000">
+			<description>Navigation List</description>
+			<left>0</left>
+			<top>0</top>
+			<itemlayout />
+			<focusedlayout />
+		</control>
+	</controls>
+</window>
