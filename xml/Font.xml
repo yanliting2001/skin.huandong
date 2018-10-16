@@ -3,29 +3,29 @@
 	<fontset id="Default" idloc="571" unicode="true">
 		<!-- Normal Fonts -->
 		<font>
+			<name>font12</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>12</size>
+		</font>
+		<font>
 			<name>font13</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<size>30</size>
 		</font>
 		<font>
-			<name>fontnumber</name>
-			<filename>Antenna-Regular.ttf</filename>
-			<size>30</size>
-		</font>
-		<font>
-			<name>fontnumber22</name>
-			<filename>Antenna-Regular.ttf</filename>
-			<size>22</size>
-		</font>
-		<font>
-			<name>fontarial</name>
-			<filename>Arial.ttf</filename>
-			<size>36</size>
+			<name>font16</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>16</size>
 		</font>
 		<font>
 			<name>font18</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<size>18</size>
+		</font>
+		<font>
+			<name>font19</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>19</size>
 		</font>
 		<font>
 			<name>font20</name>
@@ -43,6 +43,12 @@
 			<size>24</size>
 		</font>
 		<font>
+			<name>font24_title</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>24</size>
+			<style>bold</style>
+		</font>
+		<font>
 			<name>font24_textbox</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<linespacing>1.1</linespacing>
@@ -51,6 +57,12 @@
 		<font>
 			<name>font26</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>26</size>
+		</font>
+		<font>
+			<name>font26_bold</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<style>bold</style>
 			<size>26</size>
 		</font>
 		<font>
@@ -95,6 +107,15 @@
 			<size>44</size>
 		</font>
 		<font>
+			<name>font45_bold</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<style>bold</style>
+			<size>45</size>
+			<name>fontnumber38</name>
+			<filename>Antenna-Regular.ttf</filename>
+			<size>38</size>
+		</font>
+		<font>
 			<name>font50</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<size>50</size>
@@ -116,35 +137,14 @@
 			<size>70</size>
 		</font>
 		<font>
-			<name>font26_bold</name>
-			<filename>FZLanTingHei-L-GBK.ttf</filename>
-			<style>bold</style>
-			<size>26</size>
-		</font>
-		<font>
-			<name>font45_bold</name>
-			<filename>FZLanTingHei-L-GBK.ttf</filename>
-			<style>bold</style>
-			<size>45</size>
-			<name>fontnumber38</name>
+			<name>fontnumber22</name>
 			<filename>Antenna-Regular.ttf</filename>
-			<size>38</size>
+			<size>22</size>
 		</font>
 		<font>
-			<name>font24_title</name>
-			<filename>FZLanTingHei-L-GBK.ttf</filename>
-			<size>24</size>
-			<style>bold</style>
-		</font>
-		<font>
-			<name>font12</name>
-			<filename>FZLanTingHei-L-GBK.ttf</filename>
-			<size>12</size>
-		</font>
-		<font>
-			<name>font16</name>
-			<filename>FZLanTingHei-L-GBK.ttf</filename>
-			<size>16</size>
+			<name>fontnumber30</name>
+			<filename>Antenna-Regular.ttf</filename>
+			<size>30</size>
 		</font>
 	</fontset>
 </fonts>

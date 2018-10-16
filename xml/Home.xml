@@ -10,7 +10,7 @@
 		</control>
 		<control type="progress" id="9001">
 			<left>400</left>
-			<centertop>60%</centertop>
+			<top>635</top>
 			<width>1130</width>
 			<height>27</height>
 			<texturebg>progress/texturebg.png</texturebg>

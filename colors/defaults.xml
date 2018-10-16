@@ -9,13 +9,15 @@
 	<color name="white50">88FFFFFF</color>
 	<color name="white60">9AFFFFFF</color>
 	<color name="grey">FFb4b4b4</color>
-	<color name="grey2">FF999999</color>
+	<color name="grey2">FF767677</color>
 	<color name="grey3">FF505050</color>
 	<color name="grey4">FFcacfd1</color>
 	<color name="black">FF000000</color>
 	<color name="blue">FF0084ff</color>
 	<color name="light_blue">FF00DEFF</color>
 	<color name="gold">FFffd23e</color>
+	<color name="gold2">FFFEC86B</color>
+	<color name="gold3">FFFFC934</color>
 	<color name="selected">FF079fbe</color>
 	<color name="invalid">FFFF0000</color>
 	<color name="fanart_diffuse_color">FF888888</color>
@@ -53,7 +55,6 @@
 	<color name="dialogheader">FF17ffff</color>
 	<color name="kodi">FF45a9d4</color>
 	<color name="charcoal">ff36454f</color>
-	<color name="gold">FFFFD700</color>
 	<color name="apps">FF435a62</color>
 	<color name="musicvideos">FFe62d28</color>
 	<color name="music">FFef6c00</color>

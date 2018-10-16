@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include file="defaults.xml" />
+	<include file="variables.xml" />
+	<include file="View_50_List.xml" />
+	<include file="View_51_Poster.xml" />
+	<include file="View_52_Landscape.xml" />
+	<include file="View_53_Showcase.xml" />
+	<include file="View_56_Musicvideos.xml" />
+	<include file="View_57_Music.xml" />
+	<include file="View_58_Variety.xml" />
+	<include file="View_59_Pictures.xml" />
+	<include file="View_500_Icons.xml" />
+	<include file="View_501_MyApps.xml" />
+	<include file="View_502_Games.xml" />
+	<include file="View_503_AppPanel.xml" />
+	<include file="View_504_MyGames.xml" />
+	<include file="View_505_Member.xml" />
+	<include file="View_506_Mine.xml" />
+	<include file="View_507_List.xml" />
+	<include file="View_555_FileManagerList.xml" />
+	<include file="View_Recommended_Landscape.xml" />
+	<include file="Includes_Animations.xml" />
+	<include file="Includes_Common.xml" />
+	<include file="Includes_HomeAlt.xml" />
+	<include file="Includes_VideoNav.xml" />
+	<constant name="FanartCrossfadeTime">500</constant>
+	<constant name="IconCrossfadeTime">400</constant>
+	<include name="FullscreenDimensions">
+		<left>0</left>
+		<top>0</top>
+		<width>1920</width>
+		<height>1080</height>
+	</include>
+	<include name="SystemTimeAndDate">
+		<control type="label">
+			<description>System Time</description>
+			<width max="1000">auto</width>
+			<height>32</height>
+			<align>center</align>
+			<aligny>bottom</aligny>
+			<font>font32</font>
+			<textcolor>white</textcolor>
+			<label>$INFO[System.Time(hh:mm)]  $INFO[System.Date(yyyy/mm/dd)]</label>
+		</control>
+	</include>
+</includes>

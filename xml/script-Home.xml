@@ -6,14 +6,146 @@
 		<control type="image">
 			<description>Background Image</description>
 			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>backgrounds/home_bg.jpg</texture>
+		</control>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
 			<texture>special://skin/extras/backgrounds/home_image.jpg</texture>
+			<visible>Skin.HasSetting(DebugGrid)</visible>
+		</control>
+		<control type="grouplist" id="9001">
+			<top>150</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<itemgap>0</itemgap>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<scrolltime tween="cubic">500</scrolltime>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+			<control type="group">
+				<description>Local (本地影片)</description>
+				<left>80</left>
+				<top>45</top>
+				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),1)">Conditional</animation>
+				<control type="grouplist" id="2000">
+					<left>287</left>
+					<right>0</right>
+					<bottom>0</bottom>
+					<onleft>2001</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>9000</ondown>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>0</itemgap>
+					<scrolltime tween="cubic">500</scrolltime>
+					<control type="list" id="200001">
+						<description>movie banner</description>
+						<left>16</left>
+						<width>1500</width>
+						<height>231</height>
+						<orientation>horizontal</orientation>
+						<include>HomeWidgetListBannerLayout</include>
+					</control>
+					<control type="list" id="200002">
+						<description>movie list</description>
+						<top>47</top>
+						<width>1500</width>
+						<height>400</height>
+						<orientation>horizontal</orientation>
+						<include>HomeWidgetListPosterLayout</include>
+					</control>
+				</control>
+				<include content="HomeLeftWidgetListLocal">
+					<param name="ControlId" value="2001" />
+					<param name="OnRight" value="2000" />
+					<param name="OnDown" value="9000" />
+				</include>
+			</control>
 		</control>
 		<control type="list" id="9000">
 			<description>Navigation List</description>
-			<left>0</left>
-			<top>0</top>
-			<itemlayout />
-			<focusedlayout />
+			<left>840</left>
+			<top>950</top>
+			<width>560</width>
+			<height>80</height>
+			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),1)">200002</onup>
+			<ondown>noop</ondown>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="cubic">400</scrolltime>
+			<animation effect="fade" time="500">WindowClose</animation>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<itemlayout width="139" height="70">
+				<control type="label">
+					<width>53</width>
+					<height>16</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font19</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="image">
+					<top>17</top>
+					<width>53</width>
+					<height>45</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout width="139" height="70">
+				<control type="label">
+					<width>53</width>
+					<height>16</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font19</font>
+					<textcolor>kodi</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
+				</control>
+				<control type="image">
+					<top>17</top>
+					<width>53</width>
+					<height>45</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<label>&#x25CF;</label>
+					<icon>home/local.png</icon>
+					<property name="CurrentItem">$NUMBER[1]</property>
+					<onclick>noop</onclick>
+				</item>
+				<item>
+					<label>&#x25CF;</label>
+					<icon>home/cloud.png</icon>
+					<property name="CurrentItem">$NUMBER[2]</property>
+					<onclick>noop</onclick>
+				</item>
+				<item>
+					<label>&#x25CF;</label>
+					<icon>home/shop.png</icon>
+					<property name="CurrentItem">$NUMBER[3]</property>
+					<onclick>noop</onclick>
+				</item>
+				<item>
+					<label>&#x25CF;</label>
+					<icon>home/account.png</icon>
+					<property name="CurrentItem">$NUMBER[4]</property>
+					<onclick>noop</onclick>
+				</item>
+			</content>
+		</control>
+		<control type="group">
+			<left>1210</left>
+			<top>72</top>
+			<include>SystemTimeAndDate</include>
 		</control>
 	</controls>
 </window>
