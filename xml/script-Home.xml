@@ -15,7 +15,7 @@
 			<visible>Skin.HasSetting(DebugGrid)</visible>
 		</control>
 		<control type="grouplist" id="9001">
-			<top>150</top>
+			<top>0</top>
 			<right>0</right>
 			<bottom>0</bottom>
 			<itemgap>0</itemgap>
@@ -27,7 +27,7 @@
 			<control type="group">
 				<description>Local (本地影片)</description>
 				<left>80</left>
-				<top>45</top>
+				<top>195</top>
 				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),1)">Conditional</animation>
 				<control type="grouplist" id="2000">
 					<left>287</left>
@@ -63,14 +63,56 @@
 					<param name="OnDown" value="9000" />
 				</include>
 			</control>
+			<control type="group">
+				<description>Cloud (云端影库)</description>
+				<left>-8</left>
+				<top>146</top>
+				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),2)">Conditional</animation>
+				<animation effect="slide" end="1920" time="500" tween="cubic" easing="inout" reversible="true" condition="!IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),1)">Conditional</animation>
+				<control type="grouplist" id="3000">
+					<left>265</left>
+					<top>-10</top>
+					<right>0</right>
+					<bottom>0</bottom>
+					<onleft>3001</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>9000</ondown>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>0</itemgap>
+					<scrolltime tween="cubic">500</scrolltime>
+					<control type="panel" id="300001">
+						<description>movie list</description>
+						<width>1500</width>
+						<height>850</height>
+						<orientation>horizontal</orientation>
+						<include>HomeWidgetPanelPosterLayout</include>
+					</control>
+				</control>
+				<include content="HomeLeftWidgetListCloud">
+					<param name="ControlId" value="3001" />
+					<param name="OnRight" value="3000" />
+					<param name="OnDown" value="9000" />
+				</include>
+				<control type="label">
+					<left>-8</left>
+					<top>-118</top>
+					<width>144</width>
+					<height>36</height>
+					<font>font36</font>
+					<textcolor>white</textcolor>
+					<label>云端影库</label>
+				</control>
+			</control>
 		</control>
 		<control type="list" id="9000">
 			<description>Navigation List</description>
 			<left>840</left>
-			<top>950</top>
+			<top>978</top>
 			<width>560</width>
 			<height>80</height>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),1)">200002</onup>
+			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),2)">300001</onup>
 			<ondown>noop</ondown>
 			<onleft>noop</onleft>
 			<onright>noop</onright>
@@ -102,10 +144,28 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font19</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="100" end="0" time="200"/>
+					</animation>
+					<animation type="UnFocus" reversible="false">
+						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
+				</control>
+				<control type="label">
+					<width>53</width>
+					<height>16</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font19</font>
 					<textcolor>kodi</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<animation type="Focus" reversible="false">
 						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
+					<animation type="UnFocus" reversible="false">
+						<effect type="fade" start="100" end="0" time="200"/>
 					</animation>
 				</control>
 				<control type="image">
@@ -144,7 +204,7 @@
 		</control>
 		<control type="group">
 			<left>1210</left>
-			<top>72</top>
+			<top>32</top>
 			<include>SystemTimeAndDate</include>
 		</control>
 	</controls>
