@@ -115,6 +115,53 @@
 					<texture>special://skin/extras/backgrounds/home_shop.jpg</texture>
 				</control>
 			</control>
+			<control type="group">
+				<description>Account (个人中心)</description>
+				<left>-1</left>
+				<top>187</top>
+				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),4)">Conditional</animation>
+				<animation effect="slide" end="1920" time="500" tween="cubic" easing="inout" reversible="true" condition="!IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),3)">Conditional</animation>
+				<control type="list" id="400001">
+					<description>download list</description>
+					<left>287</left>
+					<width>1177</width>
+					<height>900</height>
+					<orientation>vertical</orientation>
+					<include>HomeWidgetListDownloadLayout</include>
+				</control>
+				<control type="list" id="400002">
+					<description>manager list</description>
+					<left>1500</left>
+					<width>180</width>
+					<height>900</height>
+					<orientation>vertical</orientation>
+					<include>HomeWidgetListManagerLayout</include>
+				</control>
+				<include content="HomeLeftWidgetListAccount">
+					<param name="ControlId" value="4001" />
+					<param name="OnDown" value="9000" />
+				</include>
+				<control type="group">
+					<top>-158</top>
+					<width>400</width>
+					<height>34</height>
+					<control type="label">
+						<width>144</width>
+						<height>100%</height>
+						<font>font34</font>
+						<textcolor>FF0072FE</textcolor>
+						<label>个人中心</label>
+					</control>
+					<control type="label">
+						<left>174</left>
+						<width>144</width>
+						<height>100%</height>
+						<font>font34</font>
+						<textcolor>white</textcolor>
+						<label>下载管理</label>
+					</control>
+				</control>
+			</control>
 		</control>
 		<control type="list" id="9000">
 			<description>Navigation List</description>
@@ -124,6 +171,7 @@
 			<height>80</height>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),1)">200002</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),2)">300001</onup>
+			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),4)">4001</onup>
 			<ondown>noop</ondown>
 			<onleft>noop</onleft>
 			<onright>noop</onright>

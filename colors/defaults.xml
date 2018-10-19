@@ -17,7 +17,7 @@
 	<color name="light_blue">FF00DEFF</color>
 	<color name="gold">FFffd23e</color>
 	<color name="gold2">FFFEC86B</color>
-	<color name="gold3">FFFFC934</color>
+	<color name="gold3">FFFBBB00</color>
 	<color name="selected">FF079fbe</color>
 	<color name="invalid">FFFF0000</color>
 	<color name="fanart_diffuse_color">FF888888</color>

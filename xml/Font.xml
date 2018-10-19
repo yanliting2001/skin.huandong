@@ -82,6 +82,11 @@
 			<size>32</size>
 		</font>
 		<font>
+			<name>font34</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>34</size>
+		</font>
+		<font>
 			<name>font36</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<size>36</size>

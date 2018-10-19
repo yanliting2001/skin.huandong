@@ -489,6 +489,205 @@
 			</control>
 		</definition>
 	</include>
+	<include name="HomeLeftWidgetListAccount">
+		<definition>
+			<control type="group">
+				<description>left widget background</description>
+				<left>2</left>
+				<width>245</width>
+				<height>754</height>
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="19b4b4b4">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<top>177</top>
+					<width>100%</width>
+					<height>1</height>
+					<texture colordiffuse="white40">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<top>313</top>
+					<width>100%</width>
+					<height>1</height>
+					<texture colordiffuse="white40">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<top>31</top>
+					<left>85</left>
+					<width>75</width>
+					<height>75</height>
+					<texture>home/icon_user.png</texture>
+				</control>
+				<control type="label">
+					<top>120</top>
+					<width>100%</width>
+					<height>20</height>
+					<align>center</align>
+					<font>font24</font>
+					<textcolor>gold3</textcolor>
+					<label>[B]1358155****[/B]</label>
+				</control>
+			</control>
+			<control type="grouplist" id="$PARAM[ControlId]">
+				<description>left widget menu</description>
+				<left>1</left>
+				<width>248</width>
+				<height>450</height>
+				<itemgap>0</itemgap>
+				<onup>noop</onup>
+				<ondown>$PARAM[OnDown]</ondown>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="list" id="$PARAM[ControlId]01">
+					<description>download and app</description>
+					<top>190</top>
+					<width>100%</width>
+					<height>100</height>
+					<onleft>noop</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+					<scrolltime tween="cubic">400</scrolltime>
+					<itemlayout width="248" height="50">
+						<control type="label">
+							<width>100%</width>
+							<height>100%</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<font>font24</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="248" height="50">
+						<control type="group">
+							<width>100%</width>
+							<height>100%</height>
+							<visible>Control.HasFocus($PARAM[ControlId]01)</visible>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" start="0" end="100" time="200" />
+							</animation>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="100" end="0" time="200" />
+							</animation>
+							<control type="image">
+								<texture colordiffuse="gold2">colors/white.png</texture>
+							</control>
+							<control type="label">
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>black</textcolor>
+								<font>font24</font>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+						</control>
+						<control type="label">
+							<width>100%</width>
+							<height>100%</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<font>font24</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" start="100" end="0" time="200" />
+							</animation>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="0" end="100" time="200" />
+							</animation>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>下载管理</label>
+							<icon />
+							<onclick>noop</onclick>
+						</item>
+						<item>
+							<label>手机端APP</label>
+							<icon />
+							<onclick>noop</onclick>
+						</item>
+					</content>
+				</control>
+				<control type="list" id="$PARAM[ControlId]02">
+					<description>pay and about</description>
+					<top>52</top>
+					<width>100%</width>
+					<height>100</height>
+					<onleft>noop</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+					<scrolltime tween="cubic">400</scrolltime>
+					<itemlayout width="248" height="50">
+						<control type="label">
+							<width>100%</width>
+							<height>100%</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<font>font24</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="248" height="50">
+						<control type="group">
+							<width>100%</width>
+							<height>100%</height>
+							<visible>Control.HasFocus($PARAM[ControlId]02)</visible>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" start="0" end="100" time="200" />
+							</animation>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="100" end="0" time="200" />
+							</animation>
+							<control type="image">
+								<texture colordiffuse="gold2">colors/white.png</texture>
+							</control>
+							<control type="label">
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>black</textcolor>
+								<font>font24</font>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+						</control>
+						<control type="label">
+							<width>100%</width>
+							<height>100%</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+							<font>font24</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation type="Focus" reversible="false">
+								<effect type="fade" start="100" end="0" time="200" />
+							</animation>
+							<animation type="UnFocus" reversible="false">
+								<effect type="fade" start="0" end="100" time="200" />
+							</animation>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>缴费续费</label>
+							<icon />
+							<onclick>noop</onclick>
+						</item>
+						<item>
+							<label>关于我们</label>
+							<icon />
+							<onclick>noop</onclick>
+						</item>
+					</content>
+				</control>
+			</control>
+		</definition>
+	</include>
 	<include name="HomeWidgetListPosterLayout">
 		<itemlayout width="305" height="400">
 			<control type="image">
@@ -2169,6 +2368,167 @@
 			<item>
 				<label>skyscraper</label>
 				<icon>home/banner/skyscraper.jpg</icon>
+				<onclick>noop</onclick>
+			</item>
+		</content>
+	</include>
+	<include name="HomeWidgetListDownloadLayout">
+		<itemlayout width="1177" height="114">
+			<control type="image">
+				<width>100%</width>
+				<height>68</height>
+				<texture>colors/white.png</texture>
+				<bordersize>1</bordersize>
+			</control>
+			<control type="progress">
+				<top>-34</top>
+				<width>100%</width>
+				<height>68</height>
+				<texturebg />
+				<lefttexture />
+				<midtexture>progress/download_mid.jpg</midtexture>
+				<righttexture />
+				<info>ListItem.Property(ProgressPercent)</info>
+			</control>
+			<control type="label">
+				<width>100%</width>
+				<height>68</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font13</font>
+				<textcolor>black</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+		<focusedlayout width="1177" height="114">
+			<control type="image">
+				<width>100%</width>
+				<height>68</height>
+				<texture>colors/white.png</texture>
+				<bordersize>1</bordersize>
+			</control>
+			<control type="progress">
+				<top>-34</top>
+				<width>100%</width>
+				<height>68</height>
+				<texturebg />
+				<lefttexture />
+				<midtexture>progress/download_mid.jpg</midtexture>
+				<righttexture />
+				<info>ListItem.Property(ProgressPercent)</info>
+			</control>
+			<control type="label">
+				<width>100%</width>
+				<height>68</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font13</font>
+				<textcolor>black</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="HomeWidgetListManagerLayout">
+		<itemlayout width="180" height="114">
+			<control type="label">
+				<width>80</width>
+				<height>68</height>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="image">
+				<left>70</left>
+				<top>11</top>
+				<width>45</width>
+				<height>45</height>
+				<texture>home/download_pause.png</texture>
+			</control>
+			<control type="group">
+				<left>135</left>
+				<top>11</top>
+				<width>45</width>
+				<height>45</height>
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="grey">home/thumbs/icon_circle.png</texture>
+				</control>
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="black">home/thumbs/icon_cross.png</texture>
+				</control>
+			</control>
+		</itemlayout>
+		<focusedlayout width="1177" height="114">
+			<control type="label">
+				<width>80</width>
+				<height>68</height>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="image">
+				<left>70</left>
+				<top>11</top>
+				<width>45</width>
+				<height>45</height>
+				<texture>home/download_pause.png</texture>
+			</control>
+			<control type="group">
+				<left>135</left>
+				<top>11</top>
+				<width>45</width>
+				<height>45</height>
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="grey">home/thumbs/icon_circle.png</texture>
+				</control>
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture colordiffuse="black">home/thumbs/icon_cross.png</texture>
+				</control>
+			</control>
+		</focusedlayout>
+		<content>
+			<item>
+				<label>75%</label>
+				<icon />
+				<onclick>noop</onclick>
+			</item>
+			<item>
+				<label>60%</label>
+				<icon />
+				<onclick>noop</onclick>
+			</item>
+			<item>
+				<label>100%</label>
+				<icon />
+				<onclick>noop</onclick>
+			</item>
+			<item>
+				<label>98%</label>
+				<icon />
+				<onclick>noop</onclick>
+			</item>
+			<item>
+				<label>30%</label>
+				<icon />
+				<onclick>noop</onclick>
+			</item>
+			<item>
+				<label>80%</label>
+				<icon />
+				<onclick>noop</onclick>
+			</item>
+			<item>
+				<label>98%</label>
+				<icon />
 				<onclick>noop</onclick>
 			</item>
 		</content>
