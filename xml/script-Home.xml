@@ -11,7 +11,7 @@
 		<control type="image">
 			<description>Background Image</description>
 			<animation effect="fade" time="600">WindowOpen</animation>
-			<texture>special://skin/extras/backgrounds/home_image.jpg</texture>
+			<texture>special://skin/extras/backgrounds/account/download.jpg</texture>
 			<visible>Skin.HasSetting(DebugGrid)</visible>
 		</control>
 		<control type="grouplist" id="9001">
@@ -134,12 +134,29 @@
 					<left>1500</left>
 					<width>180</width>
 					<height>900</height>
+					<onleft>400101</onleft>
+					<onright>400003</onright>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
 					<orientation>vertical</orientation>
 					<include>HomeWidgetListManagerLayout</include>
+				</control>
+				<control type="list" id="400003">
+					<description>del list</description>
+					<left>1635</left>
+					<width>45</width>
+					<height>900</height>
+					<onleft>400002</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+					<orientation>vertical</orientation>
+					<include>HomeWidgetListDelLayout</include>
 				</control>
 				<include content="HomeLeftWidgetListAccount">
 					<param name="ControlId" value="4001" />
 					<param name="OnDown" value="9000" />
+					<param name="ParentId" value="4000" />
 				</include>
 				<control type="group">
 					<top>-158</top>
