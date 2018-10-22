@@ -600,18 +600,6 @@
 							</animation>
 						</control>
 					</focusedlayout>
-					<content>
-						<item>
-							<label>下载管理</label>
-							<icon />
-							<onclick>noop</onclick>
-						</item>
-						<item>
-							<label>手机端APP</label>
-							<icon />
-							<onclick>noop</onclick>
-						</item>
-					</content>
 				</control>
 				<control type="list" id="$PARAM[ControlId]02">
 					<description>pay and about</description>
@@ -619,7 +607,7 @@
 					<width>100%</width>
 					<height>100</height>
 					<onleft>noop</onleft>
-					<onright>noop</onright>
+					<onright>$PARAM[ButtonId]</onright>
 					<onup>noop</onup>
 					<ondown>noop</ondown>
 					<scrolltime tween="cubic">400</scrolltime>
@@ -672,18 +660,6 @@
 							</animation>
 						</control>
 					</focusedlayout>
-					<content>
-						<item>
-							<label>缴费续费</label>
-							<icon />
-							<onclick>noop</onclick>
-						</item>
-						<item>
-							<label>关于我们</label>
-							<icon />
-							<onclick>noop</onclick>
-						</item>
-					</content>
 				</control>
 			</control>
 		</definition>

@@ -11,7 +11,7 @@
 		<control type="image">
 			<description>Background Image</description>
 			<animation effect="fade" time="600">WindowOpen</animation>
-			<texture>special://skin/extras/backgrounds/account/download.jpg</texture>
+			<texture>special://skin/extras/backgrounds/home_image.jpg</texture>
 			<visible>Skin.HasSetting(DebugGrid)</visible>
 		</control>
 		<control type="grouplist" id="9001">
@@ -121,42 +121,179 @@
 				<top>187</top>
 				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),4)">Conditional</animation>
 				<animation effect="slide" end="1920" time="500" tween="cubic" easing="inout" reversible="true" condition="!IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),3)">Conditional</animation>
-				<control type="list" id="400001">
-					<description>download list</description>
-					<left>287</left>
-					<width>1177</width>
-					<height>900</height>
-					<orientation>vertical</orientation>
-					<include>HomeWidgetListDownloadLayout</include>
+				<control type="group">
+					<visible>StringCompare(Window.Property(AccountContent),download)</visible>
+					<animation effect="fade" time="200">Visible</animation>
+					<animation effect="fade" time="200">Hidden</animation>
+					<control type="list" id="400001">
+						<description>download list</description>
+						<left>287</left>
+						<width>1177</width>
+						<height>900</height>
+						<orientation>vertical</orientation>
+						<include>HomeWidgetListDownloadLayout</include>
+					</control>
+					<control type="list" id="400002">
+						<description>manager list</description>
+						<left>1500</left>
+						<width>180</width>
+						<height>900</height>
+						<onleft>400101</onleft>
+						<onright>400003</onright>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+						<orientation>vertical</orientation>
+						<include>HomeWidgetListManagerLayout</include>
+					</control>
+					<control type="list" id="400003">
+						<description>del list</description>
+						<left>1635</left>
+						<width>45</width>
+						<height>900</height>
+						<onleft>400002</onleft>
+						<onright>noop</onright>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+						<orientation>vertical</orientation>
+						<include>HomeWidgetListDelLayout</include>
+					</control>
 				</control>
-				<control type="list" id="400002">
-					<description>manager list</description>
-					<left>1500</left>
-					<width>180</width>
-					<height>900</height>
-					<onleft>400101</onleft>
-					<onright>400003</onright>
-					<onup>noop</onup>
-					<ondown>noop</ondown>
-					<orientation>vertical</orientation>
-					<include>HomeWidgetListManagerLayout</include>
+				<control type="group">
+					<visible>StringCompare(Window.Property(AccountContent),app)</visible>
+					<animation effect="fade" time="200">Visible</animation>
+					<animation effect="fade" time="200">Hidden</animation>
+					<control type="image">
+						<left>840</left>
+						<top>159</top>
+						<width>300</width>
+						<height>300</height>
+						<texture>colors/white.png</texture>
+					</control>
+					<control type="label">
+						<left>800</left>
+						<top>529</top>
+						<width>380</width>
+						<height>32</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font34</font>
+						<textcolor>white</textcolor>
+						<label>扫描二维码，一键添加</label>
+					</control>
 				</control>
-				<control type="list" id="400003">
-					<description>del list</description>
-					<left>1635</left>
-					<width>45</width>
-					<height>900</height>
-					<onleft>400002</onleft>
-					<onright>noop</onright>
-					<onup>noop</onup>
-					<ondown>noop</ondown>
-					<orientation>vertical</orientation>
-					<include>HomeWidgetListDelLayout</include>
+				<control type="group">
+					<visible>StringCompare(Window.Property(AccountContent),pay)</visible>
+					<animation effect="fade" time="200">Visible</animation>
+					<animation effect="fade" time="200">Hidden</animation>
+					<control type="button" id="7001">
+						<left>487</left>
+						<top>177</top>
+						<width>183</width>
+						<height>183</height>
+						<texturefocus>home/alipay.png</texturefocus>
+						<texturenofocus colordiffuse="white60">home/alipay.png</texturenofocus>
+						<onleft>4001</onleft>
+						<onright>7002</onright>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+					</control>
+					<control type="label">
+						<left>520</left>
+						<top>471</top>
+						<width>120</width>
+						<height>40</height>
+						<font>font40</font>
+						<textcolor>white</textcolor>
+						<animation effect="fade" start="60" end="100" time="200" condition="Control.HasFocus(7001)">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="200" condition="!Control.HasFocus(7001)">Conditional</animation>
+						<label>支付宝</label>
+					</control>
+					<control type="button" id="7002">
+						<left>905</left>
+						<top>177</top>
+						<width>183</width>
+						<height>183</height>
+						<texturefocus>home/wechat.png</texturefocus>
+						<texturenofocus colordiffuse="white60">home/wechat.png</texturenofocus>
+						<onleft>7001</onleft>
+						<onright>7003</onright>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+					</control>
+					<control type="label">
+						<left>957</left>
+						<top>471</top>
+						<width>80</width>
+						<height>40</height>
+						<font>font40</font>
+						<textcolor>white</textcolor>
+						<animation effect="fade" start="60" end="100" time="200" condition="Control.HasFocus(7002)">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="200" condition="!Control.HasFocus(7002)">Conditional</animation>
+						<label>微信</label>
+					</control>
+					<control type="button" id="7003">
+						<left>1312</left>
+						<top>155</top>
+						<width>250</width>
+						<height>250</height>
+						<texturefocus>home/card.png</texturefocus>
+						<texturenofocus colordiffuse="white60">home/card.png</texturenofocus>
+						<onleft>7002</onleft>
+						<onright>noop</onright>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+					</control>
+					<control type="label">
+						<left>1378</left>
+						<top>471</top>
+						<width>120</width>
+						<height>40</height>
+						<font>font40</font>
+						<textcolor>white</textcolor>
+						<animation effect="fade" start="60" end="100" time="200" condition="Control.HasFocus(7003)">Conditional</animation>
+						<animation effect="fade" start="100" end="60" time="200" condition="!Control.HasFocus(7003)">Conditional</animation>
+						<label>银行卡</label>
+					</control>
+					<control type="label">
+						<left>717</left>
+						<top>633</top>
+						<width>590</width>
+						<height>25</height>
+						<font>font26</font>
+						<textcolor>white</textcolor>
+						<label>订单提交成功，请您尽快付款，以便为您尽快配货~</label>
+					</control>
+				</control>
+				<control type="group">
+					<visible>StringCompare(Window.Property(AccountContent),about)</visible>
+					<animation effect="fade" time="200">Visible</animation>
+					<animation effect="fade" time="200">Hidden</animation>
+					<control type="label">
+						<description>title</description>
+						<left>938</left>
+						<top>60</top>
+						<width>150</width>
+						<height>32</height>
+						<font>font36</font>
+						<textcolor>white</textcolor>
+						<label>关于我们</label>
+					</control>
+					<control type="label">
+						<description>content</description>
+						<left>380</left>
+						<top>173</top>
+						<width>1250</width>
+						<height>500</height>
+						<font>font26</font>
+						<textcolor>white</textcolor>
+						<label>公司简介一般包括以下几个方面：1.  公司概况：这里面可以包括注册时间，注册资本，公司性质，技术力[CR]量，规模，员工人数，员工素质等；2.公司发展状况：公司的发展速度，有何成绩，有何荣誉称号等；3.公[CR]司文化：公司的目标，理念，宗旨，使命，愿景，寄语等；4.公司主要产品：性能，特色，创新，超前；5.销[CR]售业绩及网络：销售量，各地销售点等；6.售后服务：主要是公司售后服务的承诺。[CR][CR]下面我们以新饶网站策化为例（所有数据为举例方便，无实际意义）1、公司概况：新饶网站策化，2007[CR]年，注册资金80万，员工12名，专业的设计策划团队，一家大学生创业公司；</label>
+					</control>
 				</control>
 				<include content="HomeLeftWidgetListAccount">
 					<param name="ControlId" value="4001" />
 					<param name="OnDown" value="9000" />
 					<param name="ParentId" value="4000" />
+					<param name="ButtonId" value="7001" />
 				</include>
 				<control type="group">
 					<top>-158</top>
@@ -166,12 +303,12 @@
 						<width>144</width>
 						<height>100%</height>
 						<font>font34</font>
-						<textcolor>FF0072FE</textcolor>
+						<textcolor>huandong</textcolor>
 						<label>个人中心</label>
 					</control>
-					<control type="label">
+					<control type="label" id="6000">
 						<left>174</left>
-						<width>144</width>
+						<width>180</width>
 						<height>100%</height>
 						<font>font34</font>
 						<textcolor>white</textcolor>
