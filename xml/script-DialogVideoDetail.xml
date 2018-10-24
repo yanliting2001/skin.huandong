@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>backgrounds/home_bg.png</texture>
+		</control>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>special://skin/extras/backgrounds/detail/detail_local.jpg</texture>
+			<visible>Skin.HasSetting(DebugGrid)</visible>
+		</control>
+		<control type="group">
+			<description>Video Info</description>
+			<width>1920</width>
+			<height>540</height>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,-100" end="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" end="0,-100" start="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<control type="list" id="3001">
+				<description>Hidden Actor List</description>
+				<width>0</width>
+				<height>0</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout />
+				<focusedlayout/>
+			</control>
+			<control type="image">
+				<description>poster</description>
+				<left>86</left>
+				<top>60</top>
+				<width>854</width>
+				<height>480</height>
+				<texture>$INFO[Window.Property(PosterImage)]</texture>
+			</control>
+			<control type="grouplist" id="9000">
+				<description>button list</description>
+				<left>981</left>
+				<top>476</top>
+				<width>720</width>
+				<height>59</height>
+				<itemgap>17</itemgap>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="button" id="201">
+					<width>222</width>
+					<height>59</height>
+					<texturefocus>detail/button_fo.png</texturefocus>
+					<texturenofocus>detail/button_nf.png</texturenofocus>
+					<label>播  放</label>
+					<font>font28</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<onleft>noop</onleft>
+					<onright>202</onright>
+					<onup>noop</onup>
+					<ondown>6000</ondown>
+				</control>
+				<control type="button" id="202">
+					<width>222</width>
+					<height>59</height>
+					<texturefocus>detail/button_fo.png</texturefocus>
+					<texturenofocus>detail/button_nf.png</texturenofocus>
+					<label>收  藏</label>
+					<font>font28</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<onleft>201</onleft>
+					<onright>203</onright>
+					<onup>noop</onup>
+					<ondown>6000</ondown>
+				</control>
+				<control type="button" id="203">
+					<width>222</width>
+					<height>59</height>
+					<texturefocus>detail/button_fo.png</texturefocus>
+					<texturenofocus>detail/button_nf.png</texturenofocus>
+					<label>删  除</label>
+					<font>font28</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<onleft>202</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>6000</ondown>
+				</control>
+			</control>
+			<control type="label">
+				<left>989</left>
+				<top>72</top>
+				<width max="340">auto</width>
+				<height>46</height>
+				<font>font50</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Window.Property(MovieTitle)]</label>
+			</control>
+			<control type="image">
+				<left>978</left>
+				<top>141</top>
+				<width>918</width>
+				<height>1</height>
+				<texture>colors/white.png</texture>
+			</control>
+			<control type="group">
+				<description>stars</description>
+				<left>1331</left>
+				<top>79</top>
+				<width>255</width>
+				<height>42</height>
+				<control type="image">
+					<width>42</width>
+					<height>41</height>
+					<texture>detail/star_grey.png</texture>
+				</control>
+				<control type="image">
+					<width>43</width>
+					<height>41</height>
+					<texture>detail/star.png</texture>
+					<visible>IntegerGreaterThan(Window.Property(MovieStars),0)</visible>
+				</control>
+				<control type="image">
+					<width>21</width>
+					<height>41</height>
+					<texture>detail/star_half.png</texture>
+					<visible>StringCompare(Window.Property(MovieStars),0.5)</visible>
+				</control>
+				<control type="image">
+					<left>53</left>
+					<width>42</width>
+					<height>41</height>
+					<texture>detail/star_grey.png</texture>
+				</control>
+				<control type="image">
+					<left>53</left>
+					<width>43</width>
+					<height>41</height>
+					<texture>detail/star.png</texture>
+					<visible>IntegerGreaterThan(Window.Property(MovieStars),1)</visible>
+				</control>
+				<control type="image">
+					<left>53</left>
+					<width>21</width>
+					<height>41</height>
+					<texture>detail/star_half.png</texture>
+					<visible>StringCompare(Window.Property(MovieStars),1.5)</visible>
+				</control>
+				<control type="image">
+					<left>106</left>
+					<width>42</width>
+					<height>41</height>
+					<texture>detail/star_grey.png</texture>
+				</control>
+				<control type="image">
+					<left>106</left>
+					<width>43</width>
+					<height>41</height>
+					<texture>detail/star.png</texture>
+					<visible>IntegerGreaterThan(Window.Property(MovieStars),2)</visible>
+				</control>
+				<control type="image">
+					<left>106</left>
+					<width>21</width>
+					<height>41</height>
+					<texture>detail/star_half.png</texture>
+					<visible>StringCompare(Window.Property(MovieStars),2.5)</visible>
+				</control>
+				<control type="image">
+					<left>159</left>
+					<width>42</width>
+					<height>41</height>
+					<texture>detail/star_grey.png</texture>
+				</control>
+				<control type="image">
+					<left>159</left>
+					<width>43</width>
+					<height>41</height>
+					<texture>detail/star.png</texture>
+					<visible>IntegerGreaterThan(Window.Property(MovieStars),3)</visible>
+				</control>
+				<control type="image">
+					<left>159</left>
+					<width>21</width>
+					<height>41</height>
+					<texture>detail/star_half.png</texture>
+					<visible>StringCompare(Window.Property(MovieStars),3.5)</visible>
+				</control>
+				<control type="image">
+					<left>212</left>
+					<width>42</width>
+					<height>41</height>
+					<texture>detail/star_grey.png</texture>
+				</control>
+				<control type="image">
+					<left>212</left>
+					<width>43</width>
+					<height>41</height>
+					<texture>detail/star.png</texture>
+					<visible>IntegerGreaterThan(Window.Property(MovieStars),4)</visible>
+				</control>
+				<control type="image">
+					<left>212</left>
+					<width>21</width>
+					<height>41</height>
+					<texture>detail/star_half.png</texture>
+					<visible>StringCompare(Window.Property(MovieStars),4.5)</visible>
+				</control>
+			</control>
+			<control type="grouplist">
+				<description>info</description>
+				<left>985</left>
+				<top>152</top>
+				<width>895</width>
+				<height>290</height>
+				<itemgap>0</itemgap>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<scrolltime tween="cubic">500</scrolltime>
+				<control type="label">
+					<description>directors</description>
+					<width>100%</width>
+					<height>100</height>
+					<font>font30</font>
+					<aligny>center</aligny>
+					<textcolor>grey2</textcolor>
+					<label>导演:   $INFO[Window.Property(MovieDirector)]</label>
+				</control>
+				<control type="grouplist">
+					<description>actors</description>
+					<width>855</width>
+					<height>40</height>
+					<itemgap>0</itemgap>
+					<onleft>noop</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic">500</scrolltime>
+					<visible>IntegerGreaterThan(Container(3001).NumItems,0)</visible>
+					<control type="label">
+						<width>92</width>
+						<height>30</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>主演:  </label>
+					</control>
+					<control type="label">
+						<description>actor 1</description>
+						<width min="60" max="300">auto</width>
+						<height>30</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(0).Label]</label>
+					</control>
+					<control type="label">
+						<description>actor 2</description>
+						<width min="60" max="300">auto</width>
+						<height>30</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(1).Label]</label>
+					</control>
+					<control type="label">
+						<description>actor 3</description>
+						<width min="60" max="300">auto</width>
+						<height>30</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(2).Label]</label>
+					</control>
+					<control type="label">
+						<description>actor 4</description>
+						<width min="60" max="300">auto</width>
+						<height>30</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(3).Label]</label>
+					</control>
+				</control>
+				<control type="grouplist">
+					<description>actors</description>
+					<width>855</width>
+					<height>50</height>
+					<itemgap>0</itemgap>
+					<onleft>noop</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic">500</scrolltime>
+					<visible>IntegerGreaterThan(Container(3001).NumItems,4)</visible>
+					<control type="label">
+						<description>actor 5</description>
+						<width min="60" max="300">auto</width>
+						<height>50</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(4).Label]</label>
+					</control>
+					<control type="label">
+						<description>actor 6</description>
+						<width min="60" max="300">auto</width>
+						<height>50</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(5).Label]</label>
+					</control>
+					<control type="label">
+						<description>actor 7</description>
+						<width min="60" max="300">auto</width>
+						<height>50</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(6).Label]</label>
+					</control>
+					<control type="label">
+						<description>actor 8</description>
+						<width min="60" max="300">auto</width>
+						<height>50</height>
+						<font>font30</font>
+						<aligny>center</aligny>
+						<textcolor>grey2</textcolor>
+						<label>$INFO[Container(3001).ListItemAbsolute(7).Label]</label>
+					</control>
+				</control>
+				<control type="group">
+					<width>100%</width>
+					<height>140</height>
+					<control type="textbox">
+						<top>10</top>
+						<width>100%</width>
+						<height>100%</height>
+						<font>font30_textbox</font>
+						<textcolor>grey2</textcolor>
+						<label>简介:   $INFO[Window.Property(MoviePlot)]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<description>Recommended Movies</description>
+			<top>540</top>
+			<width>1920</width>
+			<height>540</height>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,100" end="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="slide" end="0,100" start="0" time="500" tween="cubic" easing="out" />
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<control type="label">
+				<top>42</top>
+				<left>89</left>
+				<width>120</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<font>font28</font>
+				<textcolor>white</textcolor>
+				<label>推荐影片</label>
+			</control>
+			<control type="list" id="6000">
+				<left>62</left>
+				<top>80</top>
+				<width>1830</width>
+				<height>436</height>
+				<onup>9000</onup>
+				<ondown>noop</ondown>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<orientation>horizontal</orientation>
+				<itemlayout width="305" height="436">
+					<control type="image">
+						<left>23</left>
+						<top>30</top>
+						<width>266</width>
+						<height>380</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<left>23</left>
+						<top>358</top>
+						<width>266</width>
+						<height>52</height>
+						<texture>list/list_label_bg.png</texture>
+					</control>
+					<control type="label">
+						<left>23</left>
+						<top>358</top>
+						<width>266</width>
+						<height>52</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="305" height="436">
+					<control type="image">
+						<width>317</width>
+						<height>100%</height>
+						<texture>list/list_fo_poster_light.png</texture>
+						<animation effect="fade" start="0" end="100" time="100">Focus</animation>
+						<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
+						<visible>Control.HasFocus(6000)</visible>
+					</control>
+					<control type="image">
+						<left>23</left>
+						<top>30</top>
+						<width>266</width>
+						<height>380</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<left>23</left>
+						<top>358</top>
+						<width>266</width>
+						<height>52</height>
+						<texture>list/list_label_bg.png</texture>
+					</control>
+					<control type="label">
+						<left>23</left>
+						<top>358</top>
+						<width>266</width>
+						<height>52</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

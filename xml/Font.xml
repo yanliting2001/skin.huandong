@@ -66,6 +66,11 @@
 			<size>26</size>
 		</font>
 		<font>
+			<name>font28</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
 			<name>font30</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<size>30</size>
