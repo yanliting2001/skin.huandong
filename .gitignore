@@ -10,5 +10,5 @@
 *.sublime*
 .DS_Store
 1080i/CustomDebug.xml
-backgrounds/debuggrid1080.png
+extras/backgrounds
 media/Makefile

@@ -152,6 +152,11 @@
 			<size>22</size>
 		</font>
 		<font>
+			<name>fontnumber24</name>
+			<filename>Antenna-Regular.ttf</filename>
+			<size>24</size>
+		</font>
+		<font>
 			<name>fontnumber30</name>
 			<filename>Antenna-Regular.ttf</filename>
 			<size>30</size>
