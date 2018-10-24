@@ -19,4 +19,4 @@ while (count < 100):
     HOME.setProperty("LoadingPercent", loadingPercent)
     HOME.setProperty("LoadingPercentInt", str(count))
     xbmc.sleep(200)
-xbmc.executebuiltin("RunScript(script.startup.huadong, home)")
+xbmc.executebuiltin("RunScript(script.startup.huandong, home)")

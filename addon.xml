@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.huadong" version="0.1.0" name="HuaDong Theather" provider-name="yugimaster">
+<addon id="skin.huandong" version="0.1.0" name="HuanDong Theather" provider-name="yugimaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="script.startup.huadong" version="0.1.0"/>
+		<import addon="script.startup.huandong" version="0.1.0"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="1920" height="1080" aspect="1.77" default="true" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">HuaDong skin</summary>
+		<summary lang="en_GB">HuanDong skin</summary>
 		<summary lang="zh_CN">欢动影院 皮肤</summary>
-		<description lang="en_GB">A skin for HuaDong Movie Theather</description>
+		<description lang="en_GB">A skin for HuanDong Movie Theather</description>
 		<description lang="zh_CN">一款欢动影院的UI界面</description>
-		<disclaimer lang="en_GB">A skin for HuaDong Movie Theather</disclaimer>
+		<disclaimer lang="en_GB">A skin for HuanDong Movie Theather</disclaimer>
 		<disclaimer lang="zh_CN">一款欢动影院的UI界面</disclaimer>
 		<platform>all</platform>
 		<assets>
