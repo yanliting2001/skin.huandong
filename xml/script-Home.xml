@@ -6,7 +6,7 @@
 		<control type="image">
 			<description>Background Image</description>
 			<animation effect="fade" time="600">WindowOpen</animation>
-			<texture colordiffuse="FF000724">colors/white.png</texture>
+			<texture>backgrounds/home_bg.png</texture>
 		</control>
 		<control type="image">
 			<description>Background Image</description>
@@ -319,10 +319,10 @@
 		</control>
 		<control type="list" id="9000">
 			<description>Navigation List</description>
-			<left>840</left>
+			<left>835</left>
 			<top>978</top>
 			<width>560</width>
-			<height>80</height>
+			<height>90</height>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),1)">200002</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),2)">300001</onup>
 			<onup condition="StringCompare(Container(9000).ListItem.Property(CurrentItem),4)">4001</onup>
@@ -333,83 +333,58 @@
 			<scrolltime tween="cubic">400</scrolltime>
 			<animation effect="fade" time="500">WindowClose</animation>
 			<animation effect="fade" time="500">WindowOpen</animation>
-			<itemlayout width="139" height="70">
-				<control type="label">
-					<width>53</width>
-					<height>16</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font19</font>
-					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Label]</label>
+			<itemlayout width="139" height="90">
+				<control type="image">
+					<top>2</top>
+					<width>60</width>
+					<height>86</height>
+					<texture>$INFO[ListItem.ActualIcon,,_nf.png]</texture>
+					<visible>!StringCompare(ListItem.ActualIcon,home/account)</visible>
 				</control>
 				<control type="image">
-					<top>17</top>
-					<width>53</width>
-					<height>45</height>
-					<texture>$INFO[ListItem.Icon]</texture>
+					<width>63</width>
+					<height>89</height>
+					<texture>$INFO[ListItem.ActualIcon,,_nf.png]</texture>
+					<visible>StringCompare(ListItem.ActualIcon,home/account)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout width="139" height="70">
-				<control type="label">
-					<width>53</width>
-					<height>16</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font19</font>
-					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<animation type="Focus" reversible="false">
-						<effect type="fade" start="100" end="0" time="200"/>
-					</animation>
-					<animation type="UnFocus" reversible="false">
-						<effect type="fade" start="0" end="100" time="200"/>
-					</animation>
-				</control>
-				<control type="label">
-					<width>53</width>
-					<height>16</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font19</font>
-					<textcolor>kodi</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<animation type="Focus" reversible="false">
-						<effect type="fade" start="0" end="100" time="200"/>
-					</animation>
-					<animation type="UnFocus" reversible="false">
-						<effect type="fade" start="100" end="0" time="200"/>
-					</animation>
+			<focusedlayout width="139" height="90">
+				<control type="image">
+					<top>2</top>
+					<width>60</width>
+					<height>86</height>
+					<texture>$INFO[ListItem.ActualIcon,,_fo.png]</texture>
+					<visible>!StringCompare(ListItem.ActualIcon,home/account)</visible>
 				</control>
 				<control type="image">
-					<top>17</top>
-					<width>53</width>
-					<height>45</height>
-					<texture>$INFO[ListItem.Icon]</texture>
+					<width>63</width>
+					<height>89</height>
+					<texture>$INFO[ListItem.ActualIcon,,_fo.png]</texture>
+					<visible>StringCompare(ListItem.ActualIcon,home/account)</visible>
 				</control>
 			</focusedlayout>
 			<content>
 				<item>
 					<label>&#x25CF;</label>
-					<icon>home/local.png</icon>
+					<icon>home/local</icon>
 					<property name="CurrentItem">$NUMBER[1]</property>
 					<onclick>noop</onclick>
 				</item>
 				<item>
 					<label>&#x25CF;</label>
-					<icon>home/cloud.png</icon>
+					<icon>home/cloud</icon>
 					<property name="CurrentItem">$NUMBER[2]</property>
 					<onclick>noop</onclick>
 				</item>
 				<item>
 					<label>&#x25CF;</label>
-					<icon>home/shop.png</icon>
+					<icon>home/shop</icon>
 					<property name="CurrentItem">$NUMBER[3]</property>
 					<onclick>noop</onclick>
 				</item>
 				<item>
 					<label>&#x25CF;</label>
-					<icon>home/account.png</icon>
+					<icon>home/account</icon>
 					<property name="CurrentItem">$NUMBER[4]</property>
 					<onclick>noop</onclick>
 				</item>
