@@ -79,8 +79,8 @@
 				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),2)">Conditional</animation>
 				<animation effect="slide" end="1920" time="500" tween="cubic" easing="inout" reversible="true" condition="!IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),1)">Conditional</animation>
 				<control type="grouplist" id="3000">
-					<left>265</left>
-					<top>-10</top>
+					<left>251</left>
+					<top>-24</top>
 					<right>0</right>
 					<bottom>0</bottom>
 					<onleft>3001</onleft>

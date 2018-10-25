@@ -361,7 +361,7 @@
 						<control type="image">
 							<width>100%</width>
 							<height>100%</height>
-							<texture colordiffuse="gold2">colors/white.png</texture>
+							<texture>home/button/button_fo.png</texture>
 						</control>
 						<control type="image">
 							<left>81</left>
@@ -392,7 +392,7 @@
 								<effect type="fade" start="100" end="0" time="200" />
 							</animation>
 							<control type="image">
-								<texture colordiffuse="gold2">colors/white.png</texture>
+								<texture>home/button/button_fo.png</texture>
 							</control>
 							<control type="label">
 								<left>120</left>
@@ -459,7 +459,7 @@
 								<effect type="fade" start="100" end="0" time="200" />
 							</animation>
 							<control type="image">
-								<texture colordiffuse="gold2">colors/white.png</texture>
+								<texture>home/button/button_fo.png</texture>
 							</control>
 							<control type="label">
 								<align>center</align>
@@ -758,36 +758,9 @@
 	</include>
 	<include name="HomeWidgetPanelPosterLayout">
 		<itemlayout width="300" height="420">
-			<control type="image">
-				<width>280</width>
-				<height>390</height>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture fallback="list/list_poster_default.png">$INFO[ListItem.Icon]</texture>
-				<bordersize>10</bordersize>
-			</control>
-			<control type="image">
-				<top>317</top>
-				<width>280</width>
-				<height>73</height>
-				<texture colordiffuse="grey2">colors/white.png</texture>
-				<bordersize>10</bordersize>
-			</control>
-			<control type="label">
-				<left>10</left>
-				<top>327</top>
-				<width>260</width>
-				<height>53</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>font24</font>
-				<textcolor>white</textcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</itemlayout>
-		<focusedlayout width="300" height="420">
 			<control type="group">
-				<animation effect="zoom" center="153,200" start="100" end="108" time="150" tween="quadratic" reversible="false">Focus</animation>
-				<animation effect="zoom" center="153,200" start="108" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<left>14</left>
+				<top>14</top>
 				<control type="image">
 					<width>280</width>
 					<height>390</height>
@@ -795,8 +768,42 @@
 					<texture fallback="list/list_poster_default.png">$INFO[ListItem.Icon]</texture>
 					<bordersize>10</bordersize>
 				</control>
-				<control type="group">
+				<control type="image">
 					<top>317</top>
+					<width>280</width>
+					<height>73</height>
+					<texture colordiffuse="grey2">colors/white.png</texture>
+					<bordersize>10</bordersize>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>327</top>
+					<width>260</width>
+					<height>53</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</control>
+		</itemlayout>
+		<focusedlayout width="300" height="420">
+			<control type="group">
+				<animation effect="zoom" center="153,200" start="100" end="108" time="150" tween="quadratic" reversible="false">Focus</animation>
+				<animation effect="zoom" center="153,200" start="108" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
+				<control type="image">
+					<left>14</left>
+					<top>14</top>
+					<width>280</width>
+					<height>390</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="list/list_poster_default.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>10</bordersize>
+				</control>
+				<control type="group">
+					<left>14</left>
+					<top>331</top>
 					<animation effect="fade" start="100" end="0" time="100">Focus</animation>
 					<animation effect="fade" start="0" end="100" time="100">UnFocus</animation>
 					<control type="image">
@@ -822,29 +829,21 @@
 					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
 					<visible>Control.HasFocus(300001)</visible>
 					<control type="image">
-						<top>327</top>
-						<width>280</width>
-						<height>73</height>
-						<texture colordiffuse="gold3">colors/white.png</texture>
-						<bordersize>10</bordersize>
+						<width>309</width>
+						<height>420</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture>list/list_fo.png</texture>
 					</control>
 					<control type="label">
-						<left>10</left>
-						<top>337</top>
+						<left>24</left>
+						<top>341</top>
 						<width>260</width>
 						<height>53</height>
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>font24</font>
 						<textcolor>black</textcolor>
-						<label>[B]$INFO[ListItem.Label][/B]</label>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>400</height>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture colordiffuse="gold3">list/list_fo_poster.png</texture>
-						<bordersize>5</bordersize>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
 			</control>
