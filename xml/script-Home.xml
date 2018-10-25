@@ -29,6 +29,14 @@
 				<left>80</left>
 				<top>195</top>
 				<animation effect="slide" end="-1920" time="500" tween="cubic" easing="inout" reversible="true" condition="IntegerGreaterThan(Container(9000).ListItem.Property(CurrentItem),1)">Conditional</animation>
+				<control type="image">
+					<description>Logo</description>
+					<left>792</left>
+					<top>-156</top>
+					<width>226</width>
+					<height>88</height>
+					<texture>home/logo.png</texture>
+				</control>
 				<control type="grouplist" id="2000">
 					<left>287</left>
 					<right>0</right>
@@ -50,9 +58,10 @@
 					</control>
 					<control type="list" id="200002">
 						<description>movie list</description>
-						<top>47</top>
+						<left>-14</left>
+						<top>33</top>
 						<width>1500</width>
-						<height>400</height>
+						<height>440</height>
 						<orientation>horizontal</orientation>
 						<include>HomeWidgetListPosterLayout</include>
 					</control>

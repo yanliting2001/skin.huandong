@@ -32,7 +32,7 @@
 			</control>
 			<control type="grouplist" id="$PARAM[ControlId]">
 				<description>left widget menu</description>
-				<left>1</left>
+				<left>-1</left>
 				<width>248</width>
 				<height>800</height>
 				<itemgap>0</itemgap>
@@ -74,7 +74,7 @@
 								<effect type="fade" start="100" end="0" time="200" />
 							</animation>
 							<control type="image">
-								<texture colordiffuse="gold2">colors/white.png</texture>
+								<texture>home/button/button_fo.png</texture>
 							</control>
 							<control type="label">
 								<align>center</align>
@@ -121,7 +121,7 @@
 						</control>
 						<control type="image">
 							<left>81</left>
-							<top>13</top>
+							<top>15</top>
 							<width>26</width>
 							<height>26</height>
 							<texture>$INFO[ListItem.Icon]</texture>
@@ -148,7 +148,7 @@
 								<effect type="fade" start="100" end="0" time="200" />
 							</animation>
 							<control type="image">
-								<texture colordiffuse="gold2">colors/white.png</texture>
+								<texture>home/button/button_fo.png</texture>
 							</control>
 							<control type="label">
 								<left>120</left>
@@ -168,7 +168,7 @@
 						</control>
 						<control type="image">
 							<left>81</left>
-							<top>13</top>
+							<top>15</top>
 							<width>26</width>
 							<height>26</height>
 							<texture>$INFO[ListItem.Icon]</texture>
@@ -177,7 +177,7 @@
 					<content>
 						<item>
 							<label>搜索</label>
-							<icon>home/icon_search.png</icon>
+							<icon>home/thumbs/icon_search.png</icon>
 							<onclick>noop</onclick>
 						</item>
 					</content>
@@ -215,7 +215,7 @@
 								<effect type="fade" start="100" end="0" time="200" />
 							</animation>
 							<control type="image">
-								<texture colordiffuse="gold2">colors/white.png</texture>
+								<texture>home/button/button_fo.png</texture>
 							</control>
 							<control type="label">
 								<align>center</align>
@@ -287,7 +287,7 @@
 								<effect type="fade" start="100" end="0" time="200" />
 							</animation>
 							<control type="image">
-								<texture colordiffuse="gold2">colors/white.png</texture>
+								<texture>home/button/button_fo.png</texture>
 							</control>
 							<control type="label">
 								<align>center</align>
@@ -421,7 +421,7 @@
 					<content>
 						<item>
 							<label>搜索</label>
-							<icon>home/icon_search.png</icon>
+							<icon>home/thumbs/icon_search.png</icon>
 							<onclick>noop</onclick>
 						</item>
 					</content>
@@ -665,52 +665,59 @@
 		</definition>
 	</include>
 	<include name="HomeWidgetListPosterLayout">
-		<itemlayout width="305" height="400">
-			<control type="image">
-				<width>286</width>
-				<height>100%</height>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture fallback="list/list_poster_default.png">$INFO[ListItem.Icon]</texture>
-				<bordersize>10</bordersize>
-			</control>
-			<control type="image">
-				<top>327</top>
-				<width>286</width>
-				<height>73</height>
-				<texture colordiffuse="grey2">colors/white.png</texture>
-				<bordersize>10</bordersize>
-			</control>
-			<control type="label">
-				<left>10</left>
-				<top>337</top>
-				<width>266</width>
-				<height>53</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>font24</font>
-				<textcolor>white</textcolor>
-				<label>$INFO[ListItem.Label]</label>
+		<itemlayout width="305" height="431">
+			<control type="group">
+				<left>14</left>
+				<top>14</top>
+				<control type="image">
+					<width>286</width>
+					<height>400</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="list/list_poster_default.png">$INFO[ListItem.Icon]</texture>
+					<bordersize>10</bordersize>
+				</control>
+				<control type="image">
+					<top>327</top>
+					<width>286</width>
+					<height>73</height>
+					<texture>list/list_label_bg.png</texture>
+					<bordersize>10</bordersize>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>337</top>
+					<width>266</width>
+					<height>53</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
 			</control>
 		</itemlayout>
-		<focusedlayout width="305" height="400">
+		<focusedlayout width="305" height="431">
 			<control type="group">
 				<animation effect="zoom" center="153,200" start="100" end="108" time="150" tween="quadratic" reversible="false">Focus</animation>
 				<animation effect="zoom" center="153,200" start="108" end="100" time="150" tween="quadratic" reversible="false">Unfocus</animation>
 				<control type="image">
+					<left>14</left>
+					<top>14</top>
 					<width>286</width>
-					<height>100%</height>
+					<height>400</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<texture fallback="list/list_poster_default.png">$INFO[ListItem.Icon]</texture>
 					<bordersize>10</bordersize>
 				</control>
 				<control type="group">
-					<top>327</top>
+					<left>14</left>
+					<top>341</top>
 					<animation effect="fade" start="100" end="0" time="100">Focus</animation>
 					<animation effect="fade" start="0" end="100" time="100">UnFocus</animation>
 					<control type="image">
 						<width>286</width>
 						<height>73</height>
-						<texture colordiffuse="grey2">colors/white.png</texture>
+						<texture>list/list_label_bg.png</texture>
 						<bordersize>10</bordersize>
 					</control>
 					<control type="label">
@@ -730,29 +737,20 @@
 					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
 					<visible>Control.HasFocus(200002)</visible>
 					<control type="image">
-						<top>327</top>
-						<width>286</width>
-						<height>73</height>
-						<texture colordiffuse="gold3">colors/white.png</texture>
-						<bordersize>10</bordersize>
+						<width>316</width>
+						<height>431</height>
+						<texture>list/list_fo.png</texture>
 					</control>
 					<control type="label">
-						<left>10</left>
-						<top>337</top>
+						<left>24</left>
+						<top>351</top>
 						<width>266</width>
 						<height>53</height>
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>font24</font>
 						<textcolor>black</textcolor>
-						<label>[B]$INFO[ListItem.Label][/B]</label>
-					</control>
-					<control type="image">
-						<width>286</width>
-						<height>100%</height>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture colordiffuse="gold3">list/list_fo_poster.png</texture>
-						<bordersize>5</bordersize>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
 			</control>
@@ -2337,8 +2335,8 @@
 		</focusedlayout>
 		<content>
 			<item>
-				<label>deadpool</label>
-				<icon>home/banner/deadpool.jpg</icon>
+				<label>pacifico</label>
+				<icon>home/banner/pacifico.jpg</icon>
 				<onclick>noop</onclick>
 			</item>
 			<item>
