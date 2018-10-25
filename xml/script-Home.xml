@@ -136,8 +136,9 @@
 					<animation effect="fade" time="200">Hidden</animation>
 					<control type="list" id="400001">
 						<description>download list</description>
-						<left>287</left>
-						<width>1177</width>
+						<left>288</left>
+						<top>-9</top>
+						<width>1195</width>
 						<height>900</height>
 						<orientation>vertical</orientation>
 						<include>HomeWidgetListDownloadLayout</include>
@@ -156,7 +157,7 @@
 					</control>
 					<control type="list" id="400003">
 						<description>del list</description>
-						<left>1635</left>
+						<left>1631</left>
 						<width>45</width>
 						<height>900</height>
 						<onleft>400002</onleft>
@@ -199,8 +200,8 @@
 						<top>177</top>
 						<width>183</width>
 						<height>183</height>
-						<texturefocus>home/alipay.png</texturefocus>
-						<texturenofocus colordiffuse="white60">home/alipay.png</texturenofocus>
+						<texturefocus>home/thumbs/icon_alipay.png</texturefocus>
+						<texturenofocus colordiffuse="white60">home/thumbs/icon_alipay.png</texturenofocus>
 						<onleft>4001</onleft>
 						<onright>7002</onright>
 						<onup>noop</onup>
@@ -222,8 +223,8 @@
 						<top>177</top>
 						<width>183</width>
 						<height>183</height>
-						<texturefocus>home/wechat.png</texturefocus>
-						<texturenofocus colordiffuse="white60">home/wechat.png</texturenofocus>
+						<texturefocus>home/thumbs/icon_wechat.png</texturefocus>
+						<texturenofocus colordiffuse="white60">home/thumbs/icon_wechat.png</texturenofocus>
 						<onleft>7001</onleft>
 						<onright>7003</onright>
 						<onup>noop</onup>
@@ -241,12 +242,12 @@
 						<label>微信</label>
 					</control>
 					<control type="button" id="7003">
-						<left>1312</left>
-						<top>155</top>
-						<width>250</width>
-						<height>250</height>
-						<texturefocus>home/card.png</texturefocus>
-						<texturenofocus colordiffuse="white60">home/card.png</texturenofocus>
+						<left>1319</left>
+						<top>200</top>
+						<width>236</width>
+						<height>183</height>
+						<texturefocus>home/thumbs/icon_card.png</texturefocus>
+						<texturenofocus colordiffuse="white60">home/thumbs/icon_card.png</texturenofocus>
 						<onleft>7002</onleft>
 						<onright>noop</onright>
 						<onup>noop</onup>
