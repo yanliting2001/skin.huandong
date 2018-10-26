@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">noop</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<controls>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>backgrounds/home_bg.png</texture>
+		</control>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>special://skin/extras/backgrounds/follow.jpg</texture>
+			<visible>Skin.HasSetting(DebugGrid)</visible>
+		</control>
+		<control type="label">
+			<left>66</left>
+			<top>29</top>
+			<width>144</width>
+			<height>34</height>
+			<font>font34</font>
+			<textcolor>huandong</textcolor>
+			<label>我的收藏</label>
+		</control>
+		<control type="button" id="200">
+			<left>26</left>
+			<top>145</top>
+			<width>295</width>
+			<height>67</height>
+			<texturefocus>home/button/follow_btn_fo.png</texturefocus>
+			<texturenofocus>home/button/follow_btn_nf.png</texturenofocus>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font34</font>
+			<label>全部删除</label>
+			<textcolor>white</textcolor>
+			<focusedcolor>black</focusedcolor>
+			<onleft>noop</onleft>
+			<onright>5000</onright>
+			<onup>noop</onup>
+			<ondown>noop</ondown>
+		</control>
+		<control type="panel" id="5000">
+			<description>movie list</description>
+			<left>325</left>
+			<top>123</top>
+			<width>1500</width>
+			<height>900</height>
+			<orientation>horizontal</orientation>
+			<onleft>200</onleft>
+			<onright>noop</onright>
+			<onup>noop</onup>
+			<ondown>noop</ondown>
+			<include>HomeWidgetListPosterLayout</include>
+		</control>
+	</controls>
+</window>
