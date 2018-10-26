@@ -250,7 +250,7 @@
 						<item>
 							<label>播放记录</label>
 							<icon />
-							<onclick>noop</onclick>
+							<onclick>RunScript(script.startup.huandong, history)</onclick>
 						</item>
 					</content>
 				</control>
