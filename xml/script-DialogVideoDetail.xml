@@ -51,6 +51,8 @@
 				<width>720</width>
 				<height>59</height>
 				<itemgap>17</itemgap>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
 				<onup>noop</onup>
 				<ondown>noop</ondown>
 				<orientation>horizontal</orientation>
