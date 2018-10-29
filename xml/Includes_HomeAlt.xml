@@ -2357,6 +2357,7 @@
 				<info>ListItem.Property(ProgressPercent)</info>
 			</control>
 			<control type="label">
+				<top>10</top>
 				<width>100%</width>
 				<height>68</height>
 				<align>center</align>
@@ -2377,6 +2378,7 @@
 				<info>ListItem.Property(ProgressPercent)</info>
 			</control>
 			<control type="label">
+				<top>10</top>
 				<width>100%</width>
 				<height>68</height>
 				<align>center</align>
