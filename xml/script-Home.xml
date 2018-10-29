@@ -6,7 +6,7 @@
 		<control type="image">
 			<description>Background Image</description>
 			<animation effect="fade" time="600">WindowOpen</animation>
-			<texture>backgrounds/home_bg.png</texture>
+			<texture>home/bg.png</texture>
 		</control>
 		<control type="image">
 			<description>Background Image</description>
