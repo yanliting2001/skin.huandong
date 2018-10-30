@@ -16,6 +16,29 @@
 			<texture>special://skin/extras/backgrounds/follow.jpg</texture>
 			<visible>Skin.HasSetting(DebugGrid)</visible>
 		</control>
+		<control type="grouplist">
+			<centertop>50%</centertop>
+			<height>66</height>
+			<itemgap>25</itemgap>
+			<align>center</align>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="cubic">500</scrolltime>
+			<visible>!IntegerGreaterThan(Container(5000).NumItems,0)</visible>
+			<control type="image">
+				<description>Icon</description>
+				<width>66</width>
+				<height>65</height>
+				<texture>home/thumbs/icon_smiley_sad.png</texture>
+			</control>
+			<control type="label">
+				<width>auto</width>
+				<height>66</height>
+				<font>font60</font>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<label>对不起, 您还没有收藏记录哦!</label>
+			</control>
+		</control>
 		<control type="label">
 			<left>66</left>
 			<top>29</top>
@@ -42,6 +65,7 @@
 			<onright>5000</onright>
 			<onup>noop</onup>
 			<ondown>noop</ondown>
+			<visible>IntegerGreaterThan(Container(5000).NumItems,0)</visible>
 		</control>
 		<control type="panel" id="5000">
 			<description>movie list</description>
