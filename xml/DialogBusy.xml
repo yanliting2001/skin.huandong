@@ -10,95 +10,32 @@
 	</coordinates>
 	<controls>
 		<control type="group">
-			<visible>IsEmpty(Window(home).Property(LoadingScreen))</visible>
+			<description>Busy View</description>
 			<control type="image">
 				<description>background image</description>
 				<include>FullscreenDimensions</include>
 				<aspectratio>scale</aspectratio>
-				<texture>loading/bg.png</texture>
+				<texture>backgrounds/home_bg.jpg</texture>
 			</control>
-			<control type="multiimage">
-				<width>57</width>
-				<height>57</height>
-				<left>931</left>
-				<top>492</top>
-				<imagepath>loading/cube</imagepath>
-				<timeperimage>5</timeperimage>
-				<fadetime>15</fadetime>
-				<loop>yes</loop>
-				<randomize>false</randomize>
+			<control type="image">
+				<description>Busy animation</description>
+				<left>900</left>
+				<top>430</top>
+				<width>120</width>
+				<height>120</height>
+				<texture>busy/icon.png</texture>
+				<aspectratio>keep</aspectratio>
+				<animation effect="rotate" start="0" end="360" center="auto" time="2000" loop="true" condition="true">conditional</animation>
 			</control>
 			<control type="label">
 				<description>Busy label</description>
-				<top>29</top>
+				<top>50</top>
 				<width>100%</width>
 				<height>100%</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>font20</font>
-				<label>加载中...</label>
-			</control>
-			<!--
-			<control type="label">
-				<description>Busy label</description>
-				<left>912</left>
-				<top>492</top>
-				<width>96</width>
-				<height>96</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label>100%</label>
-				<label>$INFO[Control.getLabel(10)]</label>
-				<font>font_number</font>
-			</control>-->
-			<control type="progress" id="10">
-				<description>Progressbar</description>
-				<left>-100</left>
-				<top>-100</top>
-				<width>1</width>
-				<height>1</height>
-				<texturebg>-</texturebg>
-				<lefttexture>-</lefttexture>
-				<midtexture>-</midtexture>
-				<righttexture>-</righttexture>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!IsEmpty(Window(home).Property(LoadingScreen))</visible>
-			<control type="image">
-				<description>background image</description>
-				<include>FullscreenDimensions</include>
-				<texture border="1">home/bg.png</texture>
-			</control>
-			<control type="image">
-				<description>Video Loading animation</description>
-				<left>660</left>
-				<top>592</top>
-				<width>100</width>
-				<height>5</height>
-				<texture>icons/loading.png</texture>
-				<aspectratio>keep</aspectratio>
-				<animation effect="slide" start="0,0" end="500,0" time="1500" loop="true" condition="true">conditional</animation>
-			</control>
-			<control type="label">
-				<left>660</left>
-				<top>604</top>
-				<width>600</width>
-				<height>60</height>
-				<font>font28</font>
-				<align>center</align>
-				<textcolor>white</textcolor>
-				<label>$INFO[Window(10000).Property(TitleInfo)]</label>
-			</control>
-			<control type="label">
-				<left>660</left>
-				<top>528</top>
-				<width>600</width>
-				<height>60</height>
-				<font>font28</font>
-				<align>center</align>
-				<textcolor>white</textcolor>
-				<label>缓冲  $INFO[Player.StreamReadRate]</label>
+				<font>font40</font>
+				<label>正在努力加载中...</label>
 			</control>
 		</control>
 	</controls>
