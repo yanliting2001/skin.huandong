@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="false">9090</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<include>BG_OpenClose_Fade_Animation</include>
+	<onunload>ClearProperty(T9,Home)</onunload>
+	<onunload>ClearProperty(T9_Key,Home)</onunload>
+	<controls>
+		<control type="group" id="6001">
+			<description>Hidden keyboard buttons</description>
+			<control type="button" id="201">
+				<description>'A' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="202">
+				<description>'B' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="203">
+				<description>'C' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="204">
+				<description>'D' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="205">
+				<description>'E' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="206">
+				<description>'F' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="211">
+				<description>'G' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="212">
+				<description>'H' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="213">
+				<description>'I' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="214">
+				<description>'J' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="215">
+				<description>'K' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="216">
+				<description>'L' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="221">
+				<description>'M' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="222">
+				<description>'N' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="223">
+				<description>'O' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="224">
+				<description>'P' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="225">
+				<description>'Q' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="226">
+				<description>'R' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="231">
+				<description>'S' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="232">
+				<description>'T' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="233">
+				<description>'U' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="234">
+				<description>'V' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="235">
+				<description>'W' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="236">
+				<description>'X' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="241">
+				<description>'Y' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="242">
+				<description>'0' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="243">
+				<description>'1' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="244">
+				<description>'2' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="245">
+				<description>'3' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="246">
+				<description>'4' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="251">
+				<description>'Z' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="252">
+				<description>'5' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="253">
+				<description>'6' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="254">
+				<description>'7' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="255">
+				<description>'8' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="256">
+				<description>'9' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="261">
+				<description>'del' button</description>
+				<include>HiddenObject</include>
+			</control>
+			<control type="button" id="262">
+				<description>'bs' button</description>
+				<include>HiddenObject</include>
+			</control>
+		</control>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>home/other_bg.png</texture>
+		</control>
+		<control type="image">
+			<description>Background Image</description>
+			<animation effect="fade" time="600">WindowOpen</animation>
+			<texture>special://skin/extras/backgrounds/search.jpg</texture>
+			<visible>Skin.HasSetting(DebugGrid)</visible>
+		</control>
+		<control type="label">
+			<left>68</left>
+			<top>32</top>
+			<width>144</width>
+			<height>36</height>
+			<font>font34</font>
+			<textcolor>white</textcolor>
+			<label>热门搜索</label>
+		</control>
+		<control type="group" id="9083">
+			<description>keyboard</description>
+			<left>71</left>
+			<top>202</top>
+			<control type="image">
+				<left>34</left>
+				<top>-58</top>
+				<width>37</width>
+				<height>38</height>
+				<texture>home/thumbs/icon_search.png</texture>
+			</control>
+			<control type="image">
+				<description>white line</description>
+				<width>493</width>
+				<height>2</height>
+				<texture>colors/white.png</texture>
+			</control>
+			<control type="label" id="312">
+				<left>90</left>
+				<top>-58</top>
+				<width>400</width>
+				<height>50</height>
+				<font>font32</font>
+				<textcolor>white60</textcolor>
+			</control>
+			<control type="label">
+				<left>90</left>
+				<top>-58</top>
+				<width>400</width>
+				<height>50</height>
+				<font>font32</font>
+				<textcolor>white60</textcolor>
+				<label>请输入首字母</label>
+				<visible>IsEmpty(Control.GetLabel(312))</visible>
+			</control>
+			<control type="image">
+				<top>32</top>
+				<width>492</width>
+				<height>660</height>
+				<texture>search/t9_bg.png</texture>
+			</control>
+			<control type="panel" id="9090">
+				<left>-7</left>
+				<top>10</top>
+				<width>555</width>
+				<height>800</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>noop</onleft>
+				<onright>9082</onright>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic" easing="out">200</scrolltime>
+				<itemlayout height="175" width="185">
+				</itemlayout>
+				<focusedlayout height="175" width="185">
+					<control type="image">
+						<width>137</width>
+						<height>163</height>
+						<texture border="10">search/button_3.png</texture>
+						<include>Visible_Fade_Animation</include>
+						<visible>Control.HasFocus(9083)</visible>
+					</control>
+					<control type="image">
+						<width>137</width>
+						<height>163</height>
+						<texture border="10">search/button_2.png</texture>
+						<include>Visible_Fade_Animation</include>
+						<visible>!Control.HasFocus(9083)</visible>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$NUMBER[1]</label>
+						<label2 />
+						<onclick>SendClick(243)</onclick>
+					</item>
+					<item id="2">
+						<label>$NUMBER[2]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9_Key,2,Home)</onclick>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="3">
+						<label>$NUMBER[3]</label>
+						<label2>DEF</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,3,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="4">
+						<label>$NUMBER[4]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,4,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="5">
+						<label>$NUMBER[5]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,5,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="6">
+						<label>$NUMBER[6]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,6,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="7">
+						<label>$NUMBER[7]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,7,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="8">
+						<label>$NUMBER[8]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,8,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="9">
+						<label>$NUMBER[9]</label>
+						<label2>ABC</label2>
+						<onclick>SetProperty(T9,True,Home)</onclick>
+						<onclick>SetProperty(T9_Key,9,Home)</onclick>
+						<onclick>SetFocus(60102)</onclick>
+					</item>
+					<item id="10">
+						<label>$INFO[Control.GetLabel(262)]</label>
+						<label2>退格</label2>
+						<onclick>SendClick(262)</onclick>
+					</item>
+					<item id="11">
+						<label>$NUMBER[0]</label>
+						<label2 />
+						<onclick>SendClick(242)</onclick>
+					</item>
+					<item id="12">
+						<label>清空</label>
+						<label2 />
+						<onclick>SendClick(261)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="group">
+				<include>Visible_Fade_Animation</include>
+				<visible>!IsEmpty(Window(Home).Property(T9))</visible>
+				<control type="group" id="6000">
+					<left>165</left>
+					<top>176</top>
+					<control type="button" id="60101">
+						<width>152</width>
+						<height>108</height>
+						<onup>noop</onup>
+						<ondown>60102</ondown>
+						<onleft>noop</onleft>
+						<onright>noop</onright>
+						<onback>noop</onback>
+						<label>$VAR[T9LabelTopVar]</label>
+						<align>center</align>
+						<aligny>top</aligny>
+						<textoffsety>22</textoffsety>
+						<font>font30</font>
+						<texturenofocus>search/sector_up_nf.png</texturenofocus>
+						<texturefocus>search/sector_up_fo.png</texturefocus>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<onclick condition="!StringCompare(Window(Home).Property(T9_Key),1) + !StringCompare(Window(Home).Property(T9_Key),0)">ClearProperty(T9,Home)</onclick>
+						<onclick>$VAR[T9OnClickTopVar]</onclick>
+						<onclick condition="!StringCompare(Window(Home).Property(T9_Key),1) + !StringCompare(Window(Home).Property(T9_Key),0)">SetFocus(9090)</onclick>
+					</control>
+					<control type="button" id="60103">
+						<left>-28</left>
+						<top>33</top>
+						<width>108</width>
+						<height>152</height>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+						<onleft>noop</onleft>
+						<onright>60102</onright>
+						<onback>noop</onback>
+						<label>$VAR[T9LabelMidLeftVar]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>30</textoffsetx>
+						<font>font30</font>
+						<texturenofocus>search/sector_left_nf.png</texturenofocus>
+						<texturefocus>search/sector_left_fo.png</texturefocus>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<onclick condition="!StringCompare(Window(Home).Property(T9_Key),1) + !StringCompare(Window(Home).Property(T9_Key),0)">ClearProperty(T9,Home)</onclick>
+						<onclick>$VAR[T9OnClickMidLeftVar]</onclick>
+						<onclick condition="!StringCompare(Window(Home).Property(T9_Key),1) + !StringCompare(Window(Home).Property(T9_Key),0)">SetFocus(9090)</onclick>
+					</control>
+					<control type="button" id="60104">
+						<left>76</left>
+						<top>30</top>
+						<width>108</width>
+						<height>152</height>
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+						<onleft>60102</onleft>
+						<onright>noop</onright>
+						<onback>noop</onback>
+						<label>$VAR[T9LabelMidRightVar]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textoffsetx>30</textoffsetx>
+						<font>font30</font>
+						<texturenofocus>search/sector_right_nf.png</texturenofocus>
+						<texturefocus>search/sector_right_fo.png</texturefocus>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<onclick condition="!StringCompare(Window(Home).Property(T9_Key),1) + !StringCompare(Window(Home).Property(T9_Key),0)">ClearProperty(T9,Home)</onclick>
+						<onclick>$VAR[T9OnClickMidRightVar]</onclick>
+						<onclick condition="!StringCompare(Window(Home).Property(T9_Key),1) + !StringCompare(Window(Home).Property(T9_Key),0)">SetFocus(9090)</onclick>
+					</control>
+					<control type="button" id="60105">
+						<left>2</left>
+						<top>105</top>
+						<width>152</width>
+						<height>108</height>
+						<onup>60102</onup>
+						<ondown>noop</ondown>
+						<onleft>noop</onleft>
+						<onright>noop</onright>
+						<onback>noop</onback>
+						<label>$VAR[T9LabelBottomVar]</label>
+						<align>center</align>
+						<aligny>bottom</aligny>
+						<textoffsety>58</textoffsety>
+						<font>font30</font>
+						<texturenofocus>search/sector_down_nf.png</texturenofocus>
+						<texturefocus>search/sector_down_fo.png</texturefocus>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<onclick condition="StringCompare(Window(Home).Property(T9_Key),7) | StringCompare(Window(Home).Property(T9_Key),9)">ClearProperty(T9,Home)</onclick>
+						<onclick>$VAR[T9OnClickBottomVar]</onclick>
+						<onclick condition="StringCompare(Window(Home).Property(T9_Key),7) | StringCompare(Window(Home).Property(T9_Key),9)">SetFocus(9090)</onclick>
+					</control>
+					<control type="button" id="60102">
+						<left>22</left>
+						<top>58</top>
+						<width>107</width>
+						<height>103</height>
+						<onup>60101</onup>
+						<ondown>60105</ondown>
+						<onleft>60103</onleft>
+						<onright>60104</onright>
+						<onback>noop</onback>
+						<label>$VAR[T9LabelMidCenterVar]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font34</font>
+						<texturenofocus>search/circle_nf.png</texturenofocus>
+						<texturefocus>search/circle_fo.png</texturefocus>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<onclick>ClearProperty(T9,Home)</onclick>
+						<onclick>$VAR[T9OnClickMidCenterVar]</onclick>
+						<onclick>SetFocus(9090)</onclick>
+						<animation effect="slide" start="0,0" end="2,0" time="0" condition="!Control.HasFocus(60102)">conditional</animation>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="label">
+			<left>88</left>
+			<top>918</top>
+			<width>500</width>
+			<height>60</height>
+			<font>font26</font>
+			<textcolor>white60</textcolor>
+			<label>        首字母搜索，例如“非诚勿扰”[CR]输入[COLOR yellow]F[/COLOR]ei[COLOR yellow]C[/COLOR]heng[COLOR yellow]W[/COLOR]u[COLOR yellow]R[/COLOR]ao首字母[COLOR yellow]FC[/COLOR][COLOR black]WR[/COLOR]即可</label>
+		</control>
+		<control type="group" id="9082">
+			<description>Results Video</description>
+			<left>612</left>
+			<top>147</top>
+			<control type="list" id="9091">
+				<width>1500</width>
+				<height>440</height>
+				<orientation>horizontal</orientation>
+				<onup>noop</onup>
+				<ondown>9092</ondown>
+				<onleft>9083</onleft>
+				<onright>noop</onright>
+				<include>HomeWidgetListPosterLayout</include>
+			</control>
+			<control type="panel" id="9092">
+				<left>22</left>
+				<top>450</top>
+				<width>1500</width>
+				<height>440</height>
+				<onup>9091</onup>
+				<ondown>noop</ondown>
+				<onleft>9083</onleft>
+				<onright>noop</onright>
+				<itemlayout width="603" height="74">
+					<control type="image">
+						<width>576</width>
+						<height>61</height>
+						<texture>list/list_label_bg.png</texture>
+					</control>
+					<control type="label">
+						<left>33</left>
+						<width>576</width>
+						<height>61</height>
+						<aligny>center</aligny>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="603" height="74">
+					<control type="image">
+						<width>576</width>
+						<height>61</height>
+						<texture>home/button/button_fo.png</texture>
+					</control>
+					<control type="label">
+						<left>33</left>
+						<width>576</width>
+						<height>61</height>
+						<aligny>center</aligny>
+						<font>font24</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

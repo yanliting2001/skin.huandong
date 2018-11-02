@@ -20,11 +20,15 @@
 		</animation>
 	</include>
 	<include name="Visible_Fade_Animation">
-		<animation effect="fade" time="300">Visible</animation>
-		<animation effect="fade" time="300">Hidden</animation>
+		<animation effect="fade" time="100">Visible</animation>
+		<animation effect="fade" time="100">Hidden</animation>
 	</include>
 	<include name="Dialog_OpenClose_Animation">
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
+	</include>
+	<include name="BG_OpenClose_Fade_Animation">
+		<animation effect="fade" time="200">WindowOpen</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
 	</include>
 </includes>

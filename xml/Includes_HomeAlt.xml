@@ -178,7 +178,7 @@
 						<item>
 							<label>搜索</label>
 							<icon>home/thumbs/icon_search.png</icon>
-							<onclick>noop</onclick>
+							<onclick>RunScript(script.startup.huandong, search)</onclick>
 						</item>
 					</content>
 				</control>
@@ -735,7 +735,7 @@
 				<control type="group">
 					<animation effect="fade" start="0" end="100" time="100">Focus</animation>
 					<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
-					<visible>Control.HasFocus(200002) | Control.HasFocus(5000)</visible>
+					<visible>Control.HasFocus(200002) | Control.HasFocus(5000) | Control.HasFocus(9091)</visible>
 					<control type="image">
 						<width>316</width>
 						<height>431</height>

@@ -66,4 +66,106 @@
 		<value condition="IntegerGreaterThan(Player.SeekBar,99)">$INFO[Player.Duration]</value>
 		<value>$INFO[Player.SeekTime]</value>
 	</variable>
+	<variable name="T9LabelTopVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">$NUMBER[2]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">$NUMBER[3]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">$NUMBER[4]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">$NUMBER[5]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">$NUMBER[6]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">$NUMBER[7]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">$NUMBER[8]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">$NUMBER[9]</value>
+		<value>$INFO[Window(home).Property(Empty_Space)]</value>
+	</variable>
+	<variable name="T9OnClickTopVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">SendClick(1124,244)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">SendClick(1124,245)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">SendClick(1124,246)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">SendClick(1124,252)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">SendClick(1124,253)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">SendClick(1124,254)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">SendClick(1124,255)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">SendClick(1124,256)</value>
+		<value>noop</value>
+	</variable>
+	<variable name="T9LabelMidCenterVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),1)">$NUMBER[1]</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">A</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">D</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">G</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">J</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">M</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">P</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">T</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">W</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),0)">$NUMBER[0]</value>
+		<value>$INFO[Window(home).Property(Empty_Space)]</value>
+	</variable>
+	<variable name="T9OnClickMidCenterVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),1)">SendClick(1124,243)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">SendClick(1124,201)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">SendClick(1124,204)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">SendClick(1124,211)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">SendClick(1124,214)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">SendClick(1124,221)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">SendClick(1124,224)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">SendClick(1124,232)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">SendClick(1124,235)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),0)">SendClick(1124,242)</value>
+		<value>noop</value>
+	</variable>
+	<variable name="T9LabelMidLeftVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">B</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">E</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">H</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">K</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">N</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">Q</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">U</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">X</value>
+		<value>$INFO[Window(home).Property(Empty_Space)]</value>
+	</variable>
+	<variable name="T9OnClickMidLeftVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">SendClick(1124,202)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">SendClick(1124,205)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">SendClick(1124,212)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">SendClick(1124,215)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">SendClick(1124,222)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">SendClick(1124,225)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">SendClick(1124,233)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">SendClick(1124,236)</value>
+		<value>noop</value>
+	</variable>
+	<variable name="T9LabelMidRightVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">C</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">F</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">I</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">L</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">O</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">R</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">V</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">Y</value>
+		<value>$INFO[Window(home).Property(Empty_Space)]</value>
+	</variable>
+	<variable name="T9OnClickMidRightVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),2)">SendClick(1124,203)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),3)">SendClick(1124,206)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),4)">SendClick(1124,213)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),5)">SendClick(1124,216)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),6)">SendClick(1124,223)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">SendClick(1124,226)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),8)">SendClick(1124,234)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">SendClick(1124,241)</value>
+		<value>noop</value>
+	</variable>
+	<variable name="T9LabelBottomVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">S</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">Z</value>
+		<value>$INFO[Window(home).Property(Empty_Space)]</value>
+	</variable>
+	<variable name="T9OnClickBottomVar">
+		<value condition="StringCompare(Window(Home).Property(T9_Key),7)">SendClick(1124,231)</value>
+		<value condition="StringCompare(Window(Home).Property(T9_Key),9)">SendClick(1124,251)</value>
+		<value>noop</value>
+	</variable>
 </includes>
