@@ -105,7 +105,6 @@
 						<description>movie list</description>
 						<width>1500</width>
 						<height>850</height>
-						<orientation>horizontal</orientation>
 						<include>HomeWidgetPanelPosterLayout</include>
 					</control>
 				</control>

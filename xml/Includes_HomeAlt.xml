@@ -422,7 +422,7 @@
 						<item>
 							<label>搜索</label>
 							<icon>home/thumbs/icon_search.png</icon>
-							<onclick>noop</onclick>
+							<onclick>RunScript(script.startup.huandong, search)</onclick>
 						</item>
 					</content>
 				</control>
