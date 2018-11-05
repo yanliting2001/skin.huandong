@@ -197,6 +197,13 @@
 						<height>300</height>
 						<texture>colors/white.png</texture>
 					</control>
+					<control type="image">
+						<left>840</left>
+						<top>159</top>
+						<width>300</width>
+						<height>300</height>
+						<texture>home/qr.png</texture>
+					</control>
 					<control type="label">
 						<left>800</left>
 						<top>529</top>
