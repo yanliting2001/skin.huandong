@@ -148,6 +148,20 @@
 					<height>1080</height>
 					<texture>home/other_bg.png</texture>
 				</control>
+				<control type="label">
+					<left>288</left>
+					<top>-29</top>
+					<width>1700</width>
+					<height>900</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font70</font>
+					<textcolor>white80</textcolor>
+					<label>当前没有下载任务</label>
+					<visible>!IsEmpty(Window.Property(DownloadListIsEmpty)) + StringCompare(Container(400101).ListItem.Property(CurrentItem),1)</visible>
+					<animation effect="fade" time="200">Visible</animation>
+					<animation effect="fade" time="200">Hidden</animation>
+				</control>
 				<control type="group">
 					<visible>StringCompare(Window.Property(AccountContent),download)</visible>
 					<animation effect="fade" time="200">Visible</animation>
