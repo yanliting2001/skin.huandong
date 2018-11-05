@@ -58,6 +58,7 @@
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<scrolltime tween="cubic">500</scrolltime>
+				<visible>IsEmpty(Window.Property(IsDownloading))</visible>
 				<control type="button" id="201">
 					<width>222</width>
 					<height>59</height>
@@ -105,6 +106,133 @@
 					<onright>noop</onright>
 					<onup>noop</onup>
 					<ondown>6000</ondown>
+				</control>
+			</control>
+			<control type="group">
+				<description>download bar</description>
+				<left>980</left>
+				<top>489</top>
+				<visible>!IsEmpty(Window.Property(IsDownloading))</visible>
+				<control type="progress" id="9001">
+					<width>438</width>
+					<height>29</height>
+					<texturebg>progress/texturebg.png</texturebg>
+					<lefttexture>progress/textureleft.png</lefttexture>
+					<midtexture>progress/texturemid.png</midtexture>
+					<righttexture />
+					<info />
+				</control>
+				<control type="image">
+					<top>-6</top>
+					<width>37</width>
+					<height>41</height>
+					<texture>slider/nib_fo.png</texture>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),1)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),2)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),3)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),4)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),5)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),6)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),7)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),8)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),9)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),10)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),11)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),12)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),13)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),14)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),15)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),16)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),17)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),18)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),19)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),20)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),21)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),22)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),23)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),24)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),25)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),26)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),27)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),28)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),29)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),30)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),31)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),32)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),33)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),34)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),35)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),36)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),37)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),38)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),39)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),40)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),41)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),42)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),43)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),44)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),45)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),46)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),47)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),48)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),49)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),50)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),51)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),52)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),53)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),54)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),55)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),56)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),57)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),58)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),59)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),60)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),61)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),62)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),63)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),64)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),65)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),66)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),67)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),68)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),69)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),70)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),71)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),72)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),73)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),7)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),75)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),76)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),77)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),78)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),79)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),80)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),81)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),82)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),83)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),84)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),85)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),86)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),87)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),88)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),89)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),90)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),91)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),92)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),93)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),94)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),95)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),96)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),97)" reversible="false">Conditonal</animation>
+					<animation effect="slide" start="0" end="4.38" time="0" condition="IntegerGreaterThan(Window.Property(DownloadPercentInt),98)" reversible="false">Conditonal</animation>
+				</control>
+				<control type="label">
+					<left>479</left>
+					<width>100</width>
+					<height>25</height>
+					<font>font23</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[Window.Property(DownloadPercentInt)] %</label>
 				</control>
 			</control>
 			<control type="label">

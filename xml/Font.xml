@@ -38,6 +38,11 @@
 			<size>22</size>
 		</font>
 		<font>
+			<name>font23</name>
+			<filename>FZLanTingHei-L-GBK.ttf</filename>
+			<size>23</size>
+		</font>
+		<font>
 			<name>font24</name>
 			<filename>FZLanTingHei-L-GBK.ttf</filename>
 			<size>24</size>
