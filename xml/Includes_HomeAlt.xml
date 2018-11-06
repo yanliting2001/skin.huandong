@@ -99,7 +99,7 @@
 						<item>
 							<label>本地影片</label>
 							<icon />
-							<onclick>ActivateWindow(settings)</onclick>
+							<onclick>noop</onclick>
 						</item>
 					</content>
 				</control>
