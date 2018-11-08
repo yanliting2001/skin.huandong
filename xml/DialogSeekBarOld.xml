@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>noop</defaultcontrol>
+	<visible>Window.IsVisible(FullScreenVideo)</visible>
+	<visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + !Window.IsActive(videoosd)</visible>
+	<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<controls>
+		<control type="image">
+			<left>835</left>
+			<top>391</top>
+			<width>182</width>
+			<height>186</height>
+			<texture>player/play.png</texture>
+			<visible>Player.Paused</visible>
+		</control>
+		<control type="group">
+			<description>PlayerButton, PlayerTime, progress and duration</description>
+			<animation effect="slide" start="0,220" end="0,0" time="200">WindowOpen</animation>
+			<animation effect="slide" end="0,220" start="0,0" time="200">WindowClose</animation>
+			<animation effect="slide" start="0,220" end="0,0" time="200">VisibleChange</animation>
+			<bottom>0</bottom>
+			<height>220</height>
+			<control type="button">
+				<description>Play</description>
+				<left>83</left>
+				<top>44</top>
+				<width>82</width>
+				<height>72</height>
+				<texturefocus>player/icon_play.png</texturefocus>
+				<texturenofocus>player/icon_play.png</texturenofocus>
+				<visible>Player.Paused</visible>
+			</control>
+			<control type="button">
+				<description>Play</description>
+				<left>83</left>
+				<top>44</top>
+				<width>82</width>
+				<height>72</height>
+				<texturefocus>player/icon_pause.png</texturefocus>
+				<texturenofocus>player/icon_pause.png</texturenofocus>
+				<visible>Player.Playing</visible>
+			</control>
+			<control type="label">
+				<description>player time and duration</description>
+				<right>30</right>
+				<top>62</top>
+				<width>230</width>
+				<height>30</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<label>$INFO[Player.Time]/$INFO[Player.Duration]</label>
+			</control>
+			<control type="progress">
+				<description>ProgressCache</description>
+				<left>185</left>
+				<top>67</top>
+				<width>1479</width>
+				<height>22</height>
+				<texturebg>player/seekbar/texturebg.png</texturebg>
+				<lefttexture>player/seekbar/textureleft_cache.png</lefttexture>
+				<midtexture>player/seekbar/texturemid_cache.png</midtexture>
+				<righttexture />
+				<info>Player.ProgressCache</info>
+			</control>
+			<control type="progress">
+				<description>Progressbar</description>
+				<left>185</left>
+				<top>67</top>
+				<width>1479</width>
+				<height>22</height>
+				<texturebg colordiffuse="white10">player/seekbar/texturebg.png</texturebg>
+				<lefttexture>player/seekbar/textureleft.png</lefttexture>
+				<midtexture>player/seekbar/texturemid.png</midtexture>
+				<righttexture />
+				<info>Player.Progress</info>
+			</control>
+			<control type="group">
+				<control type="button">
+					<description>player time</description>
+					<left>138</left>
+					<top>12</top>
+					<width>117</width>
+					<height>45</height>
+					<align>center</align>
+					<font>font22</font>
+					<disabledcolor>white</disabledcolor>
+					<label>$INFO[Player.Time]</label>
+					<texturefocus>player/seekbar/box.png</texturefocus>
+					<texturenofocus>player/seekbar/box.png</texturenofocus>
+					<onclick>noop</onclick>
+					<enable>no</enable>
+					<visible>Player.Forwarding | Player.Rewinding</visible>
+					<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+				</control>
+				<control type="button">
+					<description>player time</description>
+					<left>155</left>
+					<top>13</top>
+					<width>117</width>
+					<height>45</height>
+					<align>center</align>
+					<font>font22</font>
+					<disabledcolor>white</disabledcolor>
+					<label>$INFO[Player.Time]</label>
+					<texturefocus>player/seekbar/box.png</texturefocus>
+					<texturenofocus>player/seekbar/box.png</texturenofocus>
+					<onclick>noop</onclick>
+					<enable>no</enable>
+					<visible>![Player.Forwarding | Player.Rewinding | Player.Seeking]</visible>
+					<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+				</control>
+				<control type="button">
+					<description>player time</description>
+					<left>155</left>
+					<top>13</top>
+					<width>117</width>
+					<height>45</height>
+					<align>center</align>
+					<font>font22</font>
+					<disabledcolor>white</disabledcolor>
+					<label>$VAR[PlayerSeekTime]</label>
+					<texturefocus>player/seekbar/box.png</texturefocus>
+					<texturenofocus>player/seekbar/box.png</texturenofocus>
+					<onclick>noop</onclick>
+					<enable>no</enable>
+					<visible>![Player.Forwarding | Player.Rewinding] + Player.Seeking</visible>
+					<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+				</control>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,1)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,2)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,3)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,4)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,5)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,6)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,7)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,8)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,9)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,10)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,11)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,12)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,13)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,14)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,15)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,16)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,17)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,18)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,19)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,20)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,21)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,22)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,23)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,24)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,25)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,26)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,27)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,28)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,29)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,30)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,31)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,32)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,33)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,34)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,35)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,36)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,37)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,38)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,39)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,40)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,41)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,42)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,43)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,44)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,45)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,46)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,47)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,48)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,49)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,50)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,51)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,52)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,53)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,54)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,55)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,56)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,57)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,58)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,59)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,60)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,61)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,62)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,63)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,64)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,65)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,66)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,67)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,68)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,69)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,70)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,71)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,72)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,73)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,74)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,75)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,76)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,77)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,78)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,79)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,80)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,81)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,82)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,83)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,84)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,85)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,86)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,87)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,88)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,89)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,90)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,91)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,92)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,93)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,94)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,95)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,96)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,97)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,98)" reversible="false">Conditonal</animation>
+				<animation effect="slide" start="0" end="14.6" time="0" condition="IntegerGreaterThan(Player.SeekBar,99)" reversible="false">Conditonal</animation>
+			</control>
+			<control type="label">
+				<description>Player Title</description>
+				<left>169</left>
+				<top>120</top>
+				<width max="1400">auto</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<font>font32</font>
+				<label>正在播放 : $INFO[VideoPlayer.Title]</label>
+			</control>
+		</control>
+	</controls>
+</window>
