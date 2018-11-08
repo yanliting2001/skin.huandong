@@ -43,13 +43,14 @@
 			</control>
 			<control type="label">
 				<description>player time and duration</description>
-				<right>30</right>
+				<left>1660</left>
 				<top>62</top>
 				<width>230</width>
 				<height>30</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>font24</font>
+				<textcolor>white</textcolor>
 				<label>$INFO[Player.Time]/$INFO[Player.Duration]</label>
 			</control>
 			<control type="progress">
@@ -84,8 +85,11 @@
 					<width>117</width>
 					<height>45</height>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font22</font>
-					<disabledcolor>white</disabledcolor>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<disabledcolor>grey</disabledcolor>
 					<label>$INFO[Player.Time]</label>
 					<texturefocus>player/seekbar/box.png</texturefocus>
 					<texturenofocus>player/seekbar/box.png</texturenofocus>
@@ -96,13 +100,16 @@
 				</control>
 				<control type="button">
 					<description>player time</description>
-					<left>155</left>
-					<top>13</top>
+					<left>138</left>
+					<top>12</top>
 					<width>117</width>
 					<height>45</height>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font22</font>
-					<disabledcolor>white</disabledcolor>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<disabledcolor>grey</disabledcolor>
 					<label>$INFO[Player.Time]</label>
 					<texturefocus>player/seekbar/box.png</texturefocus>
 					<texturenofocus>player/seekbar/box.png</texturenofocus>
@@ -113,13 +120,16 @@
 				</control>
 				<control type="button">
 					<description>player time</description>
-					<left>155</left>
-					<top>13</top>
+					<left>138</left>
+					<top>12</top>
 					<width>117</width>
 					<height>45</height>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>font22</font>
-					<disabledcolor>white</disabledcolor>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<disabledcolor>grey</disabledcolor>
 					<label>$VAR[PlayerSeekTime]</label>
 					<texturefocus>player/seekbar/box.png</texturefocus>
 					<texturenofocus>player/seekbar/box.png</texturenofocus>
