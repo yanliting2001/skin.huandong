@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include file="defaults.xml" />
-	<include file="variables.xml" />
+	<include file="Defaults.xml" />
+	<include file="Variables.xml" />
 	<include file="View_50_List.xml" />
 	<include file="View_51_Poster.xml" />
 	<include file="View_52_Landscape.xml" />

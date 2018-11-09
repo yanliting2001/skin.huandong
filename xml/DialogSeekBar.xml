@@ -89,7 +89,7 @@
 					<font>font22</font>
 					<textcolor>white</textcolor>
 					<focusedcolor>black</focusedcolor>
-					<disabledcolor>grey</disabledcolor>
+					<disabledcolor>white</disabledcolor>
 					<label>$INFO[Player.Time]</label>
 					<texturefocus>player/seekbar/box.png</texturefocus>
 					<texturenofocus>player/seekbar/box.png</texturenofocus>
@@ -109,7 +109,7 @@
 					<font>font22</font>
 					<textcolor>white</textcolor>
 					<focusedcolor>black</focusedcolor>
-					<disabledcolor>grey</disabledcolor>
+					<disabledcolor>white</disabledcolor>
 					<label>$INFO[Player.Time]</label>
 					<texturefocus>player/seekbar/box.png</texturefocus>
 					<texturenofocus>player/seekbar/box.png</texturenofocus>
@@ -129,7 +129,7 @@
 					<font>font22</font>
 					<textcolor>white</textcolor>
 					<focusedcolor>black</focusedcolor>
-					<disabledcolor>grey</disabledcolor>
+					<disabledcolor>white</disabledcolor>
 					<label>$VAR[PlayerSeekTime]</label>
 					<texturefocus>player/seekbar/box.png</texturefocus>
 					<texturenofocus>player/seekbar/box.png</texturenofocus>
