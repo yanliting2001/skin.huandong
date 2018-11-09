@@ -2317,7 +2317,7 @@
 				<width>712</width>
 				<height>231</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture>$INFO[ListItem.Icon]</texture>
+				<texture>$INFO[ListItem.Art(banner)]</texture>
 			</control>
 		</itemlayout>
 		<focusedlayout width="742" height="231">
@@ -2328,22 +2328,10 @@
 					<width>712</width>
 					<height>231</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture>$INFO[ListItem.Icon]</texture>
+					<texture>$INFO[ListItem.Art(banner)]</texture>
 				</control>
 			</control>
 		</focusedlayout>
-		<content>
-			<item>
-				<label>pacifico</label>
-				<icon>home/banner/pacifico.jpg</icon>
-				<onclick>noop</onclick>
-			</item>
-			<item>
-				<label>skyscraper</label>
-				<icon>home/banner/skyscraper.jpg</icon>
-				<onclick>noop</onclick>
-			</item>
-		</content>
 	</include>
 	<include name="HomeWidgetListDownloadLayout">
 		<itemlayout width="1195" height="114">
