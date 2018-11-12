@@ -529,68 +529,7 @@
 				<onleft>noop</onleft>
 				<onright>noop</onright>
 				<orientation>horizontal</orientation>
-				<itemlayout width="305" height="436">
-					<control type="image">
-						<left>23</left>
-						<top>30</top>
-						<width>266</width>
-						<height>380</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="image">
-						<left>23</left>
-						<top>358</top>
-						<width>266</width>
-						<height>52</height>
-						<texture>list/list_label_bg.png</texture>
-					</control>
-					<control type="label">
-						<left>23</left>
-						<top>358</top>
-						<width>266</width>
-						<height>52</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>font24</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</itemlayout>
-				<focusedlayout width="305" height="436">
-					<control type="image">
-						<width>317</width>
-						<height>100%</height>
-						<texture>list/list_fo_poster_light.png</texture>
-						<animation effect="fade" start="0" end="100" time="100">Focus</animation>
-						<animation effect="fade" start="100" end="0" time="100">UnFocus</animation>
-						<visible>Control.HasFocus(6000)</visible>
-					</control>
-					<control type="image">
-						<left>23</left>
-						<top>30</top>
-						<width>266</width>
-						<height>380</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="image">
-						<left>23</left>
-						<top>358</top>
-						<width>266</width>
-						<height>52</height>
-						<texture>list/list_label_bg.png</texture>
-					</control>
-					<control type="label">
-						<left>23</left>
-						<top>358</top>
-						<width>266</width>
-						<height>52</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>font24</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</focusedlayout>
+				<include>HomeWidgetListPosterLayout</include>
 			</control>
 		</control>
 	</controls>
