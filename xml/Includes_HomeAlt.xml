@@ -302,15 +302,10 @@
 							<height>100%</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>black</textcolor>
+							<textcolor>huandong</textcolor>
 							<font>font24</font>
 							<label>$INFO[ListItem.Label]</label>
-							<animation type="Focus" reversible="false">
-								<effect type="fade" start="100" end="0" time="200" />
-							</animation>
-							<animation type="UnFocus" reversible="false">
-								<effect type="fade" start="0" end="100" time="200" />
-							</animation>
+							<visible>!Control.HasFocus($PARAM[ControlId]04)</visible>
 						</control>
 					</focusedlayout>
 				</control>
@@ -474,15 +469,10 @@
 							<height>100%</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>black</textcolor>
+							<textcolor>huandong</textcolor>
 							<font>font24</font>
 							<label>$INFO[ListItem.Label]</label>
-							<animation type="Focus" reversible="false">
-								<effect type="fade" start="100" end="0" time="200" />
-							</animation>
-							<animation type="UnFocus" reversible="false">
-								<effect type="fade" start="0" end="100" time="200" />
-							</animation>
+							<visible>!Control.HasFocus($PARAM[ControlId]02)</visible>
 						</control>
 					</focusedlayout>
 				</control>
