@@ -776,6 +776,25 @@
 					<textcolor>white</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 				</control>
+				<control type="group">
+					<left>20</left>
+					<top>20</top>
+					<visible>StringCompare(ListItem.Property(DownloadStatus),1)</visible>
+					<control type="image">
+						<width>67</width>
+						<height>34</height>
+						<texture colordiffuse="white70">colors/black.png</texture>
+					</control>
+					<control type="label">
+						<left>3</left>
+						<width>67</width>
+						<height>34</height>
+						<aligny>center</aligny>
+						<font>font20</font>
+						<textcolor>FFff9c00</textcolor>
+						<label>已下载</label>
+					</control>
+				</control>
 			</control>
 		</itemlayout>
 		<focusedlayout width="300" height="420">
@@ -812,6 +831,25 @@
 						<font>font24</font>
 						<textcolor>white</textcolor>
 						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</control>
+				<control type="group">
+					<left>34</left>
+					<top>34</top>
+					<visible>StringCompare(ListItem.Property(DownloadStatus),1)</visible>
+					<control type="image">
+						<width>67</width>
+						<height>34</height>
+						<texture colordiffuse="white70">colors/black.png</texture>
+					</control>
+					<control type="label">
+						<left>3</left>
+						<width>67</width>
+						<height>34</height>
+						<aligny>center</aligny>
+						<font>font20</font>
+						<textcolor>FFff9c00</textcolor>
+						<label>已下载</label>
 					</control>
 				</control>
 				<control type="group">
