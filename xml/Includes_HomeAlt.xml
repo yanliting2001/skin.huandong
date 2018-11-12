@@ -302,7 +302,7 @@
 							<height>100%</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
+							<textcolor>black</textcolor>
 							<font>font24</font>
 							<label>$INFO[ListItem.Label]</label>
 							<animation type="Focus" reversible="false">
@@ -474,7 +474,7 @@
 							<height>100%</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>white</textcolor>
+							<textcolor>black</textcolor>
 							<font>font24</font>
 							<label>$INFO[ListItem.Label]</label>
 							<animation type="Focus" reversible="false">
