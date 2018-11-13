@@ -53,8 +53,8 @@
 				<itemgap>17</itemgap>
 				<onleft>noop</onleft>
 				<onright>noop</onright>
-				<onup>noop</onup>
-				<ondown>noop</ondown>
+				<onup>4000</onup>
+				<ondown>6000</ondown>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<scrolltime tween="cubic">500</scrolltime>
@@ -70,10 +70,6 @@
 					<focusedcolor>black</focusedcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<onleft>noop</onleft>
-					<onright>202</onright>
-					<onup>noop</onup>
-					<ondown>6000</ondown>
 				</control>
 				<control type="button" id="202">
 					<width>222</width>
@@ -86,10 +82,6 @@
 					<focusedcolor>black</focusedcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<onleft>201</onleft>
-					<onright>203</onright>
-					<onup>noop</onup>
-					<ondown>6000</ondown>
 				</control>
 				<control type="button" id="203">
 					<width>222</width>
@@ -102,10 +94,6 @@
 					<focusedcolor>black</focusedcolor>
 					<align>center</align>
 					<aligny>center</aligny>
-					<onleft>202</onleft>
-					<onright>noop</onright>
-					<onup>noop</onup>
-					<ondown>6000</ondown>
 				</control>
 			</control>
 			<control type="group">
@@ -482,9 +470,21 @@
 						<label>$INFO[Container(3001).ListItemAbsolute(7).Label]</label>
 					</control>
 				</control>
-				<control type="group">
+				<control type="group" id="4000">
 					<width>100%</width>
 					<height>140</height>
+					<control type="button" id="4001">
+						<width>100%</width>
+						<height>160</height>
+						<onleft>noop</onleft>
+						<onright>noop</onright>
+						<onup>noop</onup>
+						<ondown condition="Control.IsVisible(9000)">9000</ondown>
+						<ondown condition="!Control.IsVisible(9000)">6000</ondown>
+						<label />
+						<texturenofocus />
+						<texturefocus>detail/button_nf.png</texturefocus>
+					</control>
 					<control type="textbox">
 						<top>10</top>
 						<width>100%</width>
@@ -492,6 +492,16 @@
 						<font>font30_textbox</font>
 						<textcolor>grey2</textcolor>
 						<label>简介:   $INFO[Window.Property(MoviePlot)]</label>
+						<visible>!Control.HasFocus(4001)</visible>
+					</control>
+					<control type="textbox">
+						<top>10</top>
+						<width>100%</width>
+						<height>100%</height>
+						<font>font30_textbox</font>
+						<textcolor>white60</textcolor>
+						<label>简介:   $INFO[Window.Property(MoviePlot)]</label>
+						<visible>Control.HasFocus(4001)</visible>
 					</control>
 				</control>
 			</control>

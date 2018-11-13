@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+	<defaultcontrol>noop</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" end="100" time="250" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" end="0" time="250" />
+			</animation>
+			<control type="image">
+				<width>100%</width>
+				<height>100%</height>
+				<texture>colors/black.png</texture>
+			</control>
+			<control type="label">
+				<left>152</left>
+				<top>100</top>
+				<width>auto</width>
+				<font>font40</font>
+				<textcolor>white</textcolor>
+				<label>简介</label>
+			</control>
+			<control type="textbox" id="40000">
+				<description>Plot</description>
+				<left>260</left>
+				<top>340</top>
+				<width>1400</width>
+				<height>400</height>
+				<font>font30_textbox</font>
+				<align>left</align>
+				<textcolor>grey</textcolor>
+				<pagecontrol>60</pagecontrol>
+				<label />
+				<autoscroll time="3600" delay="4000" repeat="5000">true</autoscroll>
+			</control>
+		</control>
+	</controls>
+</window>
