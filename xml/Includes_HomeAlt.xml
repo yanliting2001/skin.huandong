@@ -318,7 +318,7 @@
 				<description>left widget background</description>
 				<left>2</left>
 				<width>245</width>
-				<height>378</height>
+				<height>558</height>
 				<control type="image">
 					<width>100%</width>
 					<height>100%</height>
@@ -335,7 +335,7 @@
 				<description>left widget menu</description>
 				<left>1</left>
 				<width>248</width>
-				<height>378</height>
+				<height>558</height>
 				<itemgap>0</itemgap>
 				<onup>noop</onup>
 				<ondown>$PARAM[OnDown]</ondown>
@@ -425,7 +425,7 @@
 					<description>categories</description>
 					<top>19</top>
 					<width>100%</width>
-					<height>250</height>
+					<height>450</height>
 					<onleft>noop</onleft>
 					<onright>$PARAM[OnRight]</onright>
 					<onup>noop</onup>
